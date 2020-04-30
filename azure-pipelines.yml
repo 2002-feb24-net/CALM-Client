@@ -37,12 +37,6 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)/app
       artifact: app
       displayName: artifact publish app
-    - task: DockerCompose@0
-      inputs:
-        containerregistrytype: 'Container Registry'
-        dockerComposeFile: 'docker-compose.prod.yml'
-        action: 'Build services'
-      displayName: docker-compose build
 
   - job: test
 
@@ -65,8 +59,7 @@ stages:
         organization: '2002-feb24-net'
         scannerMode: 'CLI'
         configMode: 'manual'
-        cliprojectKey: '2002-feb-net_Calm Client'
-        cliprojectName: 'Calm Client'
+        cliProjectKey: '2002-feb24-net_CALM-Client'
         cliSources: '$(appDir)/src'
         extraProperties: |
           sonar.coverage.exclusions=**/*.spec.ts
