@@ -20,6 +20,7 @@ stages:
       vmImage: ubuntu-latest
 
     steps:
+    
     - task: NodeTool@0
       inputs:
         versionSpec: $(nodeVersion)
@@ -36,6 +37,12 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)/app
       artifact: app
       displayName: artifact publish app
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerComposeFile: 'docker-compose.prod.yml'
+        action: 'Build services'
+      displayName: docker-compose build
 
   - job: test
 
@@ -52,35 +59,35 @@ stages:
       workingDirectory: $(appDir)
       displayName: npm install
 
-    # - task: SonarCloudPrepare@1
-    #   inputs:
-    #     SonarCloud: sonarcloud-escalonn
-    #     organization: 2002-feb24-net
-    #     scannerMode: CLI
-    #     configMode: manual
-    #     cliProjectKey: 2002-feb24-net_nick-project2-ng-notes-client
-    #     cliProjectName: nick-project2-ng-notes-client
-    #     cliSources: $(appDir)/src
-    #     extraProperties: |
-    #       sonar.coverage.exclusions=**/*.spec.ts
-    #       sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
-    #   displayName: sonarcloud analysis prepare
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'Calm Client'
+        organization: '2002-feb24-net'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliprojectKey: '2002-feb-net_Calm Client'
+        cliprojectName: 'Calm Client'
+        cliSources: '$(appDir)/src'
+        extraProperties: |
+          sonar.coverage.exclusions=**/*.spec.ts
+          sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
+      displayName: sonarcloud analysis prepare
 
     - script: npx ng test --browsers ChromeHeadless --no-watch --code-coverage
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng test
 
     - script: npm run lint
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng lint
 
-    # - task: SonarCloudAnalyze@1
-    #   displayName: sonarcloud analysis run
+    - task: SonarCloudAnalyze@1
+      displayName: sonarcloud analysis run
 
-    # - task: SonarCloudPublish@1
-    #   displayName: sonarcloud results build publish
+    - task: SonarCloudPublish@1
+      inputs:
+        pollingTimeoutSec: '300'
+      displayName: sonarcloud results build publish
 
 - stage: deploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
@@ -100,9 +107,25 @@ stages:
         deploy:
           steps:
 
-          - download: current
-            artifact: app
-            displayName: artifact download app
+         
+          - checkout: self
+
+          - download: none
+
+          - task: DockerCompose@0
+            inputs:
+              containerregistrytype: 'Container Registry'
+              dockerComposeFile: 'docker-compose.prod.yml'
+              action: 'Build services'
+            displayName: docker-compose build
+
+          - task: DockerCompose@0
+            inputs:
+              containerregistrytype: 'Container Registry'
+              dockerRegistryEndpoint: 'CalmClient'
+              dockerComposeFile: 'docker-compose.prod.yml'
+              action: 'Push services'
+            displayName: docker-compose push
 
           - task: AzureWebAppContainer@1
             inputs:
@@ -111,5 +134,6 @@ stages:
               # appType: webApp
               appName: 'calm-client'
               # packageForLinux: $(Pipeline.Workspace)/app
+              multicontainerConfigFile: 'docker-compose.prod.yml'
             displayName: azure app service deploy
 
