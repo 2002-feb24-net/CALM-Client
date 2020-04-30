@@ -52,19 +52,17 @@ stages:
       workingDirectory: $(appDir)
       displayName: npm install
 
-    # - task: SonarCloudPrepare@1
-    #   inputs:
-    #     SonarCloud: sonarcloud-escalonn
-    #     organization: 2002-feb24-net
-    #     scannerMode: CLI
-    #     configMode: manual
-    #     cliProjectKey: 2002-feb24-net_nick-project2-ng-notes-client
-    #     cliProjectName: nick-project2-ng-notes-client
-    #     cliSources: $(appDir)/src
-    #     extraProperties: |
-    #       sonar.coverage.exclusions=**/*.spec.ts
-    #       sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
-    #   displayName: sonarcloud analysis prepare
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'Calm Client'
+        organization: '2002-feb24-net'
+        scannerMode: 'MSBuild'
+        projectKey: '2002-Feb24.net- Calm Client'
+        projectName: 'Calm Client'
+        extraProperties: |
+          sonar.coverage.exclusions=**/*.spec.ts
+          sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
+      displayName: sonarcloud analysis prepare
 
     - script: npx ng test --browsers ChromeHeadless --no-watch --code-coverage
       workingDirectory: $(appDir)
@@ -76,11 +74,11 @@ stages:
       continueOnError: true
       displayName: ng lint
 
-    # - task: SonarCloudAnalyze@1
-    #   displayName: sonarcloud analysis run
+    - task: SonarCloudAnalyze@1
+      displayName: sonarcloud analysis run
 
-    # - task: SonarCloudPublish@1
-    #   displayName: sonarcloud results build publish
+    - task: SonarCloudPublish@1
+      displayName: sonarcloud results build publish
 
 - stage: deploy
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
