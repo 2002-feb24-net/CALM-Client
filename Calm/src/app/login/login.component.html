@@ -1,4 +1,4 @@
-<!-- <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 <div class="container" style="padding-top:60px;">
     <div class="row">
      
@@ -6,28 +6,32 @@
   
 
   
-              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">
+              <form name="form" #f="ngForm" >
+                <!-- (ngSubmit)="Login(f)" -->
                  
-                <h1 style="text-align:center">Username</h1>
+                <h2 style="text-align:center">Username</h2>
   
-                <input type="text" name="name" ngModel [(ngModel)]="LoginService.formData.name" class="form-control sty1"
+                <input type="text" name="name"  class="form-control sty1"
                   placeholder="name" required>
-                <input type="text" name="password" ngModel [(ngModel)]="LoginService.formData.password"
+                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->
+                  <h2 style="text-align:center">Password</h2>
+                <input type="text" name="password" 
                   class="form-control sty1" placeholder="password" required>
+                  <!-- ngModel [(ngModel)]="LoginService.formData.password" -->
   
   
                 <br>
   
-                <button type="submit" class="btn btn-primary px-4">Login</button>
+                <button type="submit" class="btn btn-block btn-success">Login</button>
                 <div>
                     <div *ngIf="error">  {{errorMessage}} </div> 
                   
                 </div>
                 <br>
-  
+<!--   
                 Username: {{ this.user.name }} <br>
                 password: {{ this.user.password }} <br>
-               
+                -->
   
   
   
@@ -39,4 +43,4 @@
     </div>
     <br />
     <app-footer></app-footer>
-   -->
+  

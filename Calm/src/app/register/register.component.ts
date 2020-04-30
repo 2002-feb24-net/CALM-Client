@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import user from '../models/user';
+import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -6,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  user: user[] = [];
+  error: string | undefined;
 
-  constructor() { }
+  CreateUserForm = this.formBuilder.group({
+    text: ['', Validators.required]
+  });
+
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
