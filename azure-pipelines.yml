@@ -20,22 +20,14 @@ stages:
       vmImage: ubuntu-latest
 
     steps:
-    - task: NodeTool@0
+    
+
+    - task: DockerCompose@0
       inputs:
-        versionSpec: $(nodeVersion)
-      displayName: node $(nodeVersion)
-
-    - script: npm ci
-      workingDirectory: $(appDir)
-      displayName: npm install
-
-    - script: npx ng build --outputPath $(Build.ArtifactStagingDirectory)/app --prod
-      workingDirectory: $(appDir)
-      displayName: ng build
-
-    - publish: $(Build.ArtifactStagingDirectory)/app
-      artifact: app
-      displayName: artifact publish app
+        containerregistrytype: 'Container Registry'
+        dockerComposeFile: 'docker-compose.prod.yml'
+        action: 'Build services'
+      displayName: docker-compose build
 
   - job: test
 
@@ -68,18 +60,18 @@ stages:
 
     - script: npx ng test --browsers ChromeHeadless --no-watch --code-coverage
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng test
 
     - script: npm run lint
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng lint
 
     - task: SonarCloudAnalyze@1
       displayName: sonarcloud analysis run
 
     - task: SonarCloudPublish@1
+      inputs:
+        pollingTimeoutSec: '300'
       displayName: sonarcloud results build publish
 
 - stage: deploy
@@ -100,9 +92,7 @@ stages:
         deploy:
           steps:
 
-          - download: current
-            artifact: app
-            displayName: artifact download app
+         
           - checkout: self
 
           - download: none
@@ -129,5 +119,6 @@ stages:
               # appType: webApp
               appName: 'calm-client'
               # packageForLinux: $(Pipeline.Workspace)/app
+              multicontainerConfigFile: 'docker-compose.prod.yml'
             displayName: azure app service deploy
 
