@@ -57,7 +57,7 @@ stages:
         SonarCloud: 'Calm Client'
         organization: '2002-feb24-net'
         scannerMode: 'MSBuild'
-        projectKey: '2002-Feb24.net- Calm Client'
+        projectKey: '2002-feb24-net_Calm Client'
         projectName: 'Calm Client'
         extraProperties: |
           sonar.coverage.exclusions=**/*.spec.ts
