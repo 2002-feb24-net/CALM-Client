@@ -37,12 +37,6 @@ stages:
     - publish: $(Build.ArtifactStagingDirectory)/app
       artifact: app
       displayName: artifact publish app
-    - task: DockerCompose@0
-      inputs:
-        containerregistrytype: 'Container Registry'
-        dockerComposeFile: 'docker-compose.prod.yml'
-        action: 'Build services'
-      displayName: docker-compose build
 
   - job: test
 
