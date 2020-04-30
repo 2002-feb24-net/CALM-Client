@@ -57,9 +57,7 @@ stages:
         SonarCloud: 'Calm Client'
         organization: '2002-feb24-net'
         scannerMode: 'MSBuild'
-        cliprojectKey: '2002-feb24-net_Calm Client'
-        cliprojectName: 'Calm Client'
-        cliSources: '$(appDir)/src'
+        projectKey: '2002-feb-net_Calm Client'
         extraProperties: |
           sonar.coverage.exclusions=**/*.spec.ts
           sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
