@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: small;
+  }
+  .container{
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -50px;
+}
+
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #333333;
+  }
+
+  .footer,
+.push {
+  height: 60px;
+}
+
+
+  .carousel-inner{
+      width: 50%; height: 500px;
+  }
+  .carousel-slide{
+    height: 150px;
+  }
+ 

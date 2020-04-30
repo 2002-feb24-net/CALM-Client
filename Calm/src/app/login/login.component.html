@@ -1,0 +1,42 @@
+<!-- <app-navbar></app-navbar>
+<div class="container" style="padding-top:60px;">
+    <div class="row">
+     
+            <div class="card-body p-4">
+  
+
+  
+              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">
+                 
+                <h1 style="text-align:center">Username</h1>
+  
+                <input type="text" name="name" ngModel [(ngModel)]="LoginService.formData.name" class="form-control sty1"
+                  placeholder="name" required>
+                <input type="text" name="password" ngModel [(ngModel)]="LoginService.formData.password"
+                  class="form-control sty1" placeholder="password" required>
+  
+  
+                <br>
+  
+                <button type="submit" class="btn btn-primary px-4">Login</button>
+                <div>
+                    <div *ngIf="error">  {{errorMessage}} </div> 
+                  
+                </div>
+                <br>
+  
+                Username: {{ this.user.name }} <br>
+                password: {{ this.user.password }} <br>
+               
+  
+  
+  
+              </form>
+            </div>
+          </div>
+        
+        <div class="push"></div>
+    </div>
+    <br />
+    <app-footer></app-footer>
+   -->
