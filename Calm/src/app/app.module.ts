@@ -8,19 +8,19 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { RegisterComponent } from './register/register.component';
 import { LogOutComponent } from './log-out/log-out.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    //LoginComponent,
-    UserLoginComponent,
-    RegisterComponent,
-    LogOutComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+//     //LoginComponent,
+//     UserLoginComponent,
+//     RegisterComponent,
+//     LogOutComponent
+//   ],
+//   imports: [
+//     BrowserModule,
+//     AppRoutingModule
+//   ],
+//   providers: [],
+//   bootstrap: [AppComponent]
+// })
 export class AppModule { }
