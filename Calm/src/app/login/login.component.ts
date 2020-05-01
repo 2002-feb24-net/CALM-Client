@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import user from '../models/user';
+import User from '../models/User';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +8,7 @@ import user from '../models/user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user: user[] = [];
+  User: User[] = [];
 
   error: string | undefined;
 

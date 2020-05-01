@@ -1,8 +1,8 @@
-export default interface user {
-    id?: number;
-    fname:string;  
-    lname:string;  
-    username:string;  
-    password:string;  
+export default interface User {
+    Id?: number;
+    LName:string;  
+    FName:string;  
+    Username:string;  
+    Password:string;  
    
 }
