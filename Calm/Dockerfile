@@ -24,3 +24,5 @@ COPY nginx-custom.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build /app/dist/* ./
 #ENTRYPOINT ["dotnet", "Calm.dll"]
+
+

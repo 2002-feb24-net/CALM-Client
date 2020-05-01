@@ -20,6 +20,7 @@ stages:
       vmImage: ubuntu-latest
 
     steps:
+    
     - task: NodeTool@0
       inputs:
         versionSpec: $(nodeVersion)
@@ -56,9 +57,10 @@ stages:
       inputs:
         SonarCloud: 'Calm Client'
         organization: '2002-feb24-net'
-        scannerMode: 'MSBuild'
-        projectKey: '2002-Feb24.net- Calm Client'
-        projectName: 'Calm Client'
+        scannerMode: 'CLI'
+        configMode: 'manual'
+        cliProjectKey: '2002-feb24-net_CALM-Client'
+        cliSources: '$(appDir)/src'
         extraProperties: |
           sonar.coverage.exclusions=**/*.spec.ts
           sonar.typescript.lcov.reportPaths=$(appDir)/coverage/$(appDir)/lcov.info
@@ -66,18 +68,18 @@ stages:
 
     - script: npx ng test --browsers ChromeHeadless --no-watch --code-coverage
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng test
 
     - script: npm run lint
       workingDirectory: $(appDir)
-      continueOnError: true
       displayName: ng lint
 
     - task: SonarCloudAnalyze@1
       displayName: sonarcloud analysis run
 
     - task: SonarCloudPublish@1
+      inputs:
+        pollingTimeoutSec: '300'
       displayName: sonarcloud results build publish
 
 - stage: deploy
@@ -98,9 +100,7 @@ stages:
         deploy:
           steps:
 
-          - download: current
-            artifact: app
-            displayName: artifact download app
+         
           - checkout: self
 
           - download: none
@@ -127,5 +127,6 @@ stages:
               # appType: webApp
               appName: 'calm-client'
               # packageForLinux: $(Pipeline.Workspace)/app
+              multicontainerConfigFile: 'docker-compose.prod.yml'
             displayName: azure app service deploy
 

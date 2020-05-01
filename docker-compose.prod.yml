@@ -4,7 +4,7 @@ services:
 
   web:
     build: Calm
-    image: brendanngoran/calmclient:1.0
+    image: brendanngoran/calm:1.0
     ports:
       - 80:80
     networks:
