@@ -1,5 +1,73 @@
 <app-navbar></app-navbar>
 <div class="pt-3 px-4" style="min-height:450px;">
+    <div class="row">
+     
+        <div class="card-body p-4">
+    <form name="form" #f="ngForm" (ngSubmit)="Submit(f)">
+         <!-- (ngSubmit)="Submit(f)" -->
+         <div class="row">
+            <div class="col-1">
+        <input type="checkbox" id="1" name="1" value=" -Generalized Anxiety Disorder- ">
+    </div>  <div class="col-7m">
+        <label for="1">Do you feel anxious on most days, worrying about 
+            a lot of different things,
+             for a period of 6 months or more?</label><br>
+             </div>   </div>
+         
+             <div class="row">
+                <div class="col-1">
+        <input type="checkbox" id="2" name="2" value=" -Social Anxiety- ">
+    </div>  <div class="col-7m">
+        <label for="2">Do you have an intense fear of being criticized 
+            or embarrassed/humiliated, even in everyday situations (ie. public <br> speaking, eating in public,
+             being assertive at work or making small talk)?</label><br>
+            </div>   </div>
+        
+            <div class="row">
+                <div class="col-1">
+        <input type="checkbox" id="3" name="3" value=" -Specific Phobias- ">
+    </div> <div class="col-7">
+        <label for="3">Do you feel fearful about a particular object or
+             situation and may go go great lengths to avoid it? This may include having an injection,
+             travelling on a plane, etc?</label><br>
+            </div>   </div>
+        
+            <div class="row">
+                <div class="col-1">
+             <input type="checkbox" id="4" name="4" value=" -Post-Traumatic Stress Disorder- ">
+            </div> <div class="col-7m">
+        <label for="4">Have you experienced a traumatic event (war, assault, accident, disaster, etc) that has resulted in you exhibiting symptoms that can <br> include difficulty relaxing, upsetting dreams or flashbacks of the event, and avoidance of anything related
+             to the event for a period of a month or longer?</label><br>
+            </div>   </div>
+        
+            <div class="row">
+                <div class="col-1">
+             <input type="checkbox" id="5" name="5" value=" -Panic Disorder- ">
+            </div>  <div class="col-7m">
+        <label for="5">Do you frequently experience shortness of breath, chest pain, dizziness and excessive perspiration,
+             otherwise known as panic attacks?</label><br>
+            </div>   </div>
+        
+            <div class="row">
+                <div class="col-1">
+             <input type="checkbox" id="6" name="6" value=" -Obsessive Compulsive Disorder- ">
+            </div> <div class="col-7m">
+        <label for="6">Do you have ongoing unwanted/intrusive thoughts
+             and fears that you know are <br> silly but try to relieve the anxiety by 
+             carrying out certain behaviors or rituals? For example, fear of germs
+             can lead to constant washing of hands and clothes.</label><br>
+            </div>   </div>
+        
+  
+        <button type="submit" class="btn btn-block btn-primary">Submit</button>
+      
+    
+      </form>
+      <br>
+      <p id="p" style="color: whitesmoke; font-size: large;"></p>
+    </div>
+</div>
+
 <div class="push"></div>
 </div>
 <br />
