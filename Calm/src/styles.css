@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: small;
+  }
+  .container{
+    padding: 20px;
+    min-height: 100%;
+    margin: 0 auto -50px;
+}
+
+
+footer {
+  position: sticky;
+    bottom: 0;
+    text-align: center;
+    background-color: #333333;
+  }
+
+
+  .footer,
+.push {
+  height: 60px;
+}
+
+
+  .carousel-inner{
+      width: 50%; height: 500px;
+  }
+  .carousel-slide{
+    height: 150px;
+  }
+ 
+/* You can add global styles to this file, and also import other style files */
+input.ng-touched.ng-invalid{
+  border-color: #dc3545;
+}
+
+input.ng-valid{
+  border-color: #28a745;
+}
+
+.green-icon{
+  color: #28a745;
+}
+.red-icon{
+  color: #dc3545;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+table tr:hover{
+  cursor: pointer;
+}
+.mx-auto{
+  background-color:  rgba(20, 17, 8, 0.6);
+}
+.card-body{
+  background-color: rgba(20, 17, 8, 0.6);
+
+}
+.col-md-6 {
+  background-color:  rgba(20, 17, 8, 0.6);
+}
+form{
+  color: white;
+  font-size: large;
+
+}
+
+input{
+  display: inline-block;
+  text-align: left;
+
+}
+.text, table, td{
+  font-size: large;
+  color: white;
+}
+
+
