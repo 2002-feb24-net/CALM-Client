@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  web:
+    build: Calm
+    image: brendanngoran/calmclient:1.0
+    ports:
+      - 80:80
+    networks:
+      - default
+
+networks:
+  default:
