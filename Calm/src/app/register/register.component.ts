@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import user from '../models/user';
+import User from '../models/User';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -9,16 +13,82 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user: user[] = [];
+  User: User[] = [];
   error: string | undefined;
-
+  submitted = false;
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
+     private router: Router,  private CookieService: CookieService,
+      private userApi:UserService) { }
 
   ngOnInit(): void {
-  }
+    this.CookieService.deleteAll();
+    this.CreateUserForm = this.formBuilder.group({
+      FName: ['', Validators.required],
+      LName: ['', Validators.required],
+      Username: ['', Validators.required],
+      Password: ['', [Validators.required, Validators.minLength(6)]],
 
+  });
+  }
+  handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
+    } else {
+      this.error = `Backend returned code ${error.status}, body was: ${error.error}`; //If the response status code was an error then display said error
+    }
+  }
+  resetError() {
+    this.error = undefined; //clears error message
+  }
+  get f() { return this.CreateUserForm.controls; }
+
+
+  getUsers() {
+    return this.userApi.getUsers()
+      .then(
+        User => {
+          this.User = User; //uses promises to accept the api response
+          this.resetError(); //resets error message
+        },
+        error => {
+          this.handleError(error); //handles error
+        }
+      );
+  }
+  CreateUser() {
+    this.submitted = true;
+  
+    const newUsers: User = {
+      FName: this.CreateUserForm.get('FName')?.value,
+      LName: this.CreateUserForm.get('LName')?.value,
+      Username: this.CreateUserForm.get('Username')?.value,
+      Password: this.CreateUserForm.get('Password')?.value,
+  
+    };
+console.log(newUsers)
+
+    this.userApi.CreateUser(newUsers)
+      .then(
+        User => {
+          if (this.error) {
+          
+           this.toastr.error('User Register', 'Error');
+          
+    
+          } else {
+            this.toastr.info('User Created', 'registered');
+            this.router.navigate(['/login']);
+            this.User.unshift(User); //inserts new element at start of array
+            this.resetError(); //clears error message
+          }
+        },
+        error => this.handleError(error) //handles error message
+      );
+     
+
+}
 }
