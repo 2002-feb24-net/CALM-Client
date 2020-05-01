@@ -12,13 +12,12 @@ html, body {
 
 
 footer {
-    position: absolute;
-    right: 0;
+  position: sticky;
     bottom: 0;
-    left: 0;
     text-align: center;
     background-color: #333333;
   }
+
 
   .footer,
 .push {
@@ -71,7 +70,6 @@ form{
   font-size: large;
 
 }
-
 
 input{
   display: inline-block;
