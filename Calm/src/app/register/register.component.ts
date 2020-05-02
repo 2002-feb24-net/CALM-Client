@@ -7,6 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -46,6 +47,11 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.CreateUserForm.controls; }
 
+
+//  const pass= this.CreateUserForm.get('Password')?.value;
+//  const salt =  bcrypt.genSaltSync(10);
+//  console.log(salt)
+// const  passhash = bcrypt.hashSync(pass, salt);
 
   getUsers() {
     return this.userApi.getUsers()

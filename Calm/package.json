@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~9.1.3",
     "@angular/platform-browser-dynamic": "~9.1.3",
     "@angular/router": "~9.1.3",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^4.4.1",
     "jquery": "^3.5.0",
     "ngx-cookie-service": "^3.0.4",
@@ -28,6 +29,18 @@
     "toastr": "^2.1.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "crypto": false,
+    "stream": false,
+    "http": false,
+    "tls": false,
+    "zlib": false,
+    "https": false,
+    "net": false
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.3",
@@ -50,4 +63,5 @@
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
   }
+  
 }

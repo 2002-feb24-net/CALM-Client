@@ -9,7 +9,7 @@ import User from '../models/User';
 export class UserService {
   Url: string;
   header: any;
-
+  formData:User;
   constructor(private http: HttpClient) { 
  
     this.Url = environment.ApiBaseUrl;
@@ -18,13 +18,17 @@ export class UserService {
 
   }
 
-  CreateUser(User: User) {
-    return this.http.post<User>(`${this.Url}/api/Users/`, User)
+  CreateUser(U: User) {
+    return this.http.post<User>(`${this.Url}/api/Users/`, U)
       .toPromise();
   }
   getUsers() {
     return this.http.get<User[]>(`${this.Url}/api/Users/`)
       .toPromise();
+  }
+  getUsersByName(){
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.Username +"/"+ this.formData.Password)
+    .toPromise();
   }
 
 }
