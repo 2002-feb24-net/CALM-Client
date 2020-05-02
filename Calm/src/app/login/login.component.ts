@@ -15,20 +15,21 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginComponent implements OnInit {
   user : User;
   error: string | undefined;
-  UserID: number | undefined;
-  Username: string | undefined;
+ 
 
   errorMessage:string;    
   UserForm = this.formBuilder.group({
     text: ['', Validators.required]
   })
 
-  constructor(private formBuilder: FormBuilder,private router: Router,
-    private toastr: ToastrService,public LoginService:UserService,
+  constructor(private formBuilder: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService,
+    public LoginService:UserService,
     private cookieService: CookieService) { }
 
   ngOnInit(): void {
-    this.cookieService.deleteAll();
+ 
     this.resetForm();
   }
 
@@ -39,29 +40,43 @@ export class LoginComponent implements OnInit {
       Id: 0,
       FName: '',
       LName: '',
-      Username: '',
-      Password:''
+      username: '',
+      Password:'',
+      isAdmin: false,
     }
   }
  
   Login(f: NgForm) {
+ 
     return  this.LoginService.getUsersByName().then(
+      
          user => {
-           this.toastr.info('Get By Id successfully', 'Get user by id');
+        
            this.user = user;
-           console.log(user);
+           console.log(this.user.username);
+           console.log(this.user);
+           console.log(this.user.Id);
            this.cookieService.set('User',`${this.user.Id}`);
-           this.cookieService.set('Username',`${this.user.Username}`);
-     
+           this.cookieService.set('Username',`${this.user.username}`);
+           if(this.user.username == "admin")
+           {
+            this.toastr.warning('No admin zone', 'username admin invalid');
+             this.resetForm();
+         
+           }
+           else{
+            this.toastr.info('Get By Id successfully', 'Get user by id');
        this.router.navigate(['/support-groups']);
 
-      
+           }
          },
-         err => {
-           console.log(err);
+         error => {
+          this.handleError(error); //handles error
+    
          }
        )
      }
+
 
      handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
