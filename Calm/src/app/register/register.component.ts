@@ -12,9 +12,12 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+/**
+ * exports Register component.
+ */
 export class RegisterComponent implements OnInit {
   User: User[] = [];
-  error: string | undefined;
+  error: string | undefined; // error handling implementation
   submitted = false;
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
@@ -23,9 +26,11 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
       private userApi:UserService) { }
-
+/**
+ * create user form that validates user properties
+ */
   ngOnInit(): void {
-    this.CookieService.deleteAll();
+    this.CookieService.deleteAll();  // cookie service injected. 
     this.CreateUserForm = this.formBuilder.group({
       FName: ['', Validators.required],
       LName: ['', Validators.required],
@@ -46,7 +51,9 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.CreateUserForm.controls; }
 
-
+/**
+ * method that gets users through the use of promises to accept response from api
+ */
   getUsers() {
     return this.userApi.getUsers()
       .then(
@@ -61,24 +68,24 @@ export class RegisterComponent implements OnInit {
   }
   CreateUser() {
     this.submitted = true;
-  
+
     const newUsers: User = {
       FName: this.CreateUserForm.get('FName')?.value,
       LName: this.CreateUserForm.get('LName')?.value,
       Username: this.CreateUserForm.get('Username')?.value,
       Password: this.CreateUserForm.get('Password')?.value,
-  
+
     };
 console.log(newUsers)
 
-    this.userApi.CreateUser(newUsers)
+    this.userApi.CreateUser(newUsers) // creates new user
       .then(
         User => {
           if (this.error) {
-          
+
            this.toastr.error('User Register', 'Error');
-          
-    
+
+
           } else {
             this.toastr.info('User Created', 'registered');
             this.router.navigate(['/login']);
@@ -88,7 +95,7 @@ console.log(newUsers)
         },
         error => this.handleError(error) //handles error message
       );
-     
+
 
 }
 }

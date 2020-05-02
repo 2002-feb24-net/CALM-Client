@@ -3,11 +3,11 @@
 
 <div class="container" style="padding-top:40px;">
     <div class="row">
-        
+
                 <div class="card-body p-4">
-                    
+
                     <form [formGroup]="CreateUserForm" (ngSubmit)="CreateUser()" >
-                     
+
                         <h1 style="text-align:center">Register</h1>
 
 
@@ -39,16 +39,16 @@
                                     <div *ngIf="f.Password.errors.required">Password is required</div>
                                 </div>
                         </div>
-                  
-                    
+
+
                         <button type="submit" class="btn btn-block btn-success" >
                             Register</button>
                     </form>
                     <div *ngIf="error" class="error">
                         {{ error }}
                     </div>
-               
-           
+
+
         </div>
     </div>
 
@@ -56,3 +56,5 @@
 </div>
 <br />
 <app-footer></app-footer>
+
+// the above code is a register form for the new user to input all as a new member to website.
