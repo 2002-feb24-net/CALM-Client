@@ -17,7 +17,9 @@ const routes: Routes = [
   { path: 'support-groups', component: SupportGroupsComponent },
   { path: 'notfound', component: NotfoundComponent },
 ];
-
+/**
+ * imports and exports of Router
+ */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

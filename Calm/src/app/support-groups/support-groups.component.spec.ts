@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+/**
+ * imports support group component
+ */
 import { SupportGroupsComponent } from './support-groups.component';
 
 describe('SupportGroupsComponent', () => {
