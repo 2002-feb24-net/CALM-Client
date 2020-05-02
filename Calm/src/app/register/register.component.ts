@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
  * create user form that validates user properties
  */
   ngOnInit(): void {
-    this.CookieService.deleteAll();  // cookie service injected. 
+    this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm = this.formBuilder.group({
       FName: ['', Validators.required],
       LName: ['', Validators.required],
