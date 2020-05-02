@@ -27,7 +27,7 @@ export class UserService {
       .toPromise();
   }
   getUsersByName(){
-    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.Username +"/"+ this.formData.Password)
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
     .toPromise();
   }
 
