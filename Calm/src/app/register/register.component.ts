@@ -6,14 +6,11 @@ import { UserService } from '../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
-<<<<<<< HEAD
+
 /**
  * register component
  */
-=======
 
-
->>>>>>> master
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

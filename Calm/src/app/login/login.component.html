@@ -4,38 +4,21 @@
             /// class for login component with all features and functionality.
             <div class="card-body p-4">
 
-<<<<<<< HEAD
 
 
-              <form name="form" #f="ngForm" >
-                <!-- (ngSubmit)="Login(f)" -->
-
-                <h2 style="text-align:center">Username</h2>
-
-                <input type="text" name="name"  class="form-control sty1"
-                  placeholder="name" required>
-                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->
-                  <h2 style="text-align:center">Password</h2>
-                <input type="text" name="Password"
-                  class="form-control sty1" placeholder="Password" required>
-                  <!-- ngModel [(ngModel)]="LoginService.formData.Password" -->
-
-
-=======
-  
               <form name="form" #f="ngForm" (ngSubmit)="Login(f)">
-               
-                 
+
+
                 <h2 style="text-align:center">Username</h2>
-  
+
                 <input type="text" name="username"  class="form-control sty1"
                   placeholder="Username" required ngModel [(ngModel)]="LoginService.formData.username" >
                   <h2 style="text-align:center">Password</h2>
-                <input type="Password" name="Password" 
+                <input type="Password" name="Password"
                   class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.Password" >
-  
-  
->>>>>>> master
+
+
+
                 <br>
 
                 <button type="submit" class="btn btn-block btn-success">Login</button>
@@ -44,20 +27,12 @@
 
                 </div>
                 <br>
-<<<<<<< HEAD
-<!--
-                Username: {{ this.user.name }} <br>
-                Password: {{ this.user.Password }} <br>
-                -->
 
 
 
-=======
 
-  
-  
-  
->>>>>>> master
+
+
               </form>
             </div>
           </div>
