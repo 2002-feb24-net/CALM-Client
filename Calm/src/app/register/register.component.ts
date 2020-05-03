@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     this.CreateUserForm = this.formBuilder.group({
       FName: ['', Validators.required],
       LName: ['', Validators.required],
-      Username: ['', Validators.required],
+      username: ['', Validators.required],
       Password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -71,9 +71,9 @@ export class RegisterComponent implements OnInit {
     const newUsers: User = {
       FName: this.CreateUserForm.get('FName')?.value,
       LName: this.CreateUserForm.get('LName')?.value,
-      Username: this.CreateUserForm.get('Username')?.value,
+      username: this.CreateUserForm.get('Username')?.value,
       Password: this.CreateUserForm.get('Password')?.value,
-  
+  isAdmin: false
     };
 console.log(newUsers)
 

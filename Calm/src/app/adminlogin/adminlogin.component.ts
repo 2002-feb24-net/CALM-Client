@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class LoginComponent implements OnInit {
+export class AdminloginComponent implements OnInit {
   user : User;
   error: string | undefined;
 
@@ -21,16 +22,16 @@ export class LoginComponent implements OnInit {
   UserForm = this.formBuilder.group({
     text: ['', Validators.required]
   })
-
-  constructor(private formBuilder: FormBuilder,private router: Router,
-    private toastr: ToastrService,public LoginService:UserService,
-    private cookieService: CookieService) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: Router,
+    private toastr: ToastrService,
+    public LoginService:UserService,
+    private cookieService: CookieService,) { }
 
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.resetForm();
   }
-
   resetForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -40,10 +41,10 @@ export class LoginComponent implements OnInit {
       LName: '',
       username: '',
       Password:'',
-      isAdmin: false
+      isAdmin: false,
     }
   }
- 
+
   Login(f: NgForm) {
     return  this.LoginService.getUsersByName().then(
          user => {
@@ -53,8 +54,9 @@ export class LoginComponent implements OnInit {
            this.cookieService.set('User',`${this.user.Id}`);
            this.cookieService.set('Username',`${this.user.username}`);
      
-       this.router.navigate(['/support-groups']);
-
+           if(this.user.isAdmin){
+       this.router.navigate(['/adminedit']);
+           }
       
          },
          err => {
