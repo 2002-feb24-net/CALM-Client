@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+/**
+ * imports tips page compoent 
+ */
 import { TipsPageComponent } from './tips-page.component';
 
 describe('TipsPageComponent', () => {
