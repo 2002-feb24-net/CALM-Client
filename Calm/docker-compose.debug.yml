@@ -1,3 +1,4 @@
+## docker compose yml file with a debugging properties. 
 version: '3.4'
 
 services:

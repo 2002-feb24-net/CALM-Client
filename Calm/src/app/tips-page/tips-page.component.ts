@@ -4,7 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 /**
- * Tips-page Component. 
+ * Tips-page Component.
  */
 
 @Component({
@@ -14,8 +14,16 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class TipsPageComponent implements OnInit {
 
+/**
+ * @ignore
+ */
+
+
   constructor( private cookieService: CookieService) { }
 
+/**
+ * @ignore
+ */
   ngOnInit(): void {
     this.cookieService.deleteAll();
   }
