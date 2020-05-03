@@ -162,12 +162,13 @@ export class EventsComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-navbar&gt;&lt;/app-navbar&gt;
-&lt;div class&#x3D;&quot;pt-3 px-4&quot; style&#x3D;&quot;min-height:450px;&quot;&gt;
+&lt;div class&#x3D;&quot;pt-3 px-4&quot; style&#x3D;&quot;min-height:450px;&quot;&gt; ## styling page  button for events.
 &lt;div class&#x3D;&quot;push&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;br /&gt;
 &lt;app-footer&gt;&lt;/app-footer&gt;
-// event nagivation bar that displays on the main page for users view.
+
+## event nagivation bar that displays on the main page for users view.
 </code></pre>
     </div>
 
@@ -203,7 +204,7 @@ export class EventsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="pt-3 px-4" style="min-height:450px;"><div class="push"></div></div><br /><app-footer></app-footer>// event nagivation bar that displays on the main page for users view.</div>'
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="pt-3 px-4" style="min-height:450px;"> ## styling page  button for events.<div class="push"></div></div><br /><app-footer></app-footer>## event nagivation bar that displays on the main page for users view.</div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'EventsComponent'};

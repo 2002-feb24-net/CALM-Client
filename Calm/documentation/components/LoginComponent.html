@@ -451,49 +451,55 @@ export class LoginComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;app-navbar&gt;&lt;/app-navbar&gt;
 &lt;div class&#x3D;&quot;container&quot; style&#x3D;&quot;padding-top:60px;&quot;&gt;
     &lt;div class&#x3D;&quot;row&quot;&gt;
-     
+            /// class for login component with all features and functionality.
             &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
-  
 
-  
+
+
               &lt;form name&#x3D;&quot;form&quot; #f&#x3D;&quot;ngForm&quot; &gt;
                 &lt;!-- (ngSubmit)&#x3D;&quot;Login(f)&quot; --&gt;
+<<<<<<< HEAD
                  
                 &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;username&lt;/h2&gt;
   
+=======
+
+                &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;username&lt;/h2&gt;
+
+>>>>>>> 1fbb6c74586b92f69c11a4dd5dbd6ddaff75a596
                 &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot;  class&#x3D;&quot;form-control sty1&quot;
                   placeholder&#x3D;&quot;name&quot; required&gt;
                   &lt;!-- ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.name&quot; --&gt;
                   &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;Password&lt;/h2&gt;
-                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;Password&quot; 
+                &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;Password&quot;
                   class&#x3D;&quot;form-control sty1&quot; placeholder&#x3D;&quot;Password&quot; required&gt;
                   &lt;!-- ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.Password&quot; --&gt;
-  
-  
+
+
                 &lt;br&gt;
-  
+
                 &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot;&gt;Login&lt;/button&gt;
                 &lt;div&gt;
-                    &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{errorMessage}} &lt;/div&gt; 
-                  
+                    &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{errorMessage}} &lt;/div&gt;
+
                 &lt;/div&gt;
                 &lt;br&gt;
 &lt;!--   
                 username: {{ this.user.name }} &lt;br&gt;
                 Password: {{ this.user.Password }} &lt;br&gt;
                 --&gt;
-  
-  
-  
+
+
+
               &lt;/form&gt;
             &lt;/div&gt;
           &lt;/div&gt;
-        
+
         &lt;div class&#x3D;&quot;push&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
     &lt;br /&gt;
     &lt;app-footer&gt;&lt;/app-footer&gt;
-  </code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -528,7 +534,11 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
+<<<<<<< HEAD
         var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">                 <div class="card-body p-4">                  <form name="form" #f="ngForm" >                <!-- (ngSubmit)="Login(f)" -->                                 <h2 style="text-align:center">username</h2>                  <input type="text" name="name"  class="form-control sty1"                  placeholder="name" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->                  <h2 style="text-align:center">Password</h2>                <input type="text" name="Password"                   class="form-control sty1" placeholder="Password" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.Password" -->                    <br>                  <button type="submit" class="btn btn-block btn-success">Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                                   </div>                <br><!--                   username: {{ this.user.name }} <br>                Password: {{ this.user.Password }} <br>                -->                    </form>            </div>          </div>                <div class="push"></div>    </div>    <br />    <app-footer></app-footer>  </div>'
+=======
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">            /// class for login component with all features and functionality.            <div class="card-body p-4">              <form name="form" #f="ngForm" >                <!-- (ngSubmit)="Login(f)" -->                <h2 style="text-align:center">username</h2>                <input type="text" name="name"  class="form-control sty1"                  placeholder="name" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->                  <h2 style="text-align:center">Password</h2>                <input type="text" name="Password"                  class="form-control sty1" placeholder="Password" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.Password" -->                <br>                <button type="submit" class="btn btn-block btn-success">Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                </div>                <br><!--                username: {{ this.user.name }} <br>                Password: {{ this.user.Password }} <br>                -->              </form>            </div>          </div>        <div class="push"></div>    </div>    <br />    <app-footer></app-footer></div>'
+>>>>>>> 1fbb6c74586b92f69c11a4dd5dbd6ddaff75a596
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};

@@ -7,6 +7,9 @@ import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
+/**
+ * register component
+ */
 
 @Component({
   selector: 'app-register',
@@ -76,7 +79,9 @@ export class RegisterComponent implements OnInit {
   }
   CreateUser() {
     this.submitted = true;
-
+    /**
+     * User form containing property values from API
+     */
     const newUsers: User = {
       FName: this.CreateUserForm.get('FName')?.value,
       LName: this.CreateUserForm.get('LName')?.value,

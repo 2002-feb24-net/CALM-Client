@@ -7,6 +7,11 @@ import { NotfoundComponent } from './notfound.component';
 import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
+
+/**
+ * Routing paths for all components on the user view page.
+ */
+
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 
