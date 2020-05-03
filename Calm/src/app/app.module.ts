@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 /**
- * imports a cookieservice and a tostrmodule. 
+ * imports a cookieservice and a tostrmodule.
  */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
@@ -25,9 +25,15 @@ import { NotfoundComponent } from './notfound.component';
 import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
+
 /**
  * ngModule that declares all components
  */
+
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdmineditComponent } from './adminedit/adminedit.component';
+import { UserService } from './services/user.service';
+
 
 
 @NgModule({
@@ -41,7 +47,9 @@ import { QuestionsComponent } from './questions/questions.component';
     NotfoundComponent,
     EventsComponent,
     SupportGroupsComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AdminloginComponent,
+    AdmineditComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,7 @@ import { QuestionsComponent } from './questions/questions.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [CookieService],
+  providers: [CookieService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

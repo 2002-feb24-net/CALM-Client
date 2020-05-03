@@ -12,20 +12,23 @@ export class UserService {
   Url: string;
   header: any;
 
-  constructor(private http: HttpClient) {
-
+  formData:User;
+  constructor(private http: HttpClient) { 
+ 
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
 
   }
+
+
 /**
  * creats users using the api url
  * @param User
  */
   CreateUser(User: User) {
     return this.http.post<User>(`${this.Url}/api/Users/`, User)
-      .toPromise();
+    .toPromise();
   }
   /** gets users from using api url.
    * @param User
@@ -33,6 +36,10 @@ export class UserService {
   getUsers() {
     return this.http.get<User[]>(`${this.Url}/api/Users/`)
       .toPromise();
+  }
+  getUsersByName(){ 
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
+    .toPromise();
   }
 
 }

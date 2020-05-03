@@ -6,9 +6,14 @@ import { UserService } from '../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
+<<<<<<< HEAD
 /**
  * register component
  */
+=======
+
+
+>>>>>>> master
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -36,7 +41,7 @@ export class RegisterComponent implements OnInit {
     this.CreateUserForm = this.formBuilder.group({
       FName: ['', Validators.required],
       LName: ['', Validators.required],
-      Username: ['', Validators.required],
+      username: ['', Validators.required],
       Password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -53,9 +58,16 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.CreateUserForm.controls; }
 
+//  const pass= this.CreateUserForm.get('Password')?.value;
+//  const salt =  bcrypt.genSaltSync(10);
+//  console.log(salt)
+// const  passhash = bcrypt.hashSync(pass, salt);
+
+
 /**
  * method that gets users through the use of promises to accept response from api
  */
+
   getUsers() {
     return this.userApi.getUsers()
       .then(
@@ -76,8 +88,10 @@ export class RegisterComponent implements OnInit {
     const newUsers: User = {
       FName: this.CreateUserForm.get('FName')?.value,
       LName: this.CreateUserForm.get('LName')?.value,
-      Username: this.CreateUserForm.get('Username')?.value,
+      username: this.CreateUserForm.get('Username')?.value,
       Password: this.CreateUserForm.get('Password')?.value,
+
+  isAdmin: false
 
     };
 console.log(newUsers)

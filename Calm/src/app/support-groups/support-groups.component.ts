@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../services/user.service';
+
 /**
  * Support group component
  */
@@ -11,11 +15,23 @@ export class SupportGroupsComponent implements OnInit {
 /**
  * @ignore
  */
-  constructor() { }
+  constructor(public LoginService:UserService,
+    private cookieService: CookieService) { }
+   data=this.cookieService.get('Username');
+   show: boolean = false;
+
+
 /**
  * @ignore
  */
   ngOnInit(): void {
+
+    this.show = false;
+   if(this.data != ""){
+this.show = true;
+   }
+   else
+   this.show = false;
   }
 
 }
