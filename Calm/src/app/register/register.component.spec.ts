@@ -7,14 +7,18 @@ import { RegisterComponent } from './register.component';
 describe('RegisterComponent', () => {
   let component: RegisterComponent;
   let fixture: ComponentFixture<RegisterComponent>;
-
+/**
+ * declarations in register component.
+ */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterComponent ]
     })
     .compileComponents();
   }));
-
+/**
+ * detects changes in login component.
+ */
   beforeEach(() => {
     fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;

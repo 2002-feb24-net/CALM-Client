@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 /**
- * Tips-page Component. 
+ * Tips-page Component.
  */
 @Component({
   selector: 'app-tips-page',
@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tips-page.component.css']
 })
 export class TipsPageComponent implements OnInit {
-
+/**
+ * @ignore
+ */
   constructor() { }
-
+/**
+ * @ignore
+ */
   ngOnInit(): void {
   }
 
