@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+import { CookieService } from 'ngx-cookie-service';
+
+
 /**
  * Tips-page Component. 
  */
+
 @Component({
   selector: 'app-tips-page',
   templateUrl: './tips-page.component.html',
@@ -9,9 +14,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipsPageComponent implements OnInit {
 
-  constructor() { }
+  constructor( private cookieService: CookieService) { }
 
   ngOnInit(): void {
+    this.cookieService.deleteAll();
   }
 
 }

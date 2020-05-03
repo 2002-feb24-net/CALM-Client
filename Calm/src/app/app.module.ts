@@ -19,6 +19,9 @@ import { NotfoundComponent } from './notfound.component';
 import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdmineditComponent } from './adminedit/adminedit.component';
+import { UserService } from './services/user.service';
 
 
 
@@ -33,7 +36,9 @@ import { QuestionsComponent } from './questions/questions.component';
     NotfoundComponent,
     EventsComponent,
     SupportGroupsComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AdminloginComponent,
+    AdmineditComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { QuestionsComponent } from './questions/questions.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [CookieService],
+  providers: [CookieService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

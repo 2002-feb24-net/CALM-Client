@@ -26,10 +26,10 @@
                                 </div>
                         </div>
                         <div class="input-group mb-3">User Name:
-                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="Username"
-                                required [ngClass]="{ 'is-invalid': submitted && f.Username.errors}">
-                                <div *ngIf="submitted && f.Username.errors" class="invalid-feedback">
-                                    <div *ngIf="f.Username.errors.required">Name is required</div>
+                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"
+                                required [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Name is required</div>
                                 </div>
                         </div>
                         <div class="input-group mb-3"> Password:
