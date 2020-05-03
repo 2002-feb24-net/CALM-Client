@@ -52,7 +52,7 @@ export class AdminloginComponent implements OnInit {
            this.user = user;
            console.log(user);
            this.cookieService.set('User',`${this.user.Id}`);
-           this.cookieService.set('Username',`${this.user.username}`);
+           this.cookieService.set('username',`${this.user.username}`);
      
            if(this.user.isAdmin){
        this.router.navigate(['/adminedit']);

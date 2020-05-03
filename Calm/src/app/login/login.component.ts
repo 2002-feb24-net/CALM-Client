@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
            this.user = user;
            console.log(user);
            this.cookieService.set('User',`${this.user.Id}`);
-           this.cookieService.set('Username',`${this.user.username}`);
+           this.cookieService.set('username',`${this.user.username}`);
      
        this.router.navigate(['/support-groups']);
 

@@ -459,7 +459,7 @@ export class LoginComponent implements OnInit {
               &lt;form name&#x3D;&quot;form&quot; #f&#x3D;&quot;ngForm&quot; &gt;
                 &lt;!-- (ngSubmit)&#x3D;&quot;Login(f)&quot; --&gt;
                  
-                &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;Username&lt;/h2&gt;
+                &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;username&lt;/h2&gt;
   
                 &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;name&quot;  class&#x3D;&quot;form-control sty1&quot;
                   placeholder&#x3D;&quot;name&quot; required&gt;
@@ -479,7 +479,7 @@ export class LoginComponent implements OnInit {
                 &lt;/div&gt;
                 &lt;br&gt;
 &lt;!--   
-                Username: {{ this.user.name }} &lt;br&gt;
+                username: {{ this.user.name }} &lt;br&gt;
                 Password: {{ this.user.Password }} &lt;br&gt;
                 --&gt;
   
@@ -528,7 +528,7 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">                 <div class="card-body p-4">                  <form name="form" #f="ngForm" >                <!-- (ngSubmit)="Login(f)" -->                                 <h2 style="text-align:center">Username</h2>                  <input type="text" name="name"  class="form-control sty1"                  placeholder="name" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->                  <h2 style="text-align:center">Password</h2>                <input type="text" name="Password"                   class="form-control sty1" placeholder="Password" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.Password" -->                    <br>                  <button type="submit" class="btn btn-block btn-success">Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                                   </div>                <br><!--                   Username: {{ this.user.name }} <br>                Password: {{ this.user.Password }} <br>                -->                    </form>            </div>          </div>                <div class="push"></div>    </div>    <br />    <app-footer></app-footer>  </div>'
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">                 <div class="card-body p-4">                  <form name="form" #f="ngForm" >                <!-- (ngSubmit)="Login(f)" -->                                 <h2 style="text-align:center">username</h2>                  <input type="text" name="name"  class="form-control sty1"                  placeholder="name" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.name" -->                  <h2 style="text-align:center">Password</h2>                <input type="text" name="Password"                   class="form-control sty1" placeholder="Password" required>                  <!-- ngModel [(ngModel)]="LoginService.formData.Password" -->                    <br>                  <button type="submit" class="btn btn-block btn-success">Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                                   </div>                <br><!--                   username: {{ this.user.name }} <br>                Password: {{ this.user.Password }} <br>                -->                    </form>            </div>          </div>                <div class="push"></div>    </div>    <br />    <app-footer></app-footer>  </div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
