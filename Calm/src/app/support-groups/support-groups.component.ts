@@ -17,7 +17,7 @@ export class SupportGroupsComponent implements OnInit {
  */
   constructor(public LoginService:UserService,
     private cookieService: CookieService) { }
-   data=this.cookieService.get('Username');
+   data=this.cookieService.get('username');
    show: boolean = false;
 
 

@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
 
 
 
-    data=this.cookieService.get('Username');
+    data=this.cookieService.get('username');
     show: boolean = false;
    ngOnInit(): void {
  
