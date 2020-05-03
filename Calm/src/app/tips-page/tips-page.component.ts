@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CookieService } from 'ngx-cookie-service';
+
+/**
+ * Tips-page Component. 
+ */
 
 @Component({
   selector: 'app-tips-page',

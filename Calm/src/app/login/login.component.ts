@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, NgForm } from '@angular/forms';
 import User from '../models/User';
+
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
+
+
+/**
+ * login component
+ */
 
 @Component({
   selector: 'app-login',
@@ -13,10 +19,16 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
   user : User;
+/**
+ * exception login error handling
+ */
   error: string | undefined;
  
-
+/**
+ * exception handling with error validation message
+ */
   errorMessage:string;    
   UserForm = this.formBuilder.group({
     text: ['', Validators.required]
@@ -27,6 +39,7 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     public LoginService:UserService,
     private cookieService: CookieService) { }
+
 
   ngOnInit(): void {
  

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
 import { CookieService } from 'ngx-cookie-service';
 import { UserService } from '../services/user.service';
+
+
+/**
+ * Support group component
+ */
 
 @Component({
   selector: 'app-support-groups',
@@ -8,11 +14,21 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./support-groups.component.css']
 })
 export class SupportGroupsComponent implements OnInit {
-  
+
+  /**
+ * @ignore
+ */
   constructor(public LoginService:UserService,
     private cookieService: CookieService) { }
    data=this.cookieService.get('Username');
    show: boolean = false;
+
+
+ 
+/**
+ * @ignore
+ */
+
   ngOnInit(): void {
 
     this.show = false;
