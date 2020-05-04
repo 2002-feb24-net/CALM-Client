@@ -20,7 +20,6 @@ export class SupportGroupsComponent implements OnInit {
    data=this.cookieService.get('username');
    show: boolean = false;
 
-
 /**
  * @ignore
  */
