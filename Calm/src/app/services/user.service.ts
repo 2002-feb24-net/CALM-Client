@@ -18,7 +18,9 @@ export class UserService {
  */
   formData:User;
   constructor(private http: HttpClient,private CookieService: CookieService) {
+
      // header settings using string. 
+
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
@@ -35,10 +37,12 @@ export class UserService {
     .toPromise();
   }
 
+
   /**
    * admin method creation with its parameters.
    * @param User
    */
+
   CreateAdmin(User: User) {
     const username =this.CookieService.get('username');
     const password =this.CookieService.get('password');
@@ -57,10 +61,8 @@ export class UserService {
    * this method gets users by their given name respectively.
    */
   getUsersByName(){
-    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.password)
     .toPromise();
   }
-
-
 
 }

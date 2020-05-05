@@ -14,11 +14,13 @@ export class NavbarComponent implements OnInit {
     private cookieService: CookieService
   ) { }
 
-
     /**
      * navbar containing cookie service set to be a false value.
      */
+
+
     data=this.cookieService.get('username');
+
     show: boolean = false;
    ngOnInit(): void {
     // A conditional statement. 
@@ -29,7 +31,5 @@ export class NavbarComponent implements OnInit {
     else
     this.show = false;
    }
-
-
 
 }
