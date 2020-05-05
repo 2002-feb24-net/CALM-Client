@@ -63,7 +63,7 @@
                 <h3>Description</h3>
             </p>
             <p class="comment">
-                <p>injectable method that exports Group services. </p>
+                <p>injectable method that exports Group services.</p>
 
             </p>
 
@@ -85,6 +85,12 @@
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor that can contain any given parameter. </p>
+</div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -97,13 +103,15 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 /**
- * injectable method that exports Group services. 
+ * injectable method that exports Group services.
  */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class GroupsService {
-
+/**
+ * constructor that can contain any given parameter. 
+ */
   constructor() { }
 }
 </code></pre>

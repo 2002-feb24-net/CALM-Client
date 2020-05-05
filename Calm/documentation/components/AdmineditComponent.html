@@ -35,7 +35,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>FooterComponent</li>
+  <li>AdmineditComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,16 +61,9 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/footer/footer.component.ts</code>
+    <code>src/app/adminedit/adminedit.component.ts</code>
 </p>
 
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>Footer Component</p>
-
-    </p>
 
 
     <p class="comment">
@@ -98,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-footer</code></td>
+                <td class="col-md-9"><code>app-adminedit</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./footer.component.css</code></td>
+                <td class="col-md-9"><code>./adminedit.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./footer.component.html</code></td>
+                <td class="col-md-9"><code>./adminedit.component.html</code></td>
             </tr>
 
 
@@ -124,35 +117,118 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/adminedit/adminedit.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/adminedit/adminedit.component.ts:12</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-/**
- * Footer Component
- */
+
 @Component({
-  selector: &#x27;app-footer&#x27;,
-  templateUrl: &#x27;./footer.component.html&#x27;,
-  styleUrls: [&#x27;./footer.component.css&#x27;]
+  selector: &#x27;app-adminedit&#x27;,
+  templateUrl: &#x27;./adminedit.component.html&#x27;,
+  styleUrls: [&#x27;./adminedit.component.css&#x27;]
 })
-export class FooterComponent implements OnInit {
-/**
- * @ignore
- */
+export class AdmineditComponent implements OnInit {
+
   constructor() { }
-/**
- * @ignore
- */
+
   ngOnInit(): void {
   }
 
@@ -161,18 +237,13 @@ export class FooterComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;text-light align-middle&quot;&gt;
-    &lt;h5 class&#x3D;&quot;text-xs-center align-middle mb-0&quot;&gt;Helpline : 9876543210&lt;/h5&gt;
-    &lt;p class&#x3D;&quot;text-xs-center align-middle mb-0 font-weight-light font-italic&quot;&gt;C.A.L.M © Copyright 2020. All rights reserved.&lt;/p&gt;
-
-  &lt;/footer&gt;
-  // HTML file that displays footer on the client view page with a Helpline phone number.
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;adminedit works!&lt;/p&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./footer.component.css</code>
+                    <code>./adminedit.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
@@ -202,10 +273,10 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="text-light align-middle">    <h5 class="text-xs-center align-middle mb-0">Helpline : 9876543210</h5>    <p class="text-xs-center align-middle mb-0 font-weight-light font-italic">C.A.L.M © Copyright 2020. All rights reserved.</p>  </footer>  // HTML file that displays footer on the client view page with a Helpline phone number.</div>'
+        var COMPONENT_TEMPLATE = '<div><p>adminedit works!</p></div>'
     var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
+    var ACTUAL_COMPONENT = {'name': 'AdmineditComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -240,7 +311,7 @@ export class FooterComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'FooterComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AdmineditComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

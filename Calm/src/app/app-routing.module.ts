@@ -14,7 +14,9 @@ import { QuestionsComponent } from './questions/questions.component';
 
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
-
+/**
+ * routing paths for each component.
+ */
 const routes: Routes = [
   { path: '', component: TipsPageComponent },
   { path: 'register', component: RegisterComponent },

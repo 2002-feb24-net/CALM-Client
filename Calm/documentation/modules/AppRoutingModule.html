@@ -79,13 +79,22 @@ import { NotfoundComponent } from &#x27;./notfound.component&#x27;;
 import { EventsComponent } from &#x27;./events/events.component&#x27;;
 import { SupportGroupsComponent } from &#x27;./support-groups/support-groups.component&#x27;;
 import { QuestionsComponent } from &#x27;./questions/questions.component&#x27;;
+
 /**
- * Routing paths for all components on the user view page. 
+ * Routing paths for all components on the user view page.
+ */
+
+import { AdminloginComponent } from &#x27;./adminlogin/adminlogin.component&#x27;;
+import { AdmineditComponent } from &#x27;./adminedit/adminedit.component&#x27;;
+/**
+ * routing paths for each component.
  */
 const routes: Routes &#x3D; [
   { path: &#x27;&#x27;, component: TipsPageComponent },
   { path: &#x27;register&#x27;, component: RegisterComponent },
   { path: &#x27;login&#x27;, component: LoginComponent },
+  { path: &#x27;adminlogin&#x27;, component: AdminloginComponent },
+  { path: &#x27;adminedit&#x27;, component: AdmineditComponent },
   { path: &#x27;events&#x27;, component: EventsComponent },
   { path: &#x27;questions&#x27;, component: QuestionsComponent },
   { path: &#x27;support-groups&#x27;, component: SupportGroupsComponent },
