@@ -1,33 +1,39 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
     
-    <a class="navbar-brand" routerLink="/adminlogin" style=" color:whitesmoke;">AdminPage</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
-<ul class="navbar-nav flex-grow-1">
-    <li class="btn btn-outline-primary">
-        <a routerLink="/questions" style=" color:whitesmoke;" >Take the test</a>
-    </li>
-    <li class="btn btn-outline-primary">
-        <a routerLink="/events" style=" color:whitesmoke;" >Events</a>
-    </li>
-    <li class="btn btn-outline-primary">
-        <a routerLink="/support-groups" style=" color:whitesmoke;" >Support-Groups</a>
-    </li>
- 
-    <li class="btn btn-outline-success">
-        <a routerLink="/register" style=" color:whitesmoke;" >Register</a>
-    </li>
-    <li  [hidden]="show" class="btn btn-outline-success">
-        <a routerLink="/login" style=" color:whitesmoke;">Login</a>
-    </li>
-    <li  [hidden]="!show" class="btn btn-outline-success ">
-        <a routerLink="/" style=" color:whitesmoke;">Logout</a>
-    </li>
-   
+        <a class="navbar-brand" routerLink="/" style=" color:whitesmoke; font-size: x-large;">🏠Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+    
+    <ul class="navbar-nav flex-grow-1">
+        <li class="btn btn-outline-primary">
+            <a routerLink="/questions" style=" color:whitesmoke;" >Take the test</a>
+        </li>
+        <li class="btn btn-outline-primary">
+            <a routerLink="/events" style=" color:whitesmoke;" >Events</a>
+        </li>
+        <li class="btn btn-outline-primary">
+            <a routerLink="/support-groups" style=" color:whitesmoke;" >Support-Groups</a>
+        </li>
+     
+        <li class="btn btn-outline-success">
+            <a routerLink="/register" style=" color:whitesmoke;" >Register</a>
+        </li>
+        <li  [hidden]="show" class="btn btn-outline-success">
+            <a routerLink="/login" style=" color:whitesmoke;">Login</a>
+        </li>
+     
+        <li  [hidden]="!show" class="btn btn-outline-success ">
+            <a routerLink="/" style=" color:whitesmoke;">Logout</a>
+        </li>
+        <li class="btn btn-outline-danger">
+            <a routerLink="/adminlogin" style=" color:whitesmoke;" >Admin</a>
+        </li>
+       
+
 </ul>
 
 </div>
