@@ -11,10 +11,12 @@ import User from '../models/User';
 export class UserService {
   Url: string;
   header: any;
-
+/**
+ * user form with a private Http client.
+ */
   formData:User;
-  constructor(private http: HttpClient) { 
- 
+  constructor(private http: HttpClient) {
+
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
@@ -22,7 +24,7 @@ export class UserService {
   }
 
 
-/**
+  /**
  * creats users using the api url
  * @param User
  */
@@ -37,7 +39,10 @@ export class UserService {
     return this.http.get<User[]>(`${this.Url}/api/Users/`)
       .toPromise();
   }
-  getUsersByName(){ 
+  /**
+   * this method gets users by their given name respectively.
+   */
+  getUsersByName(){
     return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
     .toPromise();
   }

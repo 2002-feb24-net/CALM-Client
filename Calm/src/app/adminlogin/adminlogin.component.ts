@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
-
+/**
+ * app admin login component.
+ */
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.component.html',
@@ -17,8 +19,10 @@ export class AdminloginComponent implements OnInit {
   user : User;
   error: string | undefined;
 
-
-  errorMessage:string;    
+  /**
+   * error message form for user.
+   */
+  errorMessage:string;
   UserForm = this.formBuilder.group({
     text: ['', Validators.required]
   })
@@ -27,11 +31,17 @@ export class AdminloginComponent implements OnInit {
     private toastr: ToastrService,
     public LoginService:UserService,
     private cookieService: CookieService,) { }
-
+    /**
+     * @ignore
+     */
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.resetForm();
   }
+  /**
+   *
+   * @param form 
+   */
   resetForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -44,7 +54,10 @@ export class AdminloginComponent implements OnInit {
       isAdmin: false,
     }
   }
-
+  /**
+   *
+   * @param f
+   */
   Login(f: NgForm) {
     return  this.LoginService.getUsersByName().then(
          user => {
@@ -53,18 +66,23 @@ export class AdminloginComponent implements OnInit {
            console.log(user);
            this.cookieService.set('User',`${this.user.Id}`);
            this.cookieService.set('username',`${this.user.username}`);
-     
+          /**
+           * Conditional statement utilized.
+           */
            if(this.user.isAdmin){
        this.router.navigate(['/adminedit']);
            }
-      
+
          },
          err => {
            console.log(err);
          }
        )
      }
-
+     /**
+      * this is an HTTP error handling method.
+      * @param error
+      */
      handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
         this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.

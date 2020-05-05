@@ -37,19 +37,24 @@ export class LoginComponent implements OnInit {
 
 /**
  *
- * @param formBuilder 
+ * @param formBuilder
  */
   constructor(private formBuilder: FormBuilder,private router: Router,
     private toastr: ToastrService,public LoginService:UserService,
     private cookieService: CookieService) { }
 
 
-
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.resetForm();
   }
-
+  /**
+   * user form that declares its properties. 
+   * @param form
+   */
   resetForm(form?: NgForm) {
     if (form != null)
       form.reset();
@@ -62,7 +67,10 @@ export class LoginComponent implements OnInit {
       isAdmin: false
     }
   }
- 
+  /**
+   * this is a method that gets users with the use of cookie services
+   * @param f
+   */
   Login(f: NgForm) {
     return  this.LoginService.getUsersByName().then(
          user => {
@@ -71,17 +79,20 @@ export class LoginComponent implements OnInit {
            console.log(user);
            this.cookieService.set('User',`${this.user.Id}`);
            this.cookieService.set('username',`${this.user.username}`);
-     
+
        this.router.navigate(['/support-groups']);
 
-      
+
          },
          err => {
            console.log(err);
          }
        )
      }
-
+     /**
+      * used as a method for error handling
+      * @param error
+      */
      handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
         this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.

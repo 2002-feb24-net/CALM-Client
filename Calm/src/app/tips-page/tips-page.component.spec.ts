@@ -19,14 +19,16 @@ describe('TipsPageComponent', () => {
     .compileComponents();
   }));
 /**
- * generated method for tipspage component that detects changes. 
+ * generated method for tipspage component that detects changes.
  */
   beforeEach(() => {
     fixture = TestBed.createComponent(TipsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
+/**
+ * created tips page component set to be true. 
+ */
   it('should create', () => {
     expect(component).toBeTruthy();
   });
