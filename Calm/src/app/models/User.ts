@@ -1,8 +1,8 @@
 export default interface User {
-    Id?: number;
-    LName:string;  
-    FName:string;  
+    id?: number;
+    lName:string;  
+    fName:string;  
     username:string;  
-    Password:string;  
+    password:string;  
    isAdmin: boolean;
 }

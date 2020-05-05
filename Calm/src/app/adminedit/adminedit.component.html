@@ -1,1 +1,63 @@
-<p>adminedit works!</p>
+
+<app-navbar></app-navbar>
+
+<div class="container" style="padding-top:40px;">
+    <div class="row">
+
+                <div class="card-body p-4">
+                    <button type="submit" class="btn btn-block btn-success" (click)="handleClick()">Add new Admin</button>
+        
+                    <div [hidden]="!show">
+
+                    <form [formGroup]="CreateAdminForm" (ngSubmit)="CreateAdmin()" >
+
+
+                           <h1 style="text-align:center">Add an admin</h1>
+
+
+                        <div class="input-group mb-3">First Name:
+                            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="fName"
+                                required [ngClass]="{ 'is-invalid': submitted && f.fName.errors}">
+                                <div *ngIf="submitted && f.fName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.fName.errors.required">Name is required</div>
+                                </div>
+                        </div>
+                        <div class="input-group mb-3">Last Name:
+                            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="lName"
+                                required [ngClass]="{ 'is-invalid': submitted && f.lName.errors}">
+                                <div *ngIf="submitted && f.lName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lName.errors.required">Name is required</div>
+                                </div>
+                        </div>
+                        <div class="input-group mb-3">Admin Name:
+                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"
+                                required [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Name is required</div>
+                                </div>
+                        </div>
+                        <div class="input-group mb-3"> password:
+                            <input type="password" class="form-control sty1"  placeholder="Insert 6 char password"
+                                formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors}" >
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">password is required</div>
+                                </div>
+                        </div>
+
+
+                        <button type="submit" class="btn btn-block btn-success" >
+                            Register</button>
+                    </form>
+                    <div *ngIf="error" class="error">
+                        {{ error }}
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+<div class="push"></div>
+</div>
+<br />
+<app-footer></app-footer>
+

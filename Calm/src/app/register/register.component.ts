@@ -36,10 +36,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm = this.formBuilder.group({
-      FName: ['', Validators.required],
-      LName: ['', Validators.required],
+      fName: ['', Validators.required],
+      lName: ['', Validators.required],
       username: ['', Validators.required],
-      Password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
   }
@@ -83,10 +83,10 @@ export class RegisterComponent implements OnInit {
      * User form containing property values from API
      */
     const newUsers: User = {
-      FName: this.CreateUserForm.get('FName')?.value,
-      LName: this.CreateUserForm.get('LName')?.value,
+      fName: this.CreateUserForm.get('fName')?.value,
+      lName: this.CreateUserForm.get('lName')?.value,
       username: this.CreateUserForm.get('username')?.value,
-      Password: this.CreateUserForm.get('Password')?.value,
+      password: this.CreateUserForm.get('password')?.value,
 
   isAdmin: false
 

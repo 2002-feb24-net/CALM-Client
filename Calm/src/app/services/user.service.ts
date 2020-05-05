@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import User from '../models/User';
+import { CookieService } from 'ngx-cookie-service';
 /**
  * root injection provided and exported user services
  */
@@ -15,7 +16,7 @@ export class UserService {
  * user form with a private Http client.
  */
   formData:User;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private CookieService: CookieService) {
 
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
@@ -32,6 +33,15 @@ export class UserService {
     return this.http.post<User>(`${this.Url}/api/Users/`, User)
     .toPromise();
   }
+
+
+  CreateAdmin(User: User) {
+    const username =this.CookieService.get('username');
+    const password =this.CookieService.get('password');
+    return this.http.post<User>(`${this.Url}/api/Admin/${username}/${password}`, User)
+    .toPromise();
+  }
+  
   /** gets users from using api url.
    * @param User
    */
@@ -43,8 +53,10 @@ export class UserService {
    * this method gets users by their given name respectively.
    */
   getUsersByName(){
-    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.password)
     .toPromise();
   }
 
+
+  
 }
