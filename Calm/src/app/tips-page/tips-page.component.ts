@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; // imports component, onInit
 
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from 'ngx-cookie-service'; // importing cookie service as ngx
 
 /**
  * Tips-page Component.
@@ -14,12 +14,12 @@ import { CookieService } from 'ngx-cookie-service';
 export class TipsPageComponent implements OnInit {
 
 /**
- * @ignore
+ * constructor that contains a cookie service
  */
   constructor( private cookieService: CookieService) { }
 
 /**
- * @ignore
+ * Method that returns Nothiing.
  */
   ngOnInit(): void {
     this.cookieService.deleteAll();

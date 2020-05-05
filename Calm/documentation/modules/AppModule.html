@@ -410,6 +410,7 @@ import { EventsComponent } from &#x27;./events/events.component&#x27;;
 import { SupportGroupsComponent } from &#x27;./support-groups/support-groups.component&#x27;;
 import { QuestionsComponent } from &#x27;./questions/questions.component&#x27;;
 
+
 /**
  * ngModule that declares all components
  */
@@ -417,6 +418,7 @@ import { QuestionsComponent } from &#x27;./questions/questions.component&#x27;;
 import { AdminloginComponent } from &#x27;./adminlogin/adminlogin.component&#x27;;
 import { AdmineditComponent } from &#x27;./adminedit/adminedit.component&#x27;;
 import { UserService } from &#x27;./services/user.service&#x27;;
+
 
 
 
@@ -436,6 +438,7 @@ import { UserService } from &#x27;./services/user.service&#x27;;
     AdmineditComponent
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -444,7 +447,7 @@ import { UserService } from &#x27;./services/user.service&#x27;;
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [CookieService, UserService],
+  providers: [CookieService, UserService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

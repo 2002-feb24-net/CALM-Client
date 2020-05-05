@@ -64,6 +64,13 @@
     <code>src/app/navbar/navbar.component.ts</code>
 </p>
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>navbar component</p>
+
+    </p>
 
 
     <p class="comment">
@@ -173,7 +180,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/navbar/navbar.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/navbar/navbar.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -242,8 +249,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/navbar/navbar.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/navbar/navbar.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -284,10 +291,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/navbar/navbar.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/navbar/navbar.component.ts:21</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>navbar containing cookie service set to be a false value.</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -316,7 +329,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/navbar/navbar.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/navbar/navbar.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -329,26 +342,30 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;; //imports component OnInit form
+import { CookieService } from &#x27;ngx-cookie-service&#x27;; // imports cookie service from  ngx
+/**
+ * navbar component
+ */
 @Component({
   selector: &#x27;app-navbar&#x27;,
   templateUrl: &#x27;./navbar.component.html&#x27;,
   styleUrls: [&#x27;./navbar.component.css&#x27;]
 })
 export class NavbarComponent implements OnInit {
-
+// a constructor with a cookie service
   constructor(
     private cookieService: CookieService
   ) { }
 
 
-
+    /**
+     * navbar containing cookie service set to be a false value.
+     */
     data&#x3D;this.cookieService.get(&#x27;username&#x27;);
     show: boolean &#x3D; false;
    ngOnInit(): void {
- 
+    // A conditional statement. 
      this.show &#x3D; false;
     if(this.data !&#x3D; &quot;&quot;){
  this.show &#x3D; true;
@@ -356,8 +373,8 @@ export class NavbarComponent implements OnInit {
     else
     this.show &#x3D; false;
    }
- 
-  
+
+
 
 }
 </code></pre>

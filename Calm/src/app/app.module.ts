@@ -26,6 +26,7 @@ import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
 
+
 /**
  * ngModule that declares all components
  */
@@ -33,6 +34,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 import { UserService } from './services/user.service';
+
 
 
 
@@ -52,6 +54,7 @@ import { UserService } from './services/user.service';
     AdmineditComponent
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -60,7 +63,7 @@ import { UserService } from './services/user.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [CookieService, UserService],
+  providers: [CookieService, UserService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

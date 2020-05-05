@@ -218,6 +218,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor form with its parameters</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -329,8 +331,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/register/register.component.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/register/register.component.ts:91</a></div>
                 </td>
             </tr>
 
@@ -368,8 +370,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/register/register.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/register/register.component.ts:79</a></div>
                 </td>
             </tr>
 
@@ -409,14 +411,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/register/register.component.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/register/register.component.ts:57</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Asserts errorr handling in the register form.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -479,8 +483,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/register/register.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/register/register.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -520,8 +524,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/register/register.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/register/register.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -678,7 +682,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/register/register.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/register/register.component.ts:67</a></div>
                                 </td>
                             </tr>
 
@@ -689,14 +693,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import User from &#x27;../models/User&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
-import { UserService } from &#x27;../services/user.service&#x27;;
-import { ToastrService } from &#x27;ngx-toastr&#x27;;
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
-import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;; // import from OnInit component.
+import User from &#x27;../models/User&#x27;; // imports from user model
+import { Router } from &#x27;@angular/router&#x27;; // imports router
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;; // imports formbuilder
+import { UserService } from &#x27;../services/user.service&#x27;; // imports from user services
+import { ToastrService } from &#x27;ngx-toastr&#x27;; // imports from ngx toastr
+import { CookieService } from &#x27;ngx-cookie-service&#x27;; // imports from ngx cookie service
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;; // imports Http error response
 
 /**
  * register component
@@ -717,7 +721,14 @@ export class RegisterComponent implements OnInit {
   CreateUserForm &#x3D; this.formBuilder.group({
     text: [&#x27;&#x27;, Validators.required]
   });
-
+  /**
+   * constructor form with its parameters
+   * @param formBuilder
+   * @param toastr
+   * @param router
+   * @param CookieService
+   * @param userApi
+   */
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
       private userApi:UserService) { }
@@ -734,6 +745,10 @@ export class RegisterComponent implements OnInit {
 
   });
   }
+  /**
+   * Asserts errorr handling in the register form.
+   * @param error
+   */
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
@@ -774,10 +789,10 @@ export class RegisterComponent implements OnInit {
      * User form containing property values from API
      */
     const newUsers: User &#x3D; {
-      FName: this.CreateUserForm.get(&#x27;FName&#x27;)?.value,
-      LName: this.CreateUserForm.get(&#x27;LName&#x27;)?.value,
-      username: this.CreateUserForm.get(&#x27;username&#x27;)?.value,
-      Password: this.CreateUserForm.get(&#x27;Password&#x27;)?.value,
+      FName: this.CreateUserForm.get(&#x27;FName&#x27;)?.value, // gets first name for new user.
+      LName: this.CreateUserForm.get(&#x27;LName&#x27;)?.value, // gets Last name for new user
+      username: this.CreateUserForm.get(&#x27;username&#x27;)?.value, // gets username for new user
+      Password: this.CreateUserForm.get(&#x27;Password&#x27;)?.value, // gets password for new user
 
   isAdmin: false
 
@@ -787,7 +802,7 @@ console.log(newUsers)
     this.userApi.CreateUser(newUsers) // creates new user
       .then(
         User &#x3D;&gt; {
-          if (this.error) {
+          if (this.error) { //conditinal statement that checks for errors in register component.
 
            this.toastr.error(&#x27;User Register&#x27;, &#x27;Error&#x27;);
 
