@@ -1,13 +1,12 @@
 <app-navbar></app-navbar>
 
-
 <div class="container" style="padding-top:40px;">
     <div class="row">
-        
+
                 <div class="card-body p-4">
-                    
+
                     <form [formGroup]="CreateUserForm" (ngSubmit)="CreateUser()" >
-                     
+
                         <h1 style="text-align:center">Register</h1>
 
 
@@ -26,10 +25,10 @@
                                 </div>
                         </div>
                         <div class="input-group mb-3">User Name:
-                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="Username"
-                                required [ngClass]="{ 'is-invalid': submitted && f.Username.errors}">
-                                <div *ngIf="submitted && f.Username.errors" class="invalid-feedback">
-                                    <div *ngIf="f.Username.errors.required">Name is required</div>
+                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"
+                                required [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Name is required</div>
                                 </div>
                         </div>
                         <div class="input-group mb-3"> Password:
@@ -39,16 +38,16 @@
                                     <div *ngIf="f.Password.errors.required">Password is required</div>
                                 </div>
                         </div>
-                  
-                    
+
+
                         <button type="submit" class="btn btn-block btn-success" >
                             Register</button>
                     </form>
                     <div *ngIf="error" class="error">
                         {{ error }}
                     </div>
-               
-           
+
+
         </div>
     </div>
 
@@ -56,3 +55,6 @@
 </div>
 <br />
 <app-footer></app-footer>
+
+// the above code is a register form for the new user to input all as a new member to website.
+

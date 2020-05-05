@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
     
-        <a class="navbar-brand" routerLink="/adminlogin" style=" color:whitesmoke;">AdminPage</a>
+
+        <a class="navbar-brand" routerLink="/" style=" color:whitesmoke; font-size: x-large;">🏠Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,14 +25,20 @@
         <li  [hidden]="show" class="btn btn-outline-success">
             <a routerLink="/login" style=" color:whitesmoke;">Login</a>
         </li>
+     
         <li  [hidden]="!show" class="btn btn-outline-success ">
             <a routerLink="/" style=" color:whitesmoke;">Logout</a>
         </li>
+        <li class="btn btn-outline-danger">
+            <a routerLink="/adminlogin" style=" color:whitesmoke;" >Admin</a>
+        </li>
        
-    </ul>
-   
+
+</ul>
+
 </div>
 
 </nav>
+
 
 

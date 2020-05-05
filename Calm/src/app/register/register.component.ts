@@ -7,15 +7,21 @@ import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
+/**
+ * register component
+ */
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+/**
+ * exports Register component.
+ */
 export class RegisterComponent implements OnInit {
   User: User[] = [];
-  error: string | undefined;
+  error: string | undefined; // error handling implementation
   submitted = false;
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
@@ -24,13 +30,15 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
       private userApi:UserService) { }
-
+/**
+ * create user form that validates user properties
+ */
   ngOnInit(): void {
-    this.CookieService.deleteAll();
+    this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm = this.formBuilder.group({
       FName: ['', Validators.required],
       LName: ['', Validators.required],
-      Username: ['', Validators.required],
+      username: ['', Validators.required],
       Password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -47,11 +55,15 @@ export class RegisterComponent implements OnInit {
   }
   get f() { return this.CreateUserForm.controls; }
 
-
 //  const pass= this.CreateUserForm.get('Password')?.value;
 //  const salt =  bcrypt.genSaltSync(10);
 //  console.log(salt)
 // const  passhash = bcrypt.hashSync(pass, salt);
+
+
+/**
+ * method that gets users through the use of promises to accept response from api
+ */
 
   getUsers() {
     return this.userApi.getUsers()
@@ -67,24 +79,28 @@ export class RegisterComponent implements OnInit {
   }
   CreateUser() {
     this.submitted = true;
-  
+    /**
+     * User form containing property values from API
+     */
     const newUsers: User = {
       FName: this.CreateUserForm.get('FName')?.value,
       LName: this.CreateUserForm.get('LName')?.value,
-      Username: this.CreateUserForm.get('Username')?.value,
+      username: this.CreateUserForm.get('username')?.value,
       Password: this.CreateUserForm.get('Password')?.value,
-  
+
+  isAdmin: false
+
     };
 console.log(newUsers)
 
-    this.userApi.CreateUser(newUsers)
+    this.userApi.CreateUser(newUsers) // creates new user
       .then(
         User => {
           if (this.error) {
-          
+
            this.toastr.error('User Register', 'Error');
-          
-    
+
+
           } else {
             this.toastr.info('User Created', 'registered');
             this.router.navigate(['/login']);
@@ -94,7 +110,7 @@ console.log(newUsers)
         },
         error => this.handleError(error) //handles error message
       );
-     
+
 
 }
 }
