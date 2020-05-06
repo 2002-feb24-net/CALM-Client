@@ -34,6 +34,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 import { UserService } from './services/user.service';
+import { UserviewComponent } from './adminedit/userview/userview.component';
 
 
 
@@ -51,7 +52,8 @@ import { UserService } from './services/user.service';
     SupportGroupsComponent,
     QuestionsComponent,
     AdminloginComponent,
-    AdmineditComponent
+    AdmineditComponent,
+    UserviewComponent
   ],
   imports: [
 

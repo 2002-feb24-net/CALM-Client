@@ -76,18 +76,18 @@ export class RegisterComponent implements OnInit {
  * method that gets users through the use of promises to accept response from api
  */
 
-  getUsers() {
-    return this.userApi.getUsers()
-      .then(
-        User => {
-          this.User = User; //uses promises to accept the api response
-          this.resetError(); //resets error message
-        },
-        error => {
-          this.handleError(error); //handles error
-        }
-      );
-  }
+  // getUsers() {
+  //   return this.userApi.getUsers()
+  //     .then(
+  //       User => {
+  //         this.User = User; //uses promises to accept the api response
+  //         this.resetError(); //resets error message
+  //       },
+  //       error => {
+  //         this.handleError(error); //handles error
+  //       }
+  //     );
+  // }
   CreateUser() {
     this.submitted = true;
     /**
