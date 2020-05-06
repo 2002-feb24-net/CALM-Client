@@ -46,11 +46,11 @@ export class AdminloginComponent implements OnInit {
     if (form != null)
       form.reset();
     this.LoginService.formData = {
-      Id: 0,
-      FName: '',
-      LName: '',
+      id: 0,
+      fName: '',
+      lName: '',
       username: '',
-      Password:'',
+      password:'',
       isAdmin: false,
     }
   }
@@ -61,21 +61,26 @@ export class AdminloginComponent implements OnInit {
   Login(f: NgForm) {
     return  this.LoginService.getUsersByName().then(
          user => {
-           this.toastr.info('Get By Id successfully', 'Get user by id');
+           this.toastr.info('Get By id successfully', 'Get user by id');
            this.user = user;
            console.log(user);
-           this.cookieService.set('User',`${this.user.Id}`);
+           this.cookieService.set('User',`${this.user.id}`);
            this.cookieService.set('username',`${this.user.username}`);
+           this.cookieService.set('password',`${this.user.password}`);
+           console.log(`${this.user.password}`)
+        
+           console.log(`${this.user.username}`)
+
           /**
            * Conditional statement utilized.
            */
-           if(this.user.isAdmin){
+   
        this.router.navigate(['/adminedit']);
-           }
+           
 
          },
          err => {
-           console.log(err);
+          this.handleError(err) 
          }
        )
      }

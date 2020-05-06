@@ -13,14 +13,14 @@
   
                 <input type="text" name="username"  class="form-control sty1"
                   placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >
-                  <h2 style="text-align:center">Password</h2>
-                <input type="Password" name="Password" 
-                  class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.Password" >
+                  <h2 style="text-align:center">password</h2>
+                <input type="password" name="password" 
+                  class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >
   
   
                 <br>
   
-                <button type="submit" class="btn btn-block btn-danger">AdminLogin</button>
+                <button type="submit" class="btn btn-block btn-danger" >AdminLogin</button>
                 <div>
                     <div *ngIf="error">  {{errorMessage}} </div> 
                   

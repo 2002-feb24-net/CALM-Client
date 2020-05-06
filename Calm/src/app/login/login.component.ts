@@ -61,11 +61,11 @@ export class LoginComponent implements OnInit {
     if (form != null)
       form.reset();
     this.LoginService.formData = {
-      Id: 0,
-      FName: '',
-      LName: '',
+      id: 0,
+      fName: '',
+      lName: '',
       username: '',
-      Password:'',
+      password:'',
       isAdmin: false
     }
   }
@@ -79,7 +79,7 @@ export class LoginComponent implements OnInit {
            this.toastr.info('Get By Id successfully', 'Get user by id');
            this.user = user;
            console.log(user);
-           this.cookieService.set('User',`${this.user.Id}`);
+           this.cookieService.set('User',`${this.user.id}`);
            this.cookieService.set('username',`${this.user.username}`);
 
        this.router.navigate(['/support-groups']);
@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
 
          },
          err => {
-           console.log(err);
+          this.handleError(err) 
          }
        )
      }

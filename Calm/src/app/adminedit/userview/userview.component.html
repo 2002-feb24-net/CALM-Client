@@ -1,0 +1,14 @@
+<table class="table table-hover table-dark"><caption>users</caption>
+    <thead><th scope="col">ID</th><th scope="col">name</th><th scope="col">isAdmin</th></thead>
+      <tr *ngFor="let u of userApi.list">
+        <td (click)="populateForm(u)">{{u.id}}</td>
+        <td (click)="populateForm(u)">{{u.username}}</td>  
+        <td (click)="populateForm(u)">{{u.isAdmin}}</td>
+       
+        <td>
+          <em class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(u.username,u.password)"></em>
+        </td>
+      </tr>
+      
+  
+    </table>

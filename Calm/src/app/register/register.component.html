@@ -11,17 +11,17 @@
 
 
                         <div class="input-group mb-3">First Name:
-                            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="FName"
-                                required [ngClass]="{ 'is-invalid': submitted && f.FName.errors}">
-                                <div *ngIf="submitted && f.FName.errors" class="invalid-feedback">
-                                    <div *ngIf="f.FName.errors.required">Name is required</div>
+                            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="fName"
+                                required [ngClass]="{ 'is-invalid': submitted && f.fName.errors}">
+                                <div *ngIf="submitted && f.fName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.fName.errors.required">Name is required</div>
                                 </div>
                         </div>
                         <div class="input-group mb-3">Last Name:
-                            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="LName"
-                                required [ngClass]="{ 'is-invalid': submitted && f.LName.errors}">
-                                <div *ngIf="submitted && f.LName.errors" class="invalid-feedback">
-                                    <div *ngIf="f.LName.errors.required">Name is required</div>
+                            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="lName"
+                                required [ngClass]="{ 'is-invalid': submitted && f.lName.errors}">
+                                <div *ngIf="submitted && f.lName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lName.errors.required">Name is required</div>
                                 </div>
                         </div>
                         <div class="input-group mb-3">User Name:
@@ -31,16 +31,16 @@
                                     <div *ngIf="f.username.errors.required">Name is required</div>
                                 </div>
                         </div>
-                        <div class="input-group mb-3"> Password:
-                            <input type="Password" class="form-control sty1"  placeholder="Insert 6 char Password"
-                                formControlName="Password" required [ngClass]="{ 'is-invalid': submitted && f.Password.errors}" >
-                                <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
-                                    <div *ngIf="f.Password.errors.required">Password is required</div>
+                        <div class="input-group mb-3"> password:
+                            <input type="Password" class="form-control sty1"  placeholder="Insert 6 char password"
+                                formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors}" >
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">password is required</div>
                                 </div>
                         </div>
 
 
-                        <button type="submit" class="btn btn-block btn-success" >
+                        <button type="submit" class="btn btn-block btn-success" [disabled]="!CreateUserForm.valid" >
                             Register</button>
                     </form>
                     <div *ngIf="error" class="error">
@@ -55,6 +55,4 @@
 </div>
 <br />
 <app-footer></app-footer>
-
-// the above code is a register form for the new user to input all as a new member to website.
 

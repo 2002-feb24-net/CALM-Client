@@ -13,12 +13,17 @@ import { CookieService } from 'ngx-cookie-service';
 export class UserService {
   Url: string;
   header: any;
+  list: User[];
 /**
  * user form with a private Http client.
  */
   formData:User;
   constructor(private http: HttpClient,private CookieService: CookieService) {
+<<<<<<< HEAD
      // header settings using string. 
+=======
+
+>>>>>>> master
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
@@ -35,17 +40,25 @@ export class UserService {
     .toPromise();
   }
 
+<<<<<<< HEAD
   /**
    * admin method creation with its parameters.
    * @param User
    */
+=======
+
+>>>>>>> master
   CreateAdmin(User: User) {
     const username =this.CookieService.get('username');
     const password =this.CookieService.get('password');
     return this.http.post<User>(`${this.Url}/api/Admin/${username}/${password}`, User)
     .toPromise();
   }
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> master
   /** gets users from using api url.
    * @param User
    */
@@ -57,10 +70,24 @@ export class UserService {
    * this method gets users by their given name respectively.
    */
   getUsersByName(){
-    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.Password)
+    return this.http.get<User>(`${this.Url}/api/Users/`+ this.formData.username +"/"+ this.formData.password)
     .toPromise();
   }
 
+<<<<<<< HEAD
 
 
+=======
+  refreshList(){
+    this.http.get<User[]>(`${this.Url}/api/Users`)
+    .toPromise()
+    .then(res => this.list = res as User[]);
+  }
+
+  deleteUser(username: string,password: string) {
+    return this.http.delete<User>(`${this.Url}/api/Users/`+ username +"/"+ password, { headers: this.header });
+  }
+
+  
+>>>>>>> master
 }

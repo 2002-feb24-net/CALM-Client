@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
   });
-  
+
   /**
    * constructor form with its parameters
    * @param formBuilder
@@ -44,10 +44,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm = this.formBuilder.group({
-      FName: ['', Validators.required],
-      LName: ['', Validators.required],
+      fName: ['', Validators.required],
+      lName: ['', Validators.required],
       username: ['', Validators.required],
-      Password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
   }
@@ -77,28 +77,31 @@ export class RegisterComponent implements OnInit {
  * method that gets users through the use of promises to accept response from api
  */
 
-  getUsers() {
-    return this.userApi.getUsers()
-      .then(
-        User => {
-          this.User = User; //uses promises to accept the api response
-          this.resetError(); //resets error message
-        },
-        error => {
-          this.handleError(error); //handles error
-        }
-      );
-  }
+  // getUsers() {
+  //   return this.userApi.getUsers()
+  //     .then(
+  //       User => {
+  //         this.User = User; //uses promises to accept the api response
+  //         this.resetError(); //resets error message
+  //       },
+  //       error => {
+  //         this.handleError(error); //handles error
+  //       }
+  //     );
+  // }
   CreateUser() {
     this.submitted = true;
     /**
      * User form containing property values from API
      */
     const newUsers: User = {
-      FName: this.CreateUserForm.get('FName')?.value, // gets first name for new user.
-      LName: this.CreateUserForm.get('LName')?.value, // gets Last name for new user
-      username: this.CreateUserForm.get('username')?.value, // gets username for new user
-      Password: this.CreateUserForm.get('Password')?.value, // gets password for new user
+
+
+      fName: this.CreateUserForm.get('fName')?.value,
+      lName: this.CreateUserForm.get('lName')?.value,
+      username: this.CreateUserForm.get('username')?.value,
+      password: this.CreateUserForm.get('password')?.value,
+
 
   isAdmin: false
 
