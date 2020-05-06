@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 /**
  * imports of all components from each individual component
  */
@@ -61,7 +63,8 @@ import { UserService } from './services/user.service';
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot([])
   ],
   providers: [CookieService, UserService, ],
   bootstrap: [AppComponent]

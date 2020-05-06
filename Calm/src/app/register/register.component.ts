@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
   });
+  
   /**
    * constructor form with its parameters
    * @param formBuilder
