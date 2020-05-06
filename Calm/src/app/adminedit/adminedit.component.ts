@@ -23,8 +23,10 @@ export class AdmineditComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
     private router: Router,  private CookieService: CookieService,
      private userApi:UserService) { }
-  show: boolean = false;
-  
+     showMyC: boolean = false;
+     showMyContainer: boolean = false;
+
+     
   ngOnInit(): void {
     this.CreateAdminForm = this.formBuilder.group({
       fName: ['', Validators.required],
@@ -33,10 +35,6 @@ export class AdmineditComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
-  }
-
-  handleClick(){
-    this.show = true;
   }
   
     handleError(error: HttpErrorResponse) {
@@ -61,18 +59,19 @@ export class AdmineditComponent implements OnInit {
    * method that gets users through the use of promises to accept response from api
    */
   
-    getUsers() {
-      return this.userApi.getUsers()
-        .then(
-          User => {
-            this.User = User; //uses promises to accept the api response
-            this.resetError(); //resets error message
-          },
-          error => {
-            this.handleError(error); //handles error
-          }
-        );
-    }
+    // getUsers() {
+    //   return this.userApi.getUsers()
+    //     .then(
+    //       User => {
+    //         this.User = User; //uses promises to accept the api response
+    //         this.resetError(); //resets error message
+    //       },
+    //       error => {
+    //         this.handleError(error); //handles error
+    //       }
+    //     );
+    // }
+
     CreateAdmin() {
       this.submitted = true;
       /**

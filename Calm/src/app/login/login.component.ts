@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
 
          },
          err => {
-           console.log(err);
+          this.handleError(err) 
          }
        )
      }
