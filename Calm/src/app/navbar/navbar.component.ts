@@ -15,19 +15,11 @@ export class NavbarComponent implements OnInit {
   ) { }
 
 
-<<<<<<< HEAD
-    /**
-     * navbar containing cookie service set to be a false value.
-     */
-=======
-
-
->>>>>>> master
     data=this.cookieService.get('username');
 
     show: boolean = false;
    ngOnInit(): void {
-    // A conditional statement. 
+    // A conditional statement.
      this.show = false;
     if(this.data != ""){
  this.show = true;
