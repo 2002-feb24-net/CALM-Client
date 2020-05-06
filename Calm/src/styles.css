@@ -65,18 +65,14 @@ table tr:hover{
 .col-md-6 {
   background-color:  rgba(20, 17, 8, 0.6);
 }
-form{
-  color: white;
-  font-size: large;
 
-}
 
 input{
   display: inline-block;
   text-align: left;
 
 }
-.text, table, td{
+.text, table, td, form, p{
   font-size: large;
   color: white;
 }

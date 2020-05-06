@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiBaseUrl: 'http://192.168.99.100:8000',
+  ApiBaseUrl: 'http://calm-client.azurewebsites.net',
 };
 
 /*

@@ -5,9 +5,9 @@
     <div class="row">
 
                 <div class="card-body p-4">
-                    <button type="submit" class="btn btn-block btn-success" (click)="handleClick()">Add new Admin</button>
+                    <button type="submit" class="btn btn-block btn-success" (click)="showMyC=!showMyC">Add new Admin</button>
         
-                    <div [hidden]="!show">
+                    <div *ngIf="showMyC">
 
                     <form [formGroup]="CreateAdminForm" (ngSubmit)="CreateAdmin()" >
 
@@ -52,6 +52,13 @@
                         {{ error }}
                     </div>
                 </div>
+                <button type="submit" class="btn btn-block btn-success" (click)="showMyContainer=!showMyContainer">See all users</button>
+              
+                <div *ngIf="showMyContainer">
+              
+                    <app-userview></app-userview>
+                </div>
+
 
         </div>
     </div>
