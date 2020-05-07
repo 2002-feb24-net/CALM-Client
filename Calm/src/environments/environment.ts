@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiBaseUrl: 'http://calm-api.azurewebsites.net',
+  ApiBaseUrl: 'http://a9f0bbf7745324be4ade24e93f11495a-1232551203.us-east-2.elb.amazonaws.com',
 };
 
 /*
