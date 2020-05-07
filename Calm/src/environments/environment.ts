@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiBaseUrl: 'http://calm-client.azurewebsites.net',
+  ApiBaseUrl: 'http://calm-api.azurewebsites.net',
 };
 
 /*
