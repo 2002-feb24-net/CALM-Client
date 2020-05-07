@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calm-front
+  labels:
+    app: calm
+    role: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calm
+      role: front
+  template:
+    metadata:
+      labels:
+        app: calm
+        role: front
+    spec:
+      containers:
+      - name: calm-front
+        image: brendanngoran/calm:1.0
+        ports:
+        - containerPort: 80
