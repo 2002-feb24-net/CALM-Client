@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 /**
  * imports of all components from each individual component
  */
@@ -15,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 /**
  * imports HTTP clientmodule and reactive form.
  */
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 /**
  * imports a cookieservice and a tostrmodule.
@@ -64,6 +65,7 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpRequest,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([])

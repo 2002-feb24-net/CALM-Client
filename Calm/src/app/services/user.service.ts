@@ -1,9 +1,11 @@
 
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders,HttpRequest, } from '@angular/common/http';
 import User from '../models/User';
 import { CookieService } from 'ngx-cookie-service';
+
+
 /**
  * root injection provided and exported user services
  */
@@ -29,7 +31,7 @@ export class UserService {
     this.header = new HttpHeaders(headerSettings);
 
   }
-  
+
   /**
  * creats users using the api url
  * @param User

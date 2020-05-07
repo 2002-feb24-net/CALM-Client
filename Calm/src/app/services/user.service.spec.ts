@@ -1,4 +1,6 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+
 /**
  * imports user service
  */
@@ -10,7 +12,7 @@ describe('UserService', () => {
  * auto generated test for injectable user service
  */
   beforeEach(() => {
-    TestBed.configureTestingModule({})
+    TestBed.configureTestingModule({ providers:[HttpClient, HttpHandler]})
     service = TestBed.inject(UserService);
   });
 /**
