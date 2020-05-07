@@ -14,6 +14,13 @@ export class NavbarComponent implements OnInit {
     private cookieService: CookieService
   ) { }
 
+<<<<<<< HEAD
+=======
+    /**
+     * navbar containing cookie service set to be a false value.
+     */
+
+>>>>>>> 6539ffa85b0c04b221d051886ddd51043ee7c68a
 
     data=this.cookieService.get('username');
 
@@ -27,7 +34,5 @@ export class NavbarComponent implements OnInit {
     else
     this.show = false;
    }
-
-
 
 }

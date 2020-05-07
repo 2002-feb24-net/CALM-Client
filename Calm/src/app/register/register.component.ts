@@ -95,13 +95,25 @@ export class RegisterComponent implements OnInit {
      * User form containing property values from API
      */
     const newUsers: User = {
+<<<<<<< HEAD
 
 
+=======
+      
+      FName: this.CreateUserForm.get('FName')?.value, // gets first name for new user.
+      LName: this.CreateUserForm.get('LName')?.value, // gets Last name for new user
+      username: this.CreateUserForm.get('username')?.value, // gets username for new user
+      Password: this.CreateUserForm.get('Password')?.value, // gets password for new user
+      
+>>>>>>> 6539ffa85b0c04b221d051886ddd51043ee7c68a
       fName: this.CreateUserForm.get('fName')?.value,
       lName: this.CreateUserForm.get('lName')?.value,
       username: this.CreateUserForm.get('username')?.value,
       password: this.CreateUserForm.get('password')?.value,
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6539ffa85b0c04b221d051886ddd51043ee7c68a
 
   isAdmin: false
 

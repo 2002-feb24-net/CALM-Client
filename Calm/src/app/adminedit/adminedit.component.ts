@@ -1,10 +1,13 @@
 
 // imports component OnInit
+
+import { Component, OnInit } from '@angular/core'; // imports component OnInit
+
 /**
  * app admin component.
  */
 
-import { Component, OnInit } from '@angular/core';
+//import { Component, OnInit } from '@angular/core';
 import User from '../models/User';
 import { Validators, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -12,6 +15,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
+
 
 
 @Component({
@@ -26,6 +30,7 @@ export class AdmineditComponent implements OnInit {
 /**
  * @ignore
  */
+
 
   User: User[] = [];
   error: string | undefined; // error handling implementation
