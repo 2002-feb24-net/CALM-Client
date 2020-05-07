@@ -21,17 +21,12 @@ export class UserService {
  */
   formData:User;
   constructor(private http: HttpClient,private CookieService: CookieService) {
-<<<<<<< HEAD
 
      // header settings using string.
 
+  // header settings using string.
 
 
-=======
-
-     // header settings using string. 
-
->>>>>>> 6539ffa85b0c04b221d051886ddd51043ee7c68a
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
@@ -86,11 +81,4 @@ export class UserService {
     return this.http.delete<User>(`${this.Url}/api/Users/`+ username +"/"+ password, { headers: this.header });
   }
 
-<<<<<<< HEAD
-
-
-=======
-  
-  
->>>>>>> 6539ffa85b0c04b221d051886ddd51043ee7c68a
 }
