@@ -65,7 +65,7 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpRequest,
+
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([])

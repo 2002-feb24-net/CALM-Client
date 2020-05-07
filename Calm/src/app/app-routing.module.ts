@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'; //imports from ngmodule
-import { Routes, RouterModule, Router } from '@angular/router'; // imports angular routing module
+import { Routes, RouterModule} from '@angular/router'; // imports angular routing module
 import { TipsPageComponent } from './tips-page/tips-page.component'; // imports from tipspage component
 import { LoginComponent } from './login/login.component'; // imports from login component
 import { RegisterComponent } from './register/register.component'; // imports from register component
@@ -33,7 +33,7 @@ const routes: Routes = [
  * imports and exports of Router
  */
 @NgModule({
-  imports: [RouterModule.forRoot(routes), Router],
-  exports: [RouterModule, Router]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
