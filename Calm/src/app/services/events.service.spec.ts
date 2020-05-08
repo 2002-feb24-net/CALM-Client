@@ -20,11 +20,11 @@ describe('EventsService', () => {
  */
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [EventsService, FormBuilder ],
-      providers: [FormBuilder, HttpClient, HttpHandler ],
-      imports: [RouterTestingModule, FormBuilder, NgModule, ToastrModule.forRoot()],
 
-    });
+      providers: [ HttpClient, HttpHandler ],
+      imports: [RouterTestingModule, ToastrModule.forRoot()],
+
+    })
     service = TestBed.inject(EventsService);
   });
 /**

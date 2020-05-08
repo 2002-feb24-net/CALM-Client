@@ -24,7 +24,7 @@ beforeEach(async(() => {
   TestBed.configureTestingModule({
     declarations: [ RegisterComponent ],
     providers: [FormBuilder, HttpClient, HttpHandler],
-    imports: [RouterTestingModule, FormsModule, ToastrModule.forRoot()],
+    imports: [RouterTestingModule,  ToastrModule.forRoot()],
     })
     .compileComponents();
   }));
