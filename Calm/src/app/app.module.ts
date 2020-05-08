@@ -18,6 +18,8 @@ import { RegisterComponent } from './register/register.component';
  */
 import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+//import { DynamicTestModule} from '@angular/core/testing/testing'
+
 /**
  * imports a cookieservice and a tostrmodule.
  */
@@ -28,6 +30,7 @@ import { NotfoundComponent } from './notfound.component';
 import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
+
 
 
 /**
@@ -56,7 +59,8 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     QuestionsComponent,
     AdminloginComponent,
     AdmineditComponent,
-    UserviewComponent
+    UserviewComponent,
+
   ],
   imports: [
 
@@ -65,6 +69,7 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    //DynamicTestModule,
 
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
