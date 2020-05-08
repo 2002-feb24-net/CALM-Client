@@ -124,21 +124,144 @@
     </table>
 </section>
 
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
 
 
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(cookieService: CookieService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/tips-page/tips-page.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>constructor that contains a cookie service</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>cookieService</td>
+                                                  
+                                                        <td>
+                                                                    <code>CookieService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
 
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/tips-page/tips-page.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Method that returns Nothiing.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;; // imports component, onInit
 
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
+import { CookieService } from &#x27;ngx-cookie-service&#x27;; // importing cookie service as ngx
 
 /**
  * Tips-page Component.
@@ -152,12 +275,12 @@ import { CookieService } from &#x27;ngx-cookie-service&#x27;;
 export class TipsPageComponent implements OnInit {
 
 /**
- * @ignore
+ * constructor that contains a cookie service
  */
   constructor( private cookieService: CookieService) { }
 
 /**
- * @ignore
+ * Method that returns Nothiing.
  */
   ngOnInit(): void {
     this.cookieService.deleteAll();
@@ -283,7 +406,7 @@ export class TipsPageComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="pt-3 px-4" style="min-height:450px;">  <h1>C.A.L.M(Center for Anxiety and Lifestyle Mediation)</h1>  <br />  <div class="container">    <div class="row">      <div class="col">        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">            <!-- Indicators -->            <ol class="carousel-indicators">              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>              <li data-target="#myCarousel" data-slide-to="1"></li>              <li data-target="#myCarousel" data-slide-to="2"></li>              <li data-target="#myCarousel" data-slide-to="3"></li>              <li data-target="#myCarousel" data-slide-to="4"></li>            </ol>                    <!-- Wrapper for slides -->            <div class="carousel-inner">                      <div class="item active" style="align-items: center;">                <img src="https://www.verywellmind.com/thmb/t45CRRuibSKE7oZow0JPm9j-yq4=/1500x1000/filters:fill(ABEAC3,1)/manage-your-anxiety-2584184-01-07daf91ba6de41d19f827cf65ceef07a.png" alt="Los Angeles" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                 </div>              </div>                      <div class="item">                <img src="https://www.verywellmind.com/thmb/ZBT5pMYX2t1JsG_B7js_tiananA=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/dsm-5-criteria-for-generalized-anxiety-disorder-1393147_v2-902be69757414cc7a517ef3ca9838b59.png"  alt="Chicago" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                          <div class="item">                <img src="https://www.verywellmind.com/thmb/e7E83ISe82_3MM1tKeEmmZUi2EQ=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/social-anxiety-disorder-symptoms-and-diagnosis-4157219-5c5db04146e0fb000127c7e9.png" alt="New York" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                    </div>              </div>              <div class="item active" style="align-items: center;">                <img src="https://www.verywellmind.com/thmb/s-BHACV3qi1zF0rXrxhIRLtlo2M=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/top-symptoms-of-panic-attacks-2584270_FINAL-5bcdfd4d46e0fb0051228ee5.png " alt="L" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                   </div>              </div>                      <div class="item">                <img src="https://www.verywellmind.com/thmb/dtGCloFfZ7ZjOmsHxshEaxVesUo=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/ptsd-causes-and-risk-factors-2797397_FINAL-5c12bdf046e0fb0001e0b53e.png"  alt="Chic" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                                            </div>                    <!-- Left and right controls -->            <a class="left carousel-control" href="#myCarousel" data-slide="prev">              <span class="glyphicon glyphicon-chevron-left"></span>              <span class="sr-only">Previous</span>            </a>            <a class="right carousel-control" href="#myCarousel" data-slide="next">              <span class="glyphicon glyphicon-chevron-right"></span>              <span class="sr-only">Next</span>            </a>          </div>      </div>          </div>  </div>  <div class="push"></div></div><br /><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
+    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TipsPageComponent'};
 </script>

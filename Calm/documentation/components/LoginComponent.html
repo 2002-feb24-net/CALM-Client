@@ -196,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/login/login.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/login/login.component.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -313,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="96"
-                            class="link-to-prism">src/app/login/login.component.ts:96</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="98"
+                            class="link-to-prism">src/app/login/login.component.ts:98</a></div>
                 </td>
             </tr>
 
@@ -385,8 +385,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="74"
-                            class="link-to-prism">src/app/login/login.component.ts:74</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/login/login.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -457,15 +457,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="58"
-                            class="link-to-prism">src/app/login/login.component.ts:58</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/login/login.component.ts:60</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>user form that declares its properties. </p>
+                    <div class="io-description"><p>user form that declares its properties.</p>
 </div>
 
                     <div class="io-description">
@@ -533,7 +533,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/login/login.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -566,7 +566,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/login/login.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/login/login.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -600,7 +600,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/login/login.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/login/login.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -627,7 +627,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/login/login.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/login/login.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -655,7 +655,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/login/login.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/login/login.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -669,14 +669,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { FormBuilder, Validators, NgForm } from &#x27;@angular/forms&#x27;;
-import User from &#x27;../models/User&#x27;;
-
-import { ToastrService } from &#x27;ngx-toastr&#x27;;
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { UserService } from &#x27;../services/user.service&#x27;;
-import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { FormBuilder, Validators, NgForm } from &#x27;@angular/forms&#x27;; // imports frombuilder, validtors &amp; ngform
+import User from &#x27;../models/User&#x27;; // imports user from models.
+/**
+ * imports multiple services for user login component.
+ */
+import { ToastrService } from &#x27;ngx-toastr&#x27;; // imports toastr
+import { CookieService } from &#x27;ngx-cookie-service&#x27;; // imports cookie services from ngx cookie
+import { Router } from &#x27;@angular/router&#x27;; // imports router
+import { UserService } from &#x27;../services/user.service&#x27;; // imports user services
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;; // imports an httperror response.
 
 
 /**
@@ -709,7 +711,7 @@ export class LoginComponent implements OnInit {
  *
  * @param formBuilder
  */
-  constructor(private formBuilder: FormBuilder,private router: Router,
+  constructor( private formBuilder: FormBuilder, private router: Router,
     private toastr: ToastrService,public LoginService:UserService,
     private cookieService: CookieService) { }
 
@@ -722,18 +724,18 @@ export class LoginComponent implements OnInit {
     this.resetForm();
   }
   /**
-   * user form that declares its properties. 
+   * user form that declares its properties.
    * @param form
    */
   resetForm(form?: NgForm) {
     if (form !&#x3D; null)
       form.reset();
     this.LoginService.formData &#x3D; {
-      Id: 0,
-      FName: &#x27;&#x27;,
-      LName: &#x27;&#x27;,
+      id: 0,
+      fName: &#x27;&#x27;,
+      lName: &#x27;&#x27;,
       username: &#x27;&#x27;,
-      Password:&#x27;&#x27;,
+      password:&#x27;&#x27;,
       isAdmin: false
     }
   }
@@ -747,7 +749,7 @@ export class LoginComponent implements OnInit {
            this.toastr.info(&#x27;Get By Id successfully&#x27;, &#x27;Get user by id&#x27;);
            this.user &#x3D; user;
            console.log(user);
-           this.cookieService.set(&#x27;User&#x27;,&#x60;${this.user.Id}&#x60;);
+           this.cookieService.set(&#x27;User&#x27;,&#x60;${this.user.id}&#x60;);
            this.cookieService.set(&#x27;username&#x27;,&#x60;${this.user.username}&#x60;);
 
        this.router.navigate([&#x27;/support-groups&#x27;]);
@@ -755,7 +757,7 @@ export class LoginComponent implements OnInit {
 
          },
          err &#x3D;&gt; {
-           console.log(err);
+          this.handleError(err) 
          }
        )
      }
@@ -791,15 +793,15 @@ export class LoginComponent implements OnInit {
 
                 &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot;  class&#x3D;&quot;form-control sty1&quot;
                   placeholder&#x3D;&quot;username&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.username&quot; &gt;
-                  &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;Password&lt;/h2&gt;
-                &lt;input type&#x3D;&quot;Password&quot; name&#x3D;&quot;Password&quot;
-                  class&#x3D;&quot;form-control sty1&quot; placeholder&#x3D;&quot;Password&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.Password&quot; &gt;
+                  &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;password&lt;/h2&gt;
+                &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot;
+                  class&#x3D;&quot;form-control sty1&quot; placeholder&#x3D;&quot;password&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.password&quot; &gt;
 
 
 
                 &lt;br&gt;
 
-                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot;&gt;Login&lt;/button&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot; &gt;Login&lt;/button&gt;
                 &lt;div&gt;
                     &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{errorMessage}} &lt;/div&gt;
 
@@ -819,6 +821,8 @@ export class LoginComponent implements OnInit {
     &lt;/div&gt;
     &lt;br /&gt;
     &lt;app-footer&gt;&lt;/app-footer&gt;
+
+    ## this form is an html form for user login view page. 
 </code></pre>
     </div>
 
@@ -854,8 +858,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">            <div class="card-body p-4">              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <h2 style="text-align:center">username</h2>                <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">Password</h2>                <input type="Password" name="Password"                  class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.Password" >                <br>                <button type="submit" class="btn btn-block btn-success">Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                </div>                <br>              </form>            </div>          </div>        <div class="push"></div>    </div>    <br />    <app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">            <div class="card-body p-4">              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <h2 style="text-align:center">username</h2>                <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">password</h2>                <input type="password" name="password"                  class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >                <br>                <button type="submit" class="btn btn-block btn-success" >Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                </div>                <br>              </form>            </div>          </div>        <div class="push"></div>    </div>    <br />    <app-footer></app-footer>    ## this form is an html form for user login view page. </div>'
+    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

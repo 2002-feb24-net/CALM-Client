@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+
+// imports component OnInit
+
+import { Component, OnInit } from '@angular/core'; // imports component OnInit
+
+/**
+ * app admin component.
+ */
+
+//import { Component, OnInit } from '@angular/core';
 import User from '../models/User';
 import { Validators, FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -8,12 +17,21 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-adminedit',
   templateUrl: './adminedit.component.html',
   styleUrls: ['./adminedit.component.css']
 })
 export class AdmineditComponent implements OnInit {
+
+// constructor with no parameters
+
+/**
+ * @ignore
+ */
+
+
   User: User[] = [];
   error: string | undefined; // error handling implementation
   submitted = false;
@@ -26,7 +44,8 @@ export class AdmineditComponent implements OnInit {
      showMyC: boolean = false;
      showMyContainer: boolean = false;
 
-     
+
+
   ngOnInit(): void {
     this.CreateAdminForm = this.formBuilder.group({
       fName: ['', Validators.required],
@@ -36,7 +55,7 @@ export class AdmineditComponent implements OnInit {
 
   });
   }
-  
+
     handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
         this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
@@ -48,17 +67,17 @@ export class AdmineditComponent implements OnInit {
       this.error = undefined; //clears error message
     }
     get f() { return this.CreateAdminForm.controls; }
-  
+
   //  const pass= this.CreateAdminForm.get('password')?.value;
   //  const salt =  bcrypt.genSaltSync(10);
   //  console.log(salt)
   // const  passhash = bcrypt.hashSync(pass, salt);
-  
-  
+
+
   /**
    * method that gets users through the use of promises to accept response from api
    */
-  
+
     // getUsers() {
     //   return this.userApi.getUsers()
     //     .then(
@@ -83,28 +102,29 @@ export class AdmineditComponent implements OnInit {
         username: this.CreateAdminForm.get('username')?.value,
         password: this.CreateAdminForm.get('password')?.value,
         isAdmin: true,
-  
+
       };
   console.log(newUsers)
-  
+
       this.userApi.CreateAdmin(newUsers) // creates new user
         .then(
           User => {
             if (this.error) {
-  
+
              this.toastr.error('Admin Register', 'Error');
-  
-  
+
+
             } else {
               this.toastr.info('Admin Created', 'registered');
-             
+
               this.User.unshift(User); //inserts new element at start of array
               this.resetError(); //clears error message
             }
           },
           error => this.handleError(error) //handles error message
         );
-  
-  
+
+
   }
+
   }

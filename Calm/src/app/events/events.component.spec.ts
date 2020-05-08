@@ -1,4 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormBuilder} from '@angular/forms';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 /**
  * imports event component
  */
@@ -12,9 +19,11 @@ describe('EventsComponent', () => {
 /**
  * returns or runs multiple events at once during declarations
  */
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EventsComponent ]
+beforeEach(async(() => {
+  TestBed.configureTestingModule({
+    declarations: [ EventsComponent ],
+    providers: [FormBuilder, HttpClient, HttpHandler],
+    imports: [RouterTestingModule, FormsModule, ToastrModule.forRoot()],
     })
     .compileComponents();
   }));

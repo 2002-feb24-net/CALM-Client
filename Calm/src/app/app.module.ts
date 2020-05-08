@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+
 /**
  * imports of all components from each individual component
  */
@@ -13,8 +16,10 @@ import { RegisterComponent } from './register/register.component';
 /**
  * imports HTTP clientmodule and reactive form.
  */
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+//import { DynamicTestModule} from '@angular/core/testing/testing'
+
 /**
  * imports a cookieservice and a tostrmodule.
  */
@@ -26,6 +31,8 @@ import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
 
+
+
 /**
  * ngModule that declares all components
  */
@@ -34,6 +41,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 import { UserService } from './services/user.service';
 import { UserviewComponent } from './adminedit/userview/userview.component';
+
 
 
 
@@ -51,18 +59,23 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     QuestionsComponent,
     AdminloginComponent,
     AdmineditComponent,
-    UserviewComponent
+    UserviewComponent,
+
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    //DynamicTestModule,
+
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule.forRoot([])
   ],
-  providers: [CookieService, UserService],
+  providers: [CookieService, UserService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -164,9 +164,6 @@
                                 <a href="#CreateUser">CreateUser</a>
                             </li>
                             <li>
-                                <a href="#getUsers">getUsers</a>
-                            </li>
-                            <li>
                                 <a href="#handleError">handleError</a>
                             </li>
                             <li>
@@ -218,6 +215,8 @@
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor form with its parameters</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -329,47 +328,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/register/register.component.ts:80</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="getUsers"></a>
-                    <span class="name">
-                        <b>
-                            getUsers
-                        </b>
-                        <a href="#getUsers"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>getUsers()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/register/register.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/register/register.component.ts:92</a></div>
                 </td>
             </tr>
 
@@ -380,7 +340,7 @@
 </div>
 
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -409,14 +369,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/register/register.component.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/register/register.component.ts:58</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>Asserts errorr handling in the register form.</p>
+</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -479,8 +441,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/register/register.component.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/register/register.component.ts:44</a></div>
                 </td>
             </tr>
 
@@ -520,8 +482,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/register/register.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/register/register.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -678,7 +640,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/register/register.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/register/register.component.ts:68</a></div>
                                 </td>
                             </tr>
 
@@ -689,14 +651,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import User from &#x27;../models/User&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
-import { UserService } from &#x27;../services/user.service&#x27;;
-import { ToastrService } from &#x27;ngx-toastr&#x27;;
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
-import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;; // import from OnInit component.
+import User from &#x27;../models/User&#x27;; // imports from user model
+import { Router } from &#x27;@angular/router&#x27;; // imports router
+import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;; // imports formbuilder
+import { UserService } from &#x27;../services/user.service&#x27;; // imports from user services
+import { ToastrService } from &#x27;ngx-toastr&#x27;; // imports from ngx toastr
+import { CookieService } from &#x27;ngx-cookie-service&#x27;; // imports from ngx cookie service
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;; // imports Http error response
 
 /**
  * register component
@@ -718,6 +680,14 @@ export class RegisterComponent implements OnInit {
     text: [&#x27;&#x27;, Validators.required]
   });
 
+  /**
+   * constructor form with its parameters
+   * @param formBuilder
+   * @param toastr
+   * @param router
+   * @param CookieService
+   * @param userApi
+   */
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
       private userApi:UserService) { }
@@ -727,13 +697,17 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm &#x3D; this.formBuilder.group({
-      FName: [&#x27;&#x27;, Validators.required],
-      LName: [&#x27;&#x27;, Validators.required],
+      fName: [&#x27;&#x27;, Validators.required],
+      lName: [&#x27;&#x27;, Validators.required],
       username: [&#x27;&#x27;, Validators.required],
-      Password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6)]],
+      password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6)]],
 
   });
   }
+  /**
+   * Asserts errorr handling in the register form.
+   * @param error
+   */
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
@@ -756,28 +730,33 @@ export class RegisterComponent implements OnInit {
  * method that gets users through the use of promises to accept response from api
  */
 
-  getUsers() {
-    return this.userApi.getUsers()
-      .then(
-        User &#x3D;&gt; {
-          this.User &#x3D; User; //uses promises to accept the api response
-          this.resetError(); //resets error message
-        },
-        error &#x3D;&gt; {
-          this.handleError(error); //handles error
-        }
-      );
-  }
+  // getUsers() {
+  //   return this.userApi.getUsers()
+  //     .then(
+  //       User &#x3D;&gt; {
+  //         this.User &#x3D; User; //uses promises to accept the api response
+  //         this.resetError(); //resets error message
+  //       },
+  //       error &#x3D;&gt; {
+  //         this.handleError(error); //handles error
+  //       }
+  //     );
+  // }
   CreateUser() {
     this.submitted &#x3D; true;
     /**
      * User form containing property values from API
      */
     const newUsers: User &#x3D; {
-      FName: this.CreateUserForm.get(&#x27;FName&#x27;)?.value,
-      LName: this.CreateUserForm.get(&#x27;LName&#x27;)?.value,
-      username: this.CreateUserForm.get(&#x27;username&#x27;)?.value,
-      Password: this.CreateUserForm.get(&#x27;Password&#x27;)?.value,
+
+
+      fName: this.CreateUserForm.get(&#x27;fName&#x27;)?.value, // gets first name for new user.
+      lName: this.CreateUserForm.get(&#x27;lName&#x27;)?.value, // gets Last name for new user
+      username: this.CreateUserForm.get(&#x27;username&#x27;)?.value, // gets username for new user
+      password: this.CreateUserForm.get(&#x27;password&#x27;)?.value,   // gets password for new user
+
+
+
 
   isAdmin: false
 
@@ -787,7 +766,7 @@ console.log(newUsers)
     this.userApi.CreateUser(newUsers) // creates new user
       .then(
         User &#x3D;&gt; {
-          if (this.error) {
+          if (this.error) { //conditinal statement that checks for errors in register component.
 
            this.toastr.error(&#x27;User Register&#x27;, &#x27;Error&#x27;);
 
@@ -822,17 +801,17 @@ console.log(newUsers)
 
 
                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;First Name:
-                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;First Name&quot; formControlName&#x3D;&quot;FName&quot;
-                                required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.FName.errors}&quot;&gt;
-                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.FName.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
-                                    &lt;div *ngIf&#x3D;&quot;f.FName.errors.required&quot;&gt;Name is required&lt;/div&gt;
+                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;First Name&quot; formControlName&#x3D;&quot;fName&quot;
+                                required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.fName.errors}&quot;&gt;
+                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.fName.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                                    &lt;div *ngIf&#x3D;&quot;f.fName.errors.required&quot;&gt;Name is required&lt;/div&gt;
                                 &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;Last Name:
-                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;Last Name&quot; formControlName&#x3D;&quot;LName&quot;
-                                required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.LName.errors}&quot;&gt;
-                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.LName.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
-                                    &lt;div *ngIf&#x3D;&quot;f.LName.errors.required&quot;&gt;Name is required&lt;/div&gt;
+                            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;Last Name&quot; formControlName&#x3D;&quot;lName&quot;
+                                required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.lName.errors}&quot;&gt;
+                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.lName.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                                    &lt;div *ngIf&#x3D;&quot;f.lName.errors.required&quot;&gt;Name is required&lt;/div&gt;
                                 &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt;User Name:
@@ -842,16 +821,16 @@ console.log(newUsers)
                                     &lt;div *ngIf&#x3D;&quot;f.username.errors.required&quot;&gt;Name is required&lt;/div&gt;
                                 &lt;/div&gt;
                         &lt;/div&gt;
-                        &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt; Password:
-                            &lt;input type&#x3D;&quot;Password&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;Insert 6 char Password&quot;
-                                formControlName&#x3D;&quot;Password&quot; required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.Password.errors}&quot; &gt;
-                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.Password.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
-                                    &lt;div *ngIf&#x3D;&quot;f.Password.errors.required&quot;&gt;Password is required&lt;/div&gt;
+                        &lt;div class&#x3D;&quot;input-group mb-3&quot;&gt; password:
+                            &lt;input type&#x3D;&quot;Password&quot; class&#x3D;&quot;form-control sty1&quot;  placeholder&#x3D;&quot;Insert 6 char password&quot;
+                                formControlName&#x3D;&quot;password&quot; required [ngClass]&#x3D;&quot;{ &#x27;is-invalid&#x27;: submitted &amp;&amp; f.password.errors}&quot; &gt;
+                                &lt;div *ngIf&#x3D;&quot;submitted &amp;&amp; f.password.errors&quot; class&#x3D;&quot;invalid-feedback&quot;&gt;
+                                    &lt;div *ngIf&#x3D;&quot;f.password.errors.required&quot;&gt;password is required&lt;/div&gt;
                                 &lt;/div&gt;
                         &lt;/div&gt;
 
 
-                        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot; &gt;
+                        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot; [disabled]&#x3D;&quot;!CreateUserForm.valid&quot; &gt;
                             Register&lt;/button&gt;
                     &lt;/form&gt;
                     &lt;div *ngIf&#x3D;&quot;error&quot; class&#x3D;&quot;error&quot;&gt;
@@ -866,8 +845,6 @@ console.log(newUsers)
 &lt;/div&gt;
 &lt;br /&gt;
 &lt;app-footer&gt;&lt;/app-footer&gt;
-
-// the above code is a register form for the new user to input all as a new member to website.
 
 </code></pre>
     </div>
@@ -904,8 +881,8 @@ console.log(newUsers)
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:40px;">    <div class="row">                <div class="card-body p-4">                    <form [formGroup]="CreateUserForm" (ngSubmit)="CreateUser()" >                        <h1 style="text-align:center">Register</h1>                        <div class="input-group mb-3">First Name:                            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="FName"                                required [ngClass]="{ \'is-invalid\': submitted && f.FName.errors}">                                <div *ngIf="submitted && f.FName.errors" class="invalid-feedback">                                    <div *ngIf="f.FName.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3">Last Name:                            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="LName"                                required [ngClass]="{ \'is-invalid\': submitted && f.LName.errors}">                                <div *ngIf="submitted && f.LName.errors" class="invalid-feedback">                                    <div *ngIf="f.LName.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3">User Name:                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"                                required [ngClass]="{ \'is-invalid\': submitted && f.username.errors}">                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">                                    <div *ngIf="f.username.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3"> Password:                            <input type="Password" class="form-control sty1"  placeholder="Insert 6 char Password"                                formControlName="Password" required [ngClass]="{ \'is-invalid\': submitted && f.Password.errors}" >                                <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">                                    <div *ngIf="f.Password.errors.required">Password is required</div>                                </div>                        </div>                        <button type="submit" class="btn btn-block btn-success" >                            Register</button>                    </form>                    <div *ngIf="error" class="error">                        {{ error }}                    </div>        </div>    </div><div class="push"></div></div><br /><app-footer></app-footer>// the above code is a register form for the new user to input all as a new member to website.</div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:40px;">    <div class="row">                <div class="card-body p-4">                    <form [formGroup]="CreateUserForm" (ngSubmit)="CreateUser()" >                        <h1 style="text-align:center">Register</h1>                        <div class="input-group mb-3">First Name:                            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="fName"                                required [ngClass]="{ \'is-invalid\': submitted && f.fName.errors}">                                <div *ngIf="submitted && f.fName.errors" class="invalid-feedback">                                    <div *ngIf="f.fName.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3">Last Name:                            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="lName"                                required [ngClass]="{ \'is-invalid\': submitted && f.lName.errors}">                                <div *ngIf="submitted && f.lName.errors" class="invalid-feedback">                                    <div *ngIf="f.lName.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3">User Name:                            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"                                required [ngClass]="{ \'is-invalid\': submitted && f.username.errors}">                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">                                    <div *ngIf="f.username.errors.required">Name is required</div>                                </div>                        </div>                        <div class="input-group mb-3"> password:                            <input type="Password" class="form-control sty1"  placeholder="Insert 6 char password"                                formControlName="password" required [ngClass]="{ \'is-invalid\': submitted && f.password.errors}" >                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">                                    <div *ngIf="f.password.errors.required">password is required</div>                                </div>                        </div>                        <button type="submit" class="btn btn-block btn-success" [disabled]="!CreateUserForm.valid" >                            Register</button>                    </form>                    <div *ngIf="error" class="error">                        {{ error }}                    </div>        </div>    </div><div class="push"></div></div><br /><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RegisterComponent'};
 </script>
