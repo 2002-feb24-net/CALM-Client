@@ -88,6 +88,9 @@
                                 <a href="#header">header</a>
                             </li>
                             <li>
+                                <a href="#list">list</a>
+                            </li>
+                            <li>
                                 <a href="#Url">Url</a>
                             </li>
                         </ul>
@@ -103,13 +106,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#CreateAdmin">CreateAdmin</a>
+                            </li>
+                            <li>
                                 <a href="#CreateUser">CreateUser</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUser">deleteUser</a>
                             </li>
                             <li>
                                 <a href="#getUsers">getUsers</a>
                             </li>
                             <li>
                                 <a href="#getUsersByName">getUsersByName</a>
+                            </li>
+                            <li>
+                                <a href="#refreshList">refreshList</a>
                             </li>
                         </ul>
                     </td>
@@ -129,12 +141,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, CookieService: CookieService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/user.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/user.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -163,6 +175,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>CookieService</td>
+                                                  
+                                                        <td>
+                                                                    <code>CookieService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -177,6 +201,78 @@
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CreateAdmin"></a>
+                    <span class="name">
+                        <b>
+                            CreateAdmin
+                        </b>
+                        <a href="#CreateAdmin"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>CreateAdmin(User: <a href="../interfaces/User.html">User</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/services/user.service.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>admin method creation with its parameters.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>User</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -199,8 +295,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/services/user.service.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/services/user.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -253,6 +349,88 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="deleteUser"></a>
+                    <span class="name">
+                        <b>
+                            deleteUser
+                        </b>
+                        <a href="#deleteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteUser(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/services/user.service.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>username</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>password</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="getUsers"></a>
                     <span class="name">
                         <b>
@@ -271,8 +449,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/services/user.service.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/services/user.service.ts:61</a></div>
                 </td>
             </tr>
 
@@ -312,8 +490,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/services/user.service.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/services/user.service.ts:68</a></div>
                 </td>
             </tr>
 
@@ -325,6 +503,45 @@
 
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshList"></a>
+                    <span class="name">
+                        <b>
+                            refreshList
+                        </b>
+                        <a href="#refreshList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>refreshList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/services/user.service.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                     </div>
                 </td>
@@ -357,7 +574,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/user.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/services/user.service.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -390,7 +607,34 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/user.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/services/user.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="list"></a>
+                        <span class="name">
+                            <b>
+                            list</b>
+                            <a href="#list"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/services/user.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -417,7 +661,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/user.service.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/user.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -432,8 +676,11 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-import { HttpClient, HttpHeaders } from &#x27;@angular/common/http&#x27;;
+import { HttpClient, HttpHeaders,HttpRequest, } from &#x27;@angular/common/http&#x27;;
 import User from &#x27;../models/User&#x27;;
+import { CookieService } from &#x27;ngx-cookie-service&#x27;;
+
+
 /**
  * root injection provided and exported user services
  */
@@ -443,18 +690,23 @@ import User from &#x27;../models/User&#x27;;
 export class UserService {
   Url: string;
   header: any;
+  list: User[];
 /**
  * user form with a private Http client.
  */
   formData:User;
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private CookieService: CookieService) {
+
+     // header settings using string.
+
+  // header settings using string.
+
 
     this.Url &#x3D; environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } &#x3D; {};
     this.header &#x3D; new HttpHeaders(headerSettings);
 
   }
-
 
   /**
  * creats users using the api url
@@ -464,6 +716,20 @@ export class UserService {
     return this.http.post&lt;User&gt;(&#x60;${this.Url}/api/Users/&#x60;, User)
     .toPromise();
   }
+
+
+  /**
+   * admin method creation with its parameters.
+   * @param User
+   */
+
+  CreateAdmin(User: User) {
+    const username &#x3D;this.CookieService.get(&#x27;username&#x27;);
+    const password &#x3D;this.CookieService.get(&#x27;password&#x27;);
+    return this.http.post&lt;User&gt;(&#x60;${this.Url}/api/Admin/${username}/${password}&#x60;, User)
+    .toPromise();
+  }
+
   /** gets users from using api url.
    * @param User
    */
@@ -475,8 +741,19 @@ export class UserService {
    * this method gets users by their given name respectively.
    */
   getUsersByName(){
-    return this.http.get&lt;User&gt;(&#x60;${this.Url}/api/Users/&#x60;+ this.formData.username +&quot;/&quot;+ this.formData.Password)
+    return this.http.get&lt;User&gt;(&#x60;${this.Url}/api/Users/&#x60;+ this.formData.username +&quot;/&quot;+ this.formData.password)
     .toPromise();
+  }
+
+
+  refreshList(){
+    this.http.get&lt;User[]&gt;(&#x60;${this.Url}/api/Users&#x60;)
+    .toPromise()
+    .then(res &#x3D;&gt; this.list &#x3D; res as User[]);
+  }
+
+  deleteUser(username: string,password: string) {
+    return this.http.delete&lt;User&gt;(&#x60;${this.Url}/api/Users/&#x60;+ username +&quot;/&quot;+ password, { headers: this.header });
   }
 
 }

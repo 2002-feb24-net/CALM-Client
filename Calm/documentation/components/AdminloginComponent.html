@@ -313,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="86"
-                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:86</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="91"
+                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:91</a></div>
                 </td>
             </tr>
 
@@ -706,11 +706,11 @@ export class AdminloginComponent implements OnInit {
     if (form !&#x3D; null)
       form.reset();
     this.LoginService.formData &#x3D; {
-      Id: 0,
-      FName: &#x27;&#x27;,
-      LName: &#x27;&#x27;,
+      id: 0,
+      fName: &#x27;&#x27;,
+      lName: &#x27;&#x27;,
       username: &#x27;&#x27;,
-      Password:&#x27;&#x27;,
+      password:&#x27;&#x27;,
       isAdmin: false,
     }
   }
@@ -721,21 +721,26 @@ export class AdminloginComponent implements OnInit {
   Login(f: NgForm) {
     return  this.LoginService.getUsersByName().then(
          user &#x3D;&gt; {
-           this.toastr.info(&#x27;Get By Id successfully&#x27;, &#x27;Get user by id&#x27;);
+           this.toastr.info(&#x27;Get By id successfully&#x27;, &#x27;Get user by id&#x27;);
            this.user &#x3D; user;
            console.log(user);
-           this.cookieService.set(&#x27;User&#x27;,&#x60;${this.user.Id}&#x60;);
+           this.cookieService.set(&#x27;User&#x27;,&#x60;${this.user.id}&#x60;);
            this.cookieService.set(&#x27;username&#x27;,&#x60;${this.user.username}&#x60;);
+           this.cookieService.set(&#x27;password&#x27;,&#x60;${this.user.password}&#x60;);
+           console.log(&#x60;${this.user.password}&#x60;)
+        
+           console.log(&#x60;${this.user.username}&#x60;)
+
           /**
            * Conditional statement utilized.
            */
-           if(this.user.isAdmin){
+   
        this.router.navigate([&#x27;/adminedit&#x27;]);
-           }
+           
 
          },
          err &#x3D;&gt; {
-           console.log(err);
+          this.handleError(err) 
          }
        )
      }
@@ -771,14 +776,14 @@ export class AdminloginComponent implements OnInit {
   
                 &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot;  class&#x3D;&quot;form-control sty1&quot;
                   placeholder&#x3D;&quot;username&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.username&quot; &gt;
-                  &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;Password&lt;/h2&gt;
-                &lt;input type&#x3D;&quot;Password&quot; name&#x3D;&quot;Password&quot; 
-                  class&#x3D;&quot;form-control sty1&quot; placeholder&#x3D;&quot;Password&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.Password&quot; &gt;
+                  &lt;h2 style&#x3D;&quot;text-align:center&quot;&gt;password&lt;/h2&gt;
+                &lt;input type&#x3D;&quot;password&quot; name&#x3D;&quot;password&quot; 
+                  class&#x3D;&quot;form-control sty1&quot; placeholder&#x3D;&quot;password&quot; required ngModel [(ngModel)]&#x3D;&quot;LoginService.formData.password&quot; &gt;
   
   
                 &lt;br&gt;
   
-                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-danger&quot;&gt;AdminLogin&lt;/button&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-danger&quot; &gt;AdminLogin&lt;/button&gt;
                 &lt;div&gt;
                     &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{errorMessage}} &lt;/div&gt; 
                   
@@ -830,8 +835,8 @@ export class AdminloginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">                 <div class="card-body p-4">                  <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <!--  -->                                 <h2 style="text-align:center">Admin name</h2>                  <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">Password</h2>                <input type="Password" name="Password"                   class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.Password" >                    <br>                  <button type="submit" class="btn btn-block btn-danger">AdminLogin</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                                   </div>                <br>                  </form>            </div>          </div>                <div class="push"></div>    </div>    <br />    <app-footer></app-footer>  </div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">                 <div class="card-body p-4">                  <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <!--  -->                                 <h2 style="text-align:center">Admin name</h2>                  <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">password</h2>                <input type="password" name="password"                   class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >                    <br>                  <button type="submit" class="btn btn-block btn-danger" >AdminLogin</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                                   </div>                <br>                  </form>            </div>          </div>                <div class="push"></div>    </div>    <br />    <app-footer></app-footer>  </div>'
+    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminloginComponent'};
 </script>

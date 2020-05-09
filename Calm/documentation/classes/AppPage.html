@@ -63,6 +63,13 @@
             <code>e2e/src/app.po.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>export class Apppage that returns the baseUrl as Promise</p>
+
+            </p>
 
 
 
@@ -127,14 +134,16 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="8"
-                            class="link-to-prism">e2e/src/app.po.ts:8</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">e2e/src/app.po.ts:12</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
+                    <div class="io-description"><p>gets tittle method that returns an element.</p>
+</div>
 
                     <div class="io-description">
                         <b>Returns : </b>    <code>Promise&lt;string&gt;</code>
@@ -166,8 +175,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="4"
-                            class="link-to-prism">e2e/src/app.po.ts:4</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="6"
+                            class="link-to-prism">e2e/src/app.po.ts:6</a></div>
                 </td>
             </tr>
 
@@ -193,13 +202,17 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { browser, by, element } from &#x27;protractor&#x27;;
-
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { browser, by, element } from &#x27;protractor&#x27;; // imports from a protractor
+/**
+ * export class Apppage that returns the baseUrl as Promise
+ */
 export class AppPage {
   navigateTo(): Promise&lt;unknown&gt; {
     return browser.get(browser.baseUrl) as Promise&lt;unknown&gt;;
   }
-
+  /**
+   *  gets tittle method that returns an element.
+   */
   getTitleText(): Promise&lt;string&gt; {
     return element(by.css(&#x27;app-root .content span&#x27;)).getText() as Promise&lt;string&gt;;
   }

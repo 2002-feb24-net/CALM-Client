@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, NgForm } from '@angular/forms';
-import User from '../models/User';
-
-import { ToastrService } from 'ngx-toastr';
-import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { FormBuilder, Validators, NgForm } from '@angular/forms'; // imports frombuilder, validtors & ngform
+import User from '../models/User'; // imports user from models.
+/**
+ * imports multiple services for user login component.
+ */
+import { ToastrService } from 'ngx-toastr'; // imports toastr
+import { CookieService } from 'ngx-cookie-service'; // imports cookie services from ngx cookie
+import { Router } from '@angular/router'; // imports router
+import { UserService } from '../services/user.service'; // imports user services
+import { HttpErrorResponse } from '@angular/common/http'; // imports an httperror response.
 
 
 /**
@@ -38,7 +40,7 @@ export class LoginComponent implements OnInit {
  *
  * @param formBuilder
  */
-  constructor(private formBuilder: FormBuilder,private router: Router,
+  constructor( private formBuilder: FormBuilder, private router: Router,
     private toastr: ToastrService,public LoginService:UserService,
     private cookieService: CookieService) { }
 
@@ -51,7 +53,7 @@ export class LoginComponent implements OnInit {
     this.resetForm();
   }
   /**
-   * user form that declares its properties. 
+   * user form that declares its properties.
    * @param form
    */
   resetForm(form?: NgForm) {

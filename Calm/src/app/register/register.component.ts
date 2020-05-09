@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import User from '../models/User';
-import { Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
-import { UserService } from '../services/user.service';
-import { ToastrService } from 'ngx-toastr';
-import { CookieService } from 'ngx-cookie-service';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core'; // import from OnInit component.
+import User from '../models/User'; // imports from user model
+import { Router } from '@angular/router'; // imports router
+import { FormBuilder, Validators } from '@angular/forms'; // imports formbuilder
+import { UserService } from '../services/user.service'; // imports from user services
+import { ToastrService } from 'ngx-toastr'; // imports from ngx toastr
+import { CookieService } from 'ngx-cookie-service'; // imports from ngx cookie service
+import { HttpErrorResponse } from '@angular/common/http'; // imports Http error response
 
 /**
  * register component
@@ -26,6 +26,14 @@ export class RegisterComponent implements OnInit {
     text: ['', Validators.required]
   });
 
+  /**
+   * constructor form with its parameters
+   * @param formBuilder
+   * @param toastr
+   * @param router
+   * @param CookieService
+   * @param userApi
+   */
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
       private userApi:UserService) { }
@@ -43,6 +51,10 @@ export class RegisterComponent implements OnInit {
 
   });
   }
+  /**
+   * Asserts errorr handling in the register form.
+   * @param error
+   */
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
@@ -83,6 +95,7 @@ export class RegisterComponent implements OnInit {
      * User form containing property values from API
      */
     const newUsers: User = {
+
       fName: this.CreateUserForm.get('fName')?.value,
       lName: this.CreateUserForm.get('lName')?.value,
       username: this.CreateUserForm.get('username')?.value,
@@ -96,7 +109,7 @@ console.log(newUsers)
     this.userApi.CreateUser(newUsers) // creates new user
       .then(
         User => {
-          if (this.error) {
+          if (this.error) { //conditinal statement that checks for errors in register component.
 
            this.toastr.error('User Register', 'Error');
 
