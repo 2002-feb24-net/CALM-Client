@@ -42,4 +42,8 @@ beforeEach(async(() => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should do on initialize', () => {
+    component.ngOnInit();
+    expect(component).toBeTruthy();
+  });
 });

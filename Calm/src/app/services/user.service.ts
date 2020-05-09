@@ -1,11 +1,8 @@
-
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders,HttpRequest, } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import User from '../models/User';
 import { CookieService } from 'ngx-cookie-service';
-
-
 /**
  * root injection provided and exported user services
  */
@@ -22,16 +19,12 @@ export class UserService {
   formData:User;
   constructor(private http: HttpClient,private CookieService: CookieService) {
 
-     // header settings using string.
-
-  // header settings using string.
-
-
     this.Url = environment.ApiBaseUrl;
     const headerSettings: { [name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
 
   }
+
 
   /**
  * creats users using the api url
@@ -43,18 +36,13 @@ export class UserService {
   }
 
 
-  /**
-   * admin method creation with its parameters.
-   * @param User
-   */
-
   CreateAdmin(User: User) {
     const username =this.CookieService.get('username');
     const password =this.CookieService.get('password');
     return this.http.post<User>(`${this.Url}/api/Admin/${username}/${password}`, User)
     .toPromise();
   }
-
+  
   /** gets users from using api url.
    * @param User
    */
@@ -70,7 +58,6 @@ export class UserService {
     .toPromise();
   }
 
-
   refreshList(){
     this.http.get<User[]>(`${this.Url}/api/Users`)
     .toPromise()
@@ -81,4 +68,5 @@ export class UserService {
     return this.http.delete<User>(`${this.Url}/api/Users/`+ username +"/"+ password, { headers: this.header });
   }
 
+  
 }

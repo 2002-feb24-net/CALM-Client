@@ -8,6 +8,7 @@ import { TipsPageComponent } from './tips-page.component';
 /**
  * generated method that descripts the tips page component.
  */
+
 describe('TipsPageComponent', () => {
   let component: TipsPageComponent;
   let fixture: ComponentFixture<TipsPageComponent>;
