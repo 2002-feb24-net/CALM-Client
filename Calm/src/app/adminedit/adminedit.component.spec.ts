@@ -3,7 +3,7 @@ import { FormBuilder} from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AdmineditComponent } from './adminedit.component';
 
@@ -29,4 +29,13 @@ describe('AdmineditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should do on initialize', () => {
+    component.ngOnInit();
+    expect(component).toBeTruthy();
+  });
+  it('should create admin ', () => {
+    component.CreateAdmin();
+    expect(component).toBeTruthy();
+  });
+ 
 });

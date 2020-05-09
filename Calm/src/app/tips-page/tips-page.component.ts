@@ -24,6 +24,7 @@ export class TipsPageComponent implements OnInit {
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.userApi.refreshList();
+   
   }
 
 }

@@ -33,4 +33,8 @@ describe('EventsService', () => {
   it('should be created', () => {
   expect(service).toBeTruthy();
   });
+  it('should refresh events', () => {
+    service.refreshevents();
+    expect(service).toBeTruthy();
+    });
 });
