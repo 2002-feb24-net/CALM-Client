@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 /**
  * imports tips page compoent
  */
+
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { TipsPageComponent } from './tips-page.component';
 /**
  * generated method that descripts the tips page component.
@@ -14,7 +16,8 @@ describe('TipsPageComponent', () => {
  */
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TipsPageComponent ]
+      declarations: [ TipsPageComponent ],
+      providers: [ HttpClient, HttpHandler],
     })
     .compileComponents();
   }));
