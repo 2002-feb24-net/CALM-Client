@@ -17,8 +17,7 @@ import { HttpErrorResponse } from '@angular/common/http'; // imports an httperro
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
 
@@ -61,11 +60,11 @@ export class LoginComponent implements OnInit {
     if (form != null)
       form.reset();
     this.LoginService.formData = {
-      id: 0,
       fName: '',
       lName: '',
       username: '',
       password:'',
+      city:'',
       isAdmin: false
     }
   }
@@ -79,7 +78,6 @@ export class LoginComponent implements OnInit {
            this.toastr.info('Get By Id successfully', 'Get user by id');
            this.user = user;
            console.log(user);
-           this.cookieService.set('User',`${this.user.id}`);
            this.cookieService.set('username',`${this.user.username}`);
 
        this.router.navigate(['/support-groups']);

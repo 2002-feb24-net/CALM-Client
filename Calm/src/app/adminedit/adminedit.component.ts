@@ -20,8 +20,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-adminedit',
-  templateUrl: './adminedit.component.html',
-  styleUrls: ['./adminedit.component.css']
+  templateUrl: './adminedit.component.html'
 })
 export class AdmineditComponent implements OnInit {
 
@@ -51,6 +50,7 @@ export class AdmineditComponent implements OnInit {
       fName: ['', Validators.required],
       lName: ['', Validators.required],
       username: ['', Validators.required],
+      city: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -101,6 +101,7 @@ export class AdmineditComponent implements OnInit {
         lName: this.CreateAdminForm.get('lName')?.value,
         username: this.CreateAdminForm.get('username')?.value,
         password: this.CreateAdminForm.get('password')?.value,
+        city: this.CreateAdminForm.get('city')?.value,
         isAdmin: true,
 
       };

@@ -5,8 +5,8 @@ import User from 'src/app/models/User';
 
 @Component({
   selector: 'app-userview',
-  templateUrl: './userview.component.html',
-  styleUrls: ['./userview.component.css']
+  templateUrl: './userview.component.html'
+
 })
 export class UserviewComponent implements OnInit {
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'; // imports component, onInit
 
-import { CookieService } from 'ngx-cookie-service'; // importing cookie service as ngx
+import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../services/user.service';
 
 /**
  * Tips-page Component.
@@ -8,21 +9,21 @@ import { CookieService } from 'ngx-cookie-service'; // importing cookie service 
 
 @Component({
   selector: 'app-tips-page',
-  templateUrl: './tips-page.component.html',
-  styleUrls: ['./tips-page.component.css']
+  templateUrl: './tips-page.component.html'
 })
 export class TipsPageComponent implements OnInit {
 
 /**
  * constructor that contains a cookie service
  */
-  constructor( private cookieService: CookieService) { }
+  constructor( private cookieService: CookieService, public userApi: UserService) { }
 
 /**
  * Method that returns Nothiing.
  */
   ngOnInit(): void {
     this.cookieService.deleteAll();
+    this.userApi.refreshList();
   }
 
 }

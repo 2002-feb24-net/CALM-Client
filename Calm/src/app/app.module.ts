@@ -41,8 +41,10 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 import { UserService } from './services/user.service';
 import { UserviewComponent } from './adminedit/userview/userview.component';
-import { EventsService } from './services/events.service';
 
+import { ProfileComponent } from './profile/profile.component';
+
+import { EventsService } from './services/events.service';
 
 
 
@@ -61,7 +63,7 @@ import { EventsService } from './services/events.service';
     AdminloginComponent,
     AdmineditComponent,
     UserviewComponent,
-
+    ProfileComponent
   ],
   imports: [
 
@@ -70,8 +72,6 @@ import { EventsService } from './services/events.service';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    //DynamicTestModule,
-
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([])

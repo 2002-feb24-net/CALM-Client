@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 //import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 /**

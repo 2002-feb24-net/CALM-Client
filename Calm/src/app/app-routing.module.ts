@@ -15,6 +15,7 @@ import { QuestionsComponent } from './questions/questions.component'; // imports
 
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
+import { ProfileComponent } from './profile/profile.component';
 /**
  * routing paths for each component.
  */
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'questions', component: QuestionsComponent },
   { path: 'support-groups', component: SupportGroupsComponent },
   { path: 'notfound', component: NotfoundComponent },
-];
+  { path: 'profile', component: ProfileComponent }
+]
 /**
  * imports and exports of Router
  */
