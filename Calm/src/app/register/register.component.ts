@@ -13,8 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  templateUrl: './register.component.html'
 })
 /**
  * exports Register component.
@@ -39,6 +38,7 @@ export class RegisterComponent implements OnInit {
       fName: ['', Validators.required],
       lName: ['', Validators.required],
       username: ['', Validators.required],
+      city:['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -86,9 +86,9 @@ export class RegisterComponent implements OnInit {
       fName: this.CreateUserForm.get('fName')?.value,
       lName: this.CreateUserForm.get('lName')?.value,
       username: this.CreateUserForm.get('username')?.value,
+      city: this.CreateUserForm.get('city')?.value,
       password: this.CreateUserForm.get('password')?.value,
-
-  isAdmin: false
+      isAdmin: false
 
     };
 console.log(newUsers)

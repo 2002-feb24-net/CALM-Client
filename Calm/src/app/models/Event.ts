@@ -5,6 +5,7 @@ export default interface Event {
     title:string;  
     occurrenceData:string;  
     organizer:User[];  
-    attendees:string;  
+    attendees:string;
+    city:string;  
  
 }

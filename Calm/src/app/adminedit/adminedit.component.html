@@ -36,6 +36,13 @@
                                     <div *ngIf="f.username.errors.required">Name is required</div>
                                 </div>
                         </div>
+                        <div class="input-group mb-3">City:
+                            <input type="text" class="form-control sty1"  placeholder="Insert city" formControlName="city"
+                                required [ngClass]="{ 'is-invalid': submitted && f.city.errors}">
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">Name is required</div>
+                                </div>
+                        </div>
                         <div class="input-group mb-3"> password:
                             <input type="password" class="form-control sty1"  placeholder="Insert 6 char password"
                                 formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors}" >
@@ -67,4 +74,3 @@
 </div>
 <br />
 <app-footer></app-footer>
-

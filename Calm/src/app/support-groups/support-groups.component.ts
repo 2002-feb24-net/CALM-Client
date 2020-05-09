@@ -8,11 +8,10 @@ import { UserService } from '../services/user.service';
  */
 @Component({
   selector: 'app-support-groups',
-  templateUrl: './support-groups.component.html',
-  styleUrls: ['./support-groups.component.css']
+  templateUrl: './support-groups.component.html'
 })
 export class SupportGroupsComponent implements OnInit {
-/**
+/*
  * @ignore
  */
   constructor(public LoginService:UserService,

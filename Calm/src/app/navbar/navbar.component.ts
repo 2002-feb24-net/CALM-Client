@@ -3,8 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  templateUrl: './navbar.component.html'
 })
 export class NavbarComponent implements OnInit {
 

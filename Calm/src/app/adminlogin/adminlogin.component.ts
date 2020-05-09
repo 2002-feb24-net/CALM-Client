@@ -12,8 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
  */
 @Component({
   selector: 'app-adminlogin',
-  templateUrl: './adminlogin.component.html',
-  styleUrls: ['./adminlogin.component.css']
+  templateUrl: './adminlogin.component.html'
 })
 export class AdminloginComponent implements OnInit {
   user : User;
@@ -46,11 +45,12 @@ export class AdminloginComponent implements OnInit {
     if (form != null)
       form.reset();
     this.LoginService.formData = {
-      id: 0,
+  
       fName: '',
       lName: '',
       username: '',
       password:'',
+      city:'',
       isAdmin: false,
     }
   }
@@ -64,7 +64,6 @@ export class AdminloginComponent implements OnInit {
            this.toastr.info('Get By id successfully', 'Get user by id');
            this.user = user;
            console.log(user);
-           this.cookieService.set('User',`${this.user.id}`);
            this.cookieService.set('username',`${this.user.username}`);
            this.cookieService.set('password',`${this.user.password}`);
            console.log(`${this.user.password}`)

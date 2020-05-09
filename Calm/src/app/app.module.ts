@@ -34,6 +34,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmineditComponent } from './adminedit/adminedit.component';
 import { UserService } from './services/user.service';
 import { UserviewComponent } from './adminedit/userview/userview.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -51,7 +52,8 @@ import { UserviewComponent } from './adminedit/userview/userview.component';
     QuestionsComponent,
     AdminloginComponent,
     AdmineditComponent,
-    UserviewComponent
+    UserviewComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
