@@ -13,6 +13,7 @@ export class UserService {
   Url: string;
   header: any;
   list: User[];
+  cities: Array<string>;
 /**
  * user form with a private Http client.
  */
@@ -58,14 +59,31 @@ export class UserService {
     .toPromise();
   }
 
+  getUsersBycookie(){
+    const username =this.CookieService.get('username');
+    const password =this.CookieService.get('password');
+    return this.http.get<User>(`${this.Url}/api/Users/${username}/${password}`)
+    .toPromise();
+  }
   refreshList(){
     this.http.get<User[]>(`${this.Url}/api/Users`)
     .toPromise()
     .then(res => this.list = res as User[]);
   }
 
+  refreshMap(){
+ return   this.http.get<Array<string>>(`${this.Url}/api/Map`)
+    .toPromise()
+  }
+  
   deleteUser(username: string,password: string) {
     return this.http.delete<User>(`${this.Url}/api/Users/`+ username +"/"+ password, { headers: this.header });
+  }
+
+  putUser() {
+    const username =this.CookieService.get('username');
+    const password =this.CookieService.get('password');
+    return this.http.put<User>(`${this.Url}api/Users/${username}/${password}`,this.formData)
   }
 
   

@@ -25,12 +25,13 @@
                                 </div>
                         </div>
                         <div class="input-group mb-3">City:
-                            <input type="text" class="form-control sty1"  placeholder="Insert city" formControlName="city"
-                                required [ngClass]="{ 'is-invalid': submitted && f.city.errors}">
-                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                                    <div *ngIf="f.city.errors.required">Name is required</div>
-                                </div>
-                        </div>
+                            <select style="background-color:blueviolet;" (change)="onCitySelect($event)">
+                            <option *ngFor="let city of this.cities" 
+                            [value]="city" >
+                          {{city}}</option>
+                            </select>
+                        
+                        </div> 
                         <div class="input-group mb-3">User Name:
                             <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"
                                 required [ngClass]="{ 'is-invalid': submitted && f.username.errors}">

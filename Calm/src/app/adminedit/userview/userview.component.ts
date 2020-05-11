@@ -16,9 +16,7 @@ export class UserviewComponent implements OnInit {
     this.userApi.refreshList();
   }
 
-  populateForm(u: User) {
-    this.userApi.formData = Object.assign({}, u);
-  }
+ 
 
   onDelete(username,password) {
     if (confirm('Are you sure to delete this record ?')) {
