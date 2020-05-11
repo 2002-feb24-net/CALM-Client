@@ -37,5 +37,5 @@ describe('AdmineditComponent', () => {
     component.CreateAdmin();
     expect(component).toBeTruthy();
   });
- 
+
 });

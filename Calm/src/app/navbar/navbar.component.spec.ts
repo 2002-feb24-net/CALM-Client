@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
  */
 import { NavbarComponent } from './navbar.component';
 /**
- * navigation bar description. 
+ * navigation bar description.
  */
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -30,6 +30,10 @@ describe('NavbarComponent', () => {
  * Navigation bar component set to be true.
  */
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should do on initialize', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });
