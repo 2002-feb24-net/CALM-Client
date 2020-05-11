@@ -4,14 +4,14 @@
         <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Organizer</th></thead>
           <tr *ngFor="let e of eventApi.list">
             <td (click)="populateForm(e)">{{e.title}}</td>
-            <td (click)="populateForm(e)">{{e.occurrenceData}}</td> 
-            <td (click)="populateForm(e)">{{e.city}}</td> 
+            <td (click)="populateForm(e)">{{e.occurrenceData}}</td>
+            <td (click)="populateForm(e)">{{e.city}}</td>
             <td (click)="populateForm(e)">{{e.organizer.username}}</td>
-           
-          
+
+
           </tr>
-          
-      
+
+
         </table>
         <p [hidden]="!show">
             Show this only if "show" is true
