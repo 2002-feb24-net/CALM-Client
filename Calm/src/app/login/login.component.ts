@@ -79,8 +79,8 @@ export class LoginComponent implements OnInit {
            this.user = user;
            console.log(user);
            this.cookieService.set('username',`${this.user.username}`);
-
-       this.router.navigate(['/support-groups']);
+           this.cookieService.set('password',`${this.user.password}`);
+           this.router.navigate(['/support-groups']);
 
 
          },

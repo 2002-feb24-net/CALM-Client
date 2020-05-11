@@ -37,7 +37,4 @@ export class EventsComponent implements OnInit {
     this.shownotlogged = true;
   }
 
-  populateForm(e: Event) {
-    this.eventApi.formData = Object.assign({}, e);
-  }
 }

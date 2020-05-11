@@ -1,13 +1,11 @@
 <table class="table table-hover table-dark"><caption>users</caption>
-    <thead><th scope="col">City/th><th scope="col">name</th><th scope="col">isAdmin</th></thead>
+    <thead><th scope="col">City</th><th scope="col">name</th><th scope="col">Admin</th></thead>
       <tr *ngFor="let u of userApi.list">
-        <td (click)="populateForm(u)">{{u.city}}</td>  
-        <td (click)="populateForm(u)">{{u.username}}</td>  
-        <td (click)="populateForm(u)">{{u.isAdmin}}</td>
+        <td>{{u.city}}</td>  
+        <td>{{u.username}}</td>  
+        <td>{{u.isAdmin}}</td>
        
-        <td>
-          <em class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(u.username,u.password)"></em>
-        </td>
+       
       </tr>
       
   

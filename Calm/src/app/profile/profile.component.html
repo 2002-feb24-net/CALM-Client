@@ -1,1 +1,58 @@
-{{data}}
+<app-navbar></app-navbar>
+<div class="pt-3 px-4" style="min-height:450px;">
+   
+
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+         
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text bg-white">
+                    City <em class="fas fa-home" [class.green-icon]="city.valid" [class.red-icon]="city.invalid && city.touched"></em>
+                  </div>
+                </div>
+                <input name="city" #city="ngModel" [(ngModel)]="user.city" class="form-control"
+                  placeholder="city" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text bg-white">
+                    First Name <em class="fas fa-user-circle"  [class.green-icon]="fName.valid" [class.red-icon]="fName.invalid && fName.touched"></em>
+                  </div>
+                </div>
+                <input name="fName" #fName="ngModel" [(ngModel)]="user.fName" 
+                class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text bg-white">
+                    Last Name <em class="fas fa-user-circle"  [class.green-icon]="lName.valid" [class.red-icon]="lName.invalid && lName.touched"></em>
+                    </div>
+                  </div>
+                  <input name="lName" #lName="ngModel" [(ngModel)]="user.lName" 
+                  class="form-control">
+                </div>
+              </div>
+             
+            
+            
+            
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid"><em class="fas fa-database"></em> Update</button>
+            </div>
+          </form>
+
+
+
+        <div>
+            <div *ngIf="error">  {{errorMessage}} </div> 
+          
+        </div>
+    <div class="push"></div>
+</div>
+<br />
+<app-footer></app-footer>

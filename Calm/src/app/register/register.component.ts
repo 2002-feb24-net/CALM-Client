@@ -20,8 +20,10 @@ import { HttpErrorResponse } from '@angular/common/http'; // imports Http error 
  */
 export class RegisterComponent implements OnInit {
   User: User[] = [];
+  value: string;
   error: string | undefined; // error handling implementation
   submitted = false;
+  cities: Array<string>;
   CreateUserForm = this.formBuilder.group({
     text: ['', Validators.required]
   });
@@ -36,20 +38,24 @@ export class RegisterComponent implements OnInit {
    */
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
      private router: Router,  private CookieService: CookieService,
-      private userApi:UserService) { }
+      public userApi:UserService) { }
 /**
  * create user form that validates user properties
  */
-  ngOnInit(): void {
+  ngOnInit() {
+    this.refresh()
+   
+ 
     this.CookieService.deleteAll();  // cookie service injected.
     this.CreateUserForm = this.formBuilder.group({
       fName: ['', Validators.required],
       lName: ['', Validators.required],
       username: ['', Validators.required],
-      city:['', Validators.required],
+ 
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
+  
   }
   /**
    * Asserts errorr handling in the register form.
@@ -61,6 +67,16 @@ export class RegisterComponent implements OnInit {
     } else {
       this.error = `Backend returned code ${error.status}, body was: ${error.error}`; //If the response status code was an error then display said error
     }
+  }
+
+  refresh(){
+    return this.userApi.refreshMap()
+    .then(
+      cities => {
+        this.cities= cities;
+        console.log(this.cities)
+      })
+ 
   }
   resetError() {
     this.error = undefined; //clears error message
@@ -89,6 +105,11 @@ export class RegisterComponent implements OnInit {
   //       }
   //     );
   // }
+
+  onCitySelect(event) {
+    this.value= event.target.value;
+    console.log(this.value)
+}
   CreateUser() {
     this.submitted = true;
     /**
@@ -99,7 +120,7 @@ export class RegisterComponent implements OnInit {
       fName: this.CreateUserForm.get('fName')?.value,
       lName: this.CreateUserForm.get('lName')?.value,
       username: this.CreateUserForm.get('username')?.value,
-      city: this.CreateUserForm.get('city')?.value,
+      city: this.value,
       password: this.CreateUserForm.get('password')?.value,
       isAdmin: false
 

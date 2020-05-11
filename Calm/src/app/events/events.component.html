@@ -3,12 +3,13 @@
     <table class="table table-hover table-dark"><caption>events</caption>
         <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Organizer</th></thead>
           <tr *ngFor="let e of eventApi.list">
-            <td (click)="populateForm(e)">{{e.title}}</td>
-            <td (click)="populateForm(e)">{{e.occurrenceData}}</td>
-            <td (click)="populateForm(e)">{{e.city}}</td>
-            <td (click)="populateForm(e)">{{e.organizer.username}}</td>
 
-
+            <td >{{e.title}}</td>
+            <td >{{e.occurrenceData}}</td> 
+            <td >{{e.city}}</td> 
+            <td >{{e.organizer.username}}</td>
+           
+ 
           </tr>
 
 
