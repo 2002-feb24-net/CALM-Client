@@ -31,9 +31,13 @@ describe('TipsPageComponent', () => {
     fixture.detectChanges();
   });
 /**
- * created tips page component set to be true. 
+ * created tips page component set to be true.
  */
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should do on initialize', () => {
+    component.ngOnInit();
     expect(component).toBeTruthy();
   });
 });
