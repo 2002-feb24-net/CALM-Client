@@ -83,7 +83,7 @@ export class UserService {
   updateUser(User: User) {
     const username =this.CookieService.get('username');
     const password =this.CookieService.get('password');
-    return this.http.put<User>(`${this.Url}api/Users/${username}/${password}`,User).toPromise()
+    return this.http.put<User>(`${this.Url}/api/Users/${username}/${password}`, User).toPromise()
   }
 
   

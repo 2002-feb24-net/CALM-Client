@@ -37,7 +37,7 @@ export class EventsService {
   EventTitle(title: string){
     const username =this.CookieService.get('username');
     const password =this.CookieService.get('password');
-    return this.http.post<string>(`${this.Url}api/Gathering/${username}/${password}/`+ title, title)
+    return this.http.post<string>(`${this.Url}/api/Gathering/${username}/${password}/`+ title, title)
     .toPromise();
   }
 
