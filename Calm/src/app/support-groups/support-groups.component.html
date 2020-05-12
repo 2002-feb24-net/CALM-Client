@@ -3,12 +3,12 @@
   <table class="table table-hover table-dark"><caption>Support groups</caption>
       <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Details</th><th scope="col">Organizer</th></thead>
         <tr *ngFor="let e of eventApi.list" >
-          
+
           <td >{{e.title}}</td>
-          <td >{{e.occurrenceData}}</td> 
-          <td >{{e.city}}</td> 
-          <td >{{e.details}}</td> 
-          <td >{{e.organizer.username}}</td>
+          <td >{{e.occurrenceData}}</td>
+          <td >{{e.city}}</td>
+          <td >{{e.details}}</td>
+        
         </tr>
       </table>
     <p [hidden]="!show">
@@ -17,5 +17,5 @@
 <div class="push"></div>
 </div>
 <br />
-<app-footer></app-footer> 
+<app-footer></app-footer>
 

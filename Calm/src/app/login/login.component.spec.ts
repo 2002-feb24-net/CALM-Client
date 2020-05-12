@@ -42,10 +42,17 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('should do on initialize', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
-  
+  it('form invalid when empty', () => {
+    expect(component.UserForm.valid).toBeFalsy();
+  });
+  // it('isAdmin field false', () => {
+  //   let isAdmin = component.UserForm.controls['isAdmin'];
+  //   expect(isAdmin.valid).toBeFalse();
+  // });
+
 });
