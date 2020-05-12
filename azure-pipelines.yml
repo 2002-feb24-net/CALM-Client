@@ -59,6 +59,9 @@ stages:
     - script: npm ci
       workingDirectory: $(appDir)
       displayName: npm install
+      
+    - script: npm install -g typescript
+      displayName: npm install -g typescript
 
     - task: SonarCloudPrepare@1
       inputs:
