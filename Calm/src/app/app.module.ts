@@ -46,6 +46,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 import { EventsService } from './services/events.service';
 import { AddgatheringComponent } from './adminedit/addgathering/addgathering.component';
+import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
 
 
 
@@ -65,7 +66,8 @@ import { AddgatheringComponent } from './adminedit/addgathering/addgathering.com
     AdmineditComponent,
     UserviewComponent,
     ProfileComponent,
-    AddgatheringComponent
+    AddgatheringComponent,
+    ViewmyselfComponent
   ],
   imports: [
 

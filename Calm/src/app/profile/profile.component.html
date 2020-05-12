@@ -1,51 +1,55 @@
 <app-navbar></app-navbar>
 <div class="pt-3 px-4" style="min-height:450px;">
-   
-  <div>
-    City: {{user.city}}
-    <br>
-    UserName: {{user.username}}
-  </div>
-
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <app-viewmyself></app-viewmyself>
+        <form [formGroup]="updateUserForm" (ngSubmit)="updateUser()">
          
             
-            <div class="form-group">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-white">
-                    First Name <em class="fas fa-user-circle"  [class.green-icon]="fName.valid" [class.red-icon]="fName.invalid && fName.touched"></em>
-                  </div>
+          <div class="input-group mb-3">First Name:
+            <input type="text" class="form-control sty1"  placeholder="First Name" formControlName="fName"
+                required [ngClass]="{ 'is-invalid': submitted && f.fName.errors}">
+                <div *ngIf="submitted && f.fName.errors" class="invalid-feedback">
+                    <div *ngIf="f.fName.errors.required">Name is required</div>
                 </div>
-                <input name="fName" #fName="ngModel" [(ngModel)]="user.fName" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text bg-white">
-                    Last Name <em class="fas fa-user-circle"  [class.green-icon]="lName.valid" [class.red-icon]="lName.invalid && lName.touched"></em>
-                    </div>
-                  </div>
-                  <input name="lName" #lName="ngModel" [(ngModel)]="user.lName" 
-                  class="form-control">
-                </div>
-              </div>
-             
-            
-            
-            
-            <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid"><em class="fas fa-database"></em> Update</button>
-            </div>
-          </form>
-
-
-
-        <div>
-            <div *ngIf="error">  {{errorMessage}} </div> 
-          
         </div>
+        <div class="input-group mb-3">Last Name:
+            <input type="text" class="form-control sty1"  placeholder="Last Name" formControlName="lName"
+                required [ngClass]="{ 'is-invalid': submitted && f.lName.errors}">
+                <div *ngIf="submitted && f.lName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lName.errors.required">Name is required</div>
+                </div>
+        </div>
+        <div class="input-group mb-3">City :
+            <select style="background-color:blueviolet;" (change)="onCitySelect($event)">
+            <option *ngFor="let city of this.cities" 
+            [value]="city" >
+          {{city}}</option>
+            </select>
+        
+        </div> 
+        <div class="input-group mb-3">User Name:
+            <input type="text" class="form-control sty1"  placeholder="Insert Name" formControlName="username"
+                required [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Name is required</div>
+                </div>
+        </div>
+        <div class="input-group mb-3"> password:
+            <input type="Password" class="form-control sty1"  placeholder="Insert 6 char password"
+                formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors}" >
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">password is required</div>
+                </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-block btn-success" [disabled]="!updateUserForm.valid" >
+            Register</button>
+    </form>
+    <div *ngIf="error" class="error">
+        {{ error }}
+    </div>
+
+
     <div class="push"></div>
 </div>
 <br />
