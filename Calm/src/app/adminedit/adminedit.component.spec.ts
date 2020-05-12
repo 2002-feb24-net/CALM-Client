@@ -37,5 +37,8 @@ describe('AdmineditComponent', () => {
     component.CreateAdmin();
     expect(component).toBeTruthy();
   });
+  it('form invalid when empty', () => {
+    expect(component.CreateAdminForm.valid).toBeFalsy();
+  });
 
 });
