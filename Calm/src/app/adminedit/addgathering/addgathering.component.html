@@ -1,0 +1,57 @@
+<div class="container" style="padding-top:40px;">
+   
+
+        <form [formGroup]="CreateGatheringForm" (ngSubmit)="CreateGathering()" >
+
+
+            <h1 style="text-align:center">Add an event or Group</h1>
+
+
+         <div class="input-group mb-3">Title:
+             <input type="text" class="form-control sty1"  placeholder="Title" formControlName="title"
+                 required [ngClass]="{ 'is-invalid': submitted && f.title.errors}">
+                 <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                     <div *ngIf="f.title.errors.required">Title is required</div>
+                 </div>
+         </div>
+         <div class="input-group mb-3">Data:
+             <input type="text" class="form-control sty1"  placeholder="Data" formControlName="occurrenceData"
+                 required [ngClass]="{ 'is-invalid': submitted && f.occurrenceData.errors}">
+                 <div *ngIf="submitted && f.occurrenceData.errors" class="invalid-feedback">
+                     <div *ngIf="f.occurrenceData.errors.required">Data is required</div>
+                 </div>
+         </div>
+         <div class="input-group mb-3">Details:
+             <input type="text" class="form-control sty1"  placeholder="Details" formControlName="details"
+                 required [ngClass]="{ 'is-invalid': submitted && f.details.errors}">
+                 <div *ngIf="submitted && f.details.errors" class="invalid-feedback">
+                     <div *ngIf="f.details.errors.required">Detail required</div>
+                 </div>
+         </div>
+         <div class="input-group mb-3">City:
+             <select style="background-color:blueviolet;" (change)="onCitySelect($event)">
+             <option *ngFor="let city of this.cities" 
+             [value]="city" >
+           {{city}}</option>
+             </select>
+         
+         </div> 
+         <div class="input-group mb-3">Event or Group:
+             <input type="radio" value="true" class="form-control sty1" 
+                 formControlName="isEvent"  >Event
+                 <input type="radio" value="false" class="form-control sty1" 
+                 formControlName="isEvent"  >Group
+         </div>
+
+
+         <button type="submit" class="btn btn-block btn-success" [disabled]="!CreateGatheringForm.valid" >
+             Add</button><br>
+     </form>
+     <div *ngIf="error" class="error">
+         {{ error }}
+     </div>
+
+
+
+
+    </div>
