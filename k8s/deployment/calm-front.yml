@@ -20,5 +20,6 @@ spec:
       containers:
       - name: calm-front
         image: brendanngoran/calm:1.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 80

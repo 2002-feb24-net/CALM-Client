@@ -46,4 +46,7 @@ beforeEach(async(() => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
+  it('form invalid when empty', () => {
+    expect(component.UserForm.valid).toBeFalsy();
+  });
 });
