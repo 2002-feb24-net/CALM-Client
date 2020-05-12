@@ -60,8 +60,8 @@ stages:
       workingDirectory: $(appDir)
       displayName: npm install
 
-    - script: npm install -g typescript
-      displayName: npm install -g typescript
+    - script: npm rm @compodoc/compodoc
+      displayName: npm rm @compodoc/compodoc
 
     - task: SonarCloudPrepare@1
       inputs:
