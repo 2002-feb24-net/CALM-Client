@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (this.user.username == " ")
    {
-    this.resetForm(form);
+  
     this.toastr.info('Invalid User', 'User Does not exist');
    }
    else
@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
   updateRecord(form: NgForm) {
     this.userApi.putUser().subscribe(
       res => {
-        this.resetForm(form);
+      
         this.toastr.info('Submitted successfully', 'user updated');
     
       },
@@ -61,17 +61,6 @@ export class ProfileComponent implements OnInit {
     )
   }
 
-  resetForm(form?: NgForm) {
-    if (form != null)
-      form.form.reset();
-    this.userApi.formData = {
-  lName: '',
-  fName:'',
-  password:'',
-  username: '',
-  city:'',
-  isAdmin: false,
-    }
-  }
+ 
 
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
+import Gathering from '../models/Gathering';
 /**
  * injectable method that exports event service
  */
@@ -11,8 +12,8 @@ import { environment } from 'src/environments/environment';
 export class EventsService {
   Url: string;
   header: any;
-  list: Event[];
-  formData:Event;
+  list: Gathering[];
+  formData:Gathering;
 /**
  * @ignore
  */
@@ -22,14 +23,29 @@ export class EventsService {
   this.header = new HttpHeaders(headerSettings);
   }
   refreshevents(){
-    this.http.get<Event[]>(`${this.Url}/api/Gathering/events`)
+    this.http.get<Gathering[]>(`${this.Url}/api/Gathering/events`)
     .toPromise()
-    .then(res => this.list = res as Event[]);
+    .then(res => this.list = res as Gathering[]);
   }
 
   refreshgroups(){
-    this.http.get<Event[]>(`${this.Url}/api/Gathering/groups`)
+    this.http.get<Gathering[]>(`${this.Url}/api/Gathering/groups`)
     .toPromise()
-    .then(res => this.list = res as Event[]);
+    .then(res => this.list = res as Gathering[]);
+  }
+
+  EventTitle(title: string){
+    const username =this.CookieService.get('username');
+    const password =this.CookieService.get('password');
+    return this.http.post<string>(`${this.Url}api/Gathering/${username}/${password}/`+ title, title)
+    .toPromise();
+  }
+
+  CreateGathering(Gathering: Gathering){
+    const username =this.CookieService.get('username');
+    const password =this.CookieService.get('password');
+    return this.http.post<Gathering>(`${this.Url}/api/Gathering/${username}/${password}`, Gathering)
+    .toPromise();
+
   }
 }

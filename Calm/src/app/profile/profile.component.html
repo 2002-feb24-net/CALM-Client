@@ -1,19 +1,15 @@
 <app-navbar></app-navbar>
 <div class="pt-3 px-4" style="min-height:450px;">
    
+  <div>
+    City: {{user.city}}
+    <br>
+    UserName: {{user.username}}
+  </div>
 
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
          
-            <div class="form-group">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text bg-white">
-                    City <em class="fas fa-home" [class.green-icon]="city.valid" [class.red-icon]="city.invalid && city.touched"></em>
-                  </div>
-                </div>
-                <input name="city" #city="ngModel" [(ngModel)]="user.city" class="form-control">
-              </div>
-            </div>
+            
             <div class="form-group">
               <div class="input-group">
                 <div class="input-group-prepend">

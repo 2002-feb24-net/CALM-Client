@@ -37,12 +37,13 @@
                                 </div>
                         </div>
                         <div class="input-group mb-3">City:
-                            <input type="text" class="form-control sty1"  placeholder="Insert city" formControlName="city"
-                                required [ngClass]="{ 'is-invalid': submitted && f.city.errors}">
-                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
-                                    <div *ngIf="f.city.errors.required">Name is required</div>
-                                </div>
-                        </div>
+                            <select style="background-color:blueviolet;" (change)="onCitySelect($event)">
+                            <option *ngFor="let city of this.cities" 
+                            [value]="city" >
+                          {{city}}</option>
+                            </select>
+                        
+                        </div> 
                         <div class="input-group mb-3"> password:
                             <input type="password" class="form-control sty1"  placeholder="Insert 6 char password"
                                 formControlName="password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors}" >
@@ -64,6 +65,13 @@
                 <div *ngIf="showMyContainer">
               
                     <app-userview></app-userview>
+                </div>
+
+                <button type="submit" class="btn btn-block btn-success" (click)="showMyGathering=!showMyGathering">Add a new Gathering</button>
+              
+                <div *ngIf="showMyGathering">
+              
+                    <app-addgathering></app-addgathering>
                 </div>
 
 

@@ -29,8 +29,8 @@ export class AdmineditComponent implements OnInit {
 /**
  * @ignore
  */
-
-
+cities: Array<string>;
+value: string;
   User: User[] = [];
   error: string | undefined; // error handling implementation
   submitted = false;
@@ -42,15 +42,17 @@ export class AdmineditComponent implements OnInit {
      private userApi:UserService) { }
      showMyC: boolean = false;
      showMyContainer: boolean = false;
+     showMyGathering: boolean = false;
 
 
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.refresh()
+    
     this.CreateAdminForm = this.formBuilder.group({
       fName: ['', Validators.required],
       lName: ['', Validators.required],
       username: ['', Validators.required],
-      city: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
@@ -90,6 +92,21 @@ export class AdmineditComponent implements OnInit {
     //       }
     //     );
     // }
+    onCitySelect(event) {
+      this.value= event.target.value;
+      console.log(this.value)
+  }
+
+  
+  refresh(){
+    return this.userApi.refreshMap()
+    .then(
+      cities => {
+        this.cities= cities;
+        console.log(this.cities)
+      })
+ 
+  }
 
     CreateAdmin() {
       this.submitted = true;
@@ -101,7 +118,7 @@ export class AdmineditComponent implements OnInit {
         lName: this.CreateAdminForm.get('lName')?.value,
         username: this.CreateAdminForm.get('username')?.value,
         password: this.CreateAdminForm.get('password')?.value,
-        city: this.CreateAdminForm.get('city')?.value,
+        city:  this.value,
         isAdmin: true,
 
       };

@@ -22,6 +22,7 @@
         <li  [hidden]="!show" class="btn btn-outline-success ">
             <a routerLink="/profile" style=" color:whitesmoke;">Profile</a>
         </li>
+      
         <li class="btn btn-outline-success">
             <a routerLink="/register" style=" color:whitesmoke;" >Register</a>
         </li>
@@ -31,6 +32,9 @@
      
         <li  [hidden]="!show" class="btn btn-outline-success ">
             <a routerLink="/" style=" color:whitesmoke;">Logout</a>
+        </li>
+        <li  [hidden]="!showA" class="btn btn-outline-danger">
+            <a routerLink="/adminedit" style=" color:whitesmoke;">AdminPage</a>
         </li>
         <li  [hidden]="show" class="btn btn-outline-danger">
             <a routerLink="/adminlogin" style=" color:whitesmoke;" >Admin</a>

@@ -66,6 +66,7 @@ export class AdminloginComponent implements OnInit {
            console.log(user);
            this.cookieService.set('username',`${this.user.username}`);
            this.cookieService.set('password',`${this.user.password}`);
+           this.cookieService.set('isAdmin', 'true')
            console.log(`${this.user.password}`)
         
            console.log(`${this.user.username}`)

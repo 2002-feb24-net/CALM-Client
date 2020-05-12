@@ -18,19 +18,19 @@ export class UserviewComponent implements OnInit {
 
  
 
-  onDelete(username,password) {
-    if (confirm('Are you sure to delete this record ?')) {
-      this.userApi.deleteUser(username,password)
-        .subscribe(res => {
+  // onDelete(username,password) {
+  //   if (confirm('Are you sure to delete this record ?')) {
+  //     this.userApi.deleteUser(username,password)
+  //       .subscribe(res => {
   
-          this.userApi.refreshList();
-          this.toastr.warning('Deleted successfully', 'user deleted');
-        },
-          err => {
+  //         this.userApi.refreshList();
+  //         this.toastr.warning('Deleted successfully', 'user deleted');
+  //       },
+  //         err => {
      
-            console.log(err);
-          })
-    }
-    }
+  //           console.log(err);
+  //         })
+  //   }
+  //   }
 
 }

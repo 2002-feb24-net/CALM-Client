@@ -20,8 +20,9 @@ export class NavbarComponent implements OnInit {
      */
 
     data=this.cookieService.get('username');
-
+    admin= this.cookieService.get('isAdmin')
     show: boolean = false;
+    showA: boolean = false;
    ngOnInit(): void {
     // A conditional statement.
      this.show = false;
@@ -30,6 +31,11 @@ export class NavbarComponent implements OnInit {
     }
     else
     this.show = false;
-   }
+   
 
+   this.showA = false;
+   if(this.admin == "true"){
+    this.showA = true;
+       }
+}
 }
