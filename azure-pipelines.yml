@@ -59,7 +59,7 @@ stages:
     - script: npm ci
       workingDirectory: $(appDir)
       displayName: npm install
-      
+
     - script: npm install -g typescript
       displayName: npm install -g typescript
 
@@ -81,9 +81,9 @@ stages:
       continueOnError: true
       displayName: ng test
 
-    # - script: npm run lint
-    #   workingDirectory: $(appDir)
-    #   displayName: ng lint
+    - script: npm run lint
+      workingDirectory: $(appDir)
+      displayName: ng lint
 
     - task: SonarCloudAnalyze@1
       displayName: sonarcloud analysis run
