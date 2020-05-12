@@ -11,8 +11,7 @@
                     City <em class="fas fa-home" [class.green-icon]="city.valid" [class.red-icon]="city.invalid && city.touched"></em>
                   </div>
                 </div>
-                <input name="city" #city="ngModel" [(ngModel)]="user.city" class="form-control"
-                  placeholder="city" required>
+                <input name="city" #city="ngModel" [(ngModel)]="user.city" class="form-control">
               </div>
             </div>
             <div class="form-group">
@@ -22,8 +21,7 @@
                     First Name <em class="fas fa-user-circle"  [class.green-icon]="fName.valid" [class.red-icon]="fName.invalid && fName.touched"></em>
                   </div>
                 </div>
-                <input name="fName" #fName="ngModel" [(ngModel)]="user.fName" 
-                class="form-control">
+                <input name="fName" #fName="ngModel" [(ngModel)]="user.fName" class="form-control">
               </div>
             </div>
             <div class="form-group">

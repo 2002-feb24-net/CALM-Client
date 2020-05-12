@@ -7,5 +7,5 @@ export default interface Event {
     organizer:User[];  
     attendees:string;
     city:string;  
- 
+    isEvent:boolean;
 }

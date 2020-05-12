@@ -21,6 +21,8 @@ export class EventsComponent implements OnInit {
  * @ignore
  */
   ngOnInit(): void {
+
+    
     this.eventApi.refreshevents();
     this.show = false;
     if(this.data != ""){
@@ -37,4 +39,5 @@ export class EventsComponent implements OnInit {
     this.shownotlogged = true;
   }
 
+ 
 }

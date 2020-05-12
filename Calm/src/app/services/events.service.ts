@@ -22,9 +22,14 @@ export class EventsService {
   this.header = new HttpHeaders(headerSettings);
   }
   refreshevents(){
-    this.http.get<Event[]>(`${this.Url}/api/Gathering`)
+    this.http.get<Event[]>(`${this.Url}/api/Gathering/events`)
     .toPromise()
     .then(res => this.list = res as Event[]);
   }
 
+  refreshgroups(){
+    this.http.get<Event[]>(`${this.Url}/api/Gathering/groups`)
+    .toPromise()
+    .then(res => this.list = res as Event[]);
+  }
 }

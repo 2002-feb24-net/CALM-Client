@@ -1,5 +1,15 @@
 <app-navbar></app-navbar>
 <div class="pt-3 px-4" style="min-height:450px;">
+  <table class="table table-hover table-dark"><caption>Support groups</caption>
+      <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Organizer</th></thead>
+        <tr *ngFor="let e of eventApi.list" >
+          
+          <td >{{e.title}}</td>
+          <td >{{e.occurrenceData}}</td> 
+          <td >{{e.city}}</td> 
+          <td >{{e.organizer.username}}</td>
+        </tr>
+      </table>
     <p [hidden]="!show">
         Show this only if "show" is true
       </p>

@@ -17,8 +17,9 @@ export class ProfileComponent implements OnInit {
     private toastr: ToastrService) { }
     error: string | undefined;
     errorMessage:string;
+   
   data=this.cookieService.get('username');
-  ngOnInit(): void {
+  ngOnInit() {
     this.userApi.getUsersBycookie()
     .then(
       user => {
@@ -67,9 +68,9 @@ export class ProfileComponent implements OnInit {
   lName: '',
   fName:'',
   password:'',
-      username: '',
-      city:'',
-      isAdmin: false,
+  username: '',
+  city:'',
+  isAdmin: false,
     }
   }
 
