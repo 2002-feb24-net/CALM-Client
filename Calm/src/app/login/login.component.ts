@@ -73,8 +73,12 @@ export class LoginComponent implements OnInit {
    * @param f
    */
   Login(f: NgForm) {
+   
     return  this.LoginService.getUsersByName().then(
          user => {
+           if(user.username == ' ' || user.password == ' '){
+            this.toastr.warning('Add details', 'No input');
+           }
            this.toastr.info('Get By Id successfully', 'Get user by id');
            this.user = user;
            console.log(user);
