@@ -74,7 +74,7 @@ import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
 
     BrowserModule,
     HttpClientModule,
-    HttpClientTestingModule,
+    //HttpClientTestingModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
