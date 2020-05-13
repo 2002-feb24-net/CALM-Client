@@ -3,7 +3,6 @@ import { EventsService } from '../services/events.service';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Validators, FormBuilder } from '@angular/forms';
-import Gathering from '../models/Gathering';
 /**
  * Event component
  */
@@ -12,7 +11,7 @@ import Gathering from '../models/Gathering';
   templateUrl: './events.component.html'
 })
 export class EventsComponent implements OnInit {
- 
+
 /**
  * @ignore
  */
@@ -35,21 +34,22 @@ export class EventsComponent implements OnInit {
     this.EventTitleForm = this.formBuilder.group({
     title: ['', Validators.required],
   });
-    
+
     this.eventApi.refreshevents();
     this.show = false;
     if(this.data != ""){
  this.show = true;
     }
-    else
+    else{
     this.show = false;
-
+    }
     this.shownotlogged = true;
     if(this.data != ""){
  this.shownotlogged = false;
     }
-    else
+    else{
     this.shownotlogged = true;
+    }
   }
 
   onTitleSelect(event) {
@@ -64,14 +64,14 @@ AddUser(){
   if (confirm('Are you sure to attend this event ?')) {
     this.eventApi.EventTitle(this.title)
       .then(res => {
-       
+
       console.log(this.title)
         this.toastr.warning('added successfully', 'Attending event');
       },
         err => {
-         
+
           console.log(err);
         })
   }}
- 
+
 }

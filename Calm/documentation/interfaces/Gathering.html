@@ -43,7 +43,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>User</li>
+  <li>Gathering</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/models/User.ts</code>
+            <code>src/app/models/Gathering.ts</code>
         </p>
 
 
@@ -79,22 +79,28 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#attendees">attendees</a>
+                                </li>
+                                <li>
                                         <a href="#city">city</a>
                                 </li>
                                 <li>
-                                        <a href="#fName">fName</a>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#details">details</a>
                                 </li>
                                 <li>
-                                        <a href="#isAdmin">isAdmin</a>
+                                        <a href="#isEvent">isEvent</a>
                                 </li>
                                 <li>
-                                        <a href="#lName">lName</a>
+                                        <a href="#occurrenceData">occurrenceData</a>
                                 </li>
                                 <li>
-                                        <a href="#password">password</a>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#organizer">organizer</a>
                                 </li>
                                 <li>
-                                        <a href="#username">username</a>
+                                        <a href="#title">title</a>
                                 </li>
                             </ul>
                         </td>
@@ -107,6 +113,40 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="attendees"></a>
+                                        <span class="name"><b>attendees</b><a href="#attendees"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>attendees:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -140,13 +180,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="fName"></a>
-                                        <span class="name"><b>fName</b><a href="#fName"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="details"></a>
+                                        <span class="name"><b>details</b><a href="#details"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>fName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>details:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -159,6 +199,11 @@
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -169,13 +214,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="isAdmin"></a>
-                                        <span class="name"><b>isAdmin</b><a href="#isAdmin"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="isEvent"></a>
+                                        <span class="name"><b>isEvent</b><a href="#isEvent"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>isAdmin:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                        <code>isEvent:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -198,13 +243,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="lName"></a>
-                                        <span class="name"><b>lName</b><a href="#lName"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="occurrenceData"></a>
+                                        <span class="name"><b>occurrenceData</b><a href="#occurrenceData"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>lName:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>occurrenceData:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -227,13 +272,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="password"></a>
-                                        <span class="name"><b>password</b><a href="#password"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="organizer"></a>
+                                        <span class="name"><b>organizer</b><a href="#organizer"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>password:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>organizer:         <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -241,11 +286,16 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            <i>Type : </i>        <code><a href="../interfaces/User.html" target="_self" >User[]</a></code>
 
                                         </td>
                                     </tr>
 
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
 
 
 
@@ -256,13 +306,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="username"></a>
-                                        <span class="name"><b>username</b><a href="#username"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="title"></a>
+                                        <span class="name"><b>title</b><a href="#title"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>username:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>title:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -286,13 +336,16 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export default interface User {
-    lName:string;  
-    fName:string;  
-    username:string;  
-    password:string;  
-   isAdmin: boolean;
-   city:string;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import User from &#x27;./User&#x27;;
+
+export default interface Gathering {
+    title:string;  
+    occurrenceData:string;  
+    organizer?:User[];  
+    attendees?:string;
+    details?:string;
+    city:string;  
+    isEvent:boolean;
 }
 </code></pre>
     </div>
@@ -321,7 +374,7 @@
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'User.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Gathering.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

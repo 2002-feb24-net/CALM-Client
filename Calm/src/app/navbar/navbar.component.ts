@@ -29,9 +29,9 @@ export class NavbarComponent implements OnInit {
     if(this.data != ""){
  this.show = true;
     }
-    else
-    this.show = false;
-   
+    else{
+    this.show = false;}
+
 
    this.showA = false;
    if(this.admin == "true"){
