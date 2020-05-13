@@ -61,6 +61,7 @@ stages:
       displayName: npm install
 
     - script: npm rm @compodoc/compodoc
+      workingDirectory: $(appDir)
       displayName: npm rm @compodoc/compodoc
 
     - task: SonarCloudPrepare@1
