@@ -1,15 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-import { FormBuilder} from '@angular/forms';
-import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { FormsModule, } from '@angular/forms';
 /**
  * importing event service
  */
 import { EventsService } from './events.service';
-import { NgModule } from '@angular/core';
 
 
 describe('EventsService', () => {
@@ -37,4 +33,9 @@ describe('EventsService', () => {
     service.refreshevents();
     expect(service).toBeTruthy();
     });
+    it('should refresh user groups', () => {
+      service.refreshgroups();
+      expect(service).toBeTruthy();
+    });
+
 });

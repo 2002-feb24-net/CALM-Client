@@ -1,10 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder} from '@angular/forms';
-import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-//import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 /**
  * imports register component
@@ -70,14 +68,14 @@ beforeEach(async(() => {
     let fName = component.CreateUserForm.controls['fName'];
     expect(fName.valid).toBeFalsy();
   });
-  it('city field validity', () => {
-    let city = component.CreateUserForm.controls['city'];
-    expect(city.valid).toBeFalsy();
+  // it('city field validity', () => {
+  //   let city = component.CreateUserForm.controls['city'];
+  //   expect(city.valid).toBeFalsy();
 
-    let errors = {};
-    errors = city.errors || {};
-    expect(errors['required']).toBeTruthy();
-  });
+  //   let errors = {};
+  //   errors = city.errors || {};
+  //   expect(errors['required']).toBeTruthy();
+  // });
   it('username fied validity', () => {
     let username = component.CreateUserForm.controls['username'];
     expect(username.valid).toBeFalsy();
