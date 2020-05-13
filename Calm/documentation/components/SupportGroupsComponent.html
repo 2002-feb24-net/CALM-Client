@@ -313,8 +313,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/support-groups/support-groups.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/support-groups/support-groups.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -352,8 +352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/support-groups/support-groups.component.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/support-groups/support-groups.component.ts:56</a></div>
                 </td>
             </tr>
 
@@ -421,7 +421,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/support-groups/support-groups.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/support-groups/support-groups.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -449,7 +449,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/support-groups/support-groups.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/support-groups/support-groups.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -471,13 +471,13 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
+    text: [&#x27;&#x27;, Validators.required],
   })</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/support-groups/support-groups.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/support-groups/support-groups.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -505,7 +505,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/support-groups/support-groups.component.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/support-groups/support-groups.component.ts:21</a></div>
                             </td>
                         </tr>
 
@@ -537,7 +537,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/support-groups/support-groups.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/support-groups/support-groups.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -569,7 +569,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/support-groups/support-groups.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/support-groups/support-groups.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -596,7 +596,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/support-groups/support-groups.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/support-groups/support-groups.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -623,7 +623,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/support-groups/support-groups.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/support-groups/support-groups.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -649,69 +649,69 @@ import { FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
  */
 @Component({
   selector: &#x27;app-support-groups&#x27;,
-  templateUrl: &#x27;./support-groups.component.html&#x27;
+  templateUrl: &#x27;./support-groups.component.html&#x27;,
 })
 export class SupportGroupsComponent implements OnInit {
-/*
- * @ignore
- */
-  constructor(public LoginService:UserService,
-    public eventApi:EventsService,
+  /*
+   * @ignore
+   */
+  constructor(
+    public LoginService: UserService,
+    public eventApi: EventsService,
     private formBuilder: FormBuilder,
-    private cookieService: CookieService,private toastr: ToastrService) { }
-   data&#x3D;this.cookieService.get(&#x27;username&#x27;);
-   show: boolean &#x3D; false;
-   value: string;
-   title:string;
-   shownotlogged: boolean &#x3D; false;
-   EventTitleForm &#x3D; this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
+    private cookieService: CookieService,
+    private toastr: ToastrService
+  ) {}
+  data &#x3D; this.cookieService.get(&#x27;username&#x27;);
+  show: boolean &#x3D; false;
+  value: string;
+  title: string;
+  shownotlogged: boolean &#x3D; false;
+  EventTitleForm &#x3D; this.formBuilder.group({
+    text: [&#x27;&#x27;, Validators.required],
   });
 
-/**
- * @ignore
- */
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.eventApi.refreshgroups();
     this.show &#x3D; false;
-    if(this.data !&#x3D; &quot;&quot;){
- this.show &#x3D; true;
+    if (this.data !&#x3D; &#x27;&#x27;) {
+      this.show &#x3D; true;
+    } else {
+      this.show &#x3D; false;
     }
-    else
-    this.show &#x3D; false;
 
     this.shownotlogged &#x3D; true;
-    if(this.data !&#x3D; &quot;&quot;){
- this.shownotlogged &#x3D; false;
+    if (this.data !&#x3D; &#x27;&#x27;) {
+      this.shownotlogged &#x3D; false;
+    } else {
+      this.shownotlogged &#x3D; true;
     }
-    else
-    this.shownotlogged &#x3D; true;
   }
 
   onTitleSelect(event) {
-    this.value&#x3D; event.target.value;
-    console.log(this.value)
-}
+    this.value &#x3D; event.target.value;
+    console.log(this.value);
+  }
 
-
-AddUser(){
-   this.title&#x3D; this.value;
-   console.log(this.title)
-  if (confirm(&#x27;Are you sure to join this group ?&#x27;)) {
-    this.eventApi.EventTitle(this.title)
-      .then(res &#x3D;&gt; {
-       
-      console.log(this.title)
-        this.toastr.warning(&#x27;added successfully&#x27;, &#x27;Joined Group&#x27;);
-      },
-        err &#x3D;&gt; {
-         
+  AddUser() {
+    this.title &#x3D; this.value;
+    console.log(this.title);
+    if (confirm(&#x27;Are you sure to join this group ?&#x27;)) {
+      this.eventApi.EventTitle(this.title).then(
+        (res) &#x3D;&gt; {
+          console.log(this.title);
+          this.toastr.warning(&#x27;added successfully&#x27;, &#x27;Joined Group&#x27;);
+        },
+        (err) &#x3D;&gt; {
           console.log(err);
-        })
-  }}
- 
+        }
+      );
+    }
+  }
 }
-
 </code></pre>
     </div>
 

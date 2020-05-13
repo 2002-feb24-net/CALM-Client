@@ -38,10 +38,10 @@ describe('AddgatheringComponent', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
-  // it('should refresh user list', () => {
-  //   component.refresh();
-  //   expect(component).toBeTruthy();
-  // });
+  it('should refresh user list', () => {
+    component.refresh();
+    expect(component).toBeTruthy();
+  });
   it('form invalid when empty', () => {
     expect(component.CreateGatheringForm.valid).toBeFalsy();
   });

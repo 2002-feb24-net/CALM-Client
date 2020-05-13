@@ -40,6 +40,23 @@ describe('AdmineditComponent', () => {
   it('form invalid when empty', () => {
     expect(component.CreateAdminForm.valid).toBeFalsy();
   });
+  it('fName field validity', () => {
+    let fName = component.CreateAdminForm.controls['fName'];
+    expect(fName.valid).toBeFalsy();
+  });
+  it('lName field validity', () => {
+    let lName = component.CreateAdminForm.controls['lName'];
+    expect(lName.valid).toBeFalsy();
+  });
+  it('username field validity', () => {
+    let username = component.CreateAdminForm.controls['username'];
+    expect(username.valid).toBeFalsy();
+  });
+  it('password field validity', () => {
+    let password = component.CreateAdminForm.controls['password'];
+    expect(password.valid).toBeFalsy();
+  });
+
 
   afterEach(() => {
     TestBed.resetTestingModule();

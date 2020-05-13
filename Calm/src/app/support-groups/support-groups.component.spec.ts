@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder} from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 /**
  * imports support group component
  */
@@ -21,7 +19,7 @@ beforeEach(async(() => {
   TestBed.configureTestingModule({
     declarations: [ SupportGroupsComponent ],
     providers: [FormBuilder, HttpClient, HttpHandler],
-    imports: [RouterTestingModule, FormsModule, ToastrModule.forRoot()],
+    imports: [ ToastrModule.forRoot()],
     })
     .compileComponents();
   }));
@@ -39,12 +37,18 @@ beforeEach(async(() => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+/**
+ * test method for OnInit method
+ */
   it('should do on initialize', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
-  
+  // it('should add user', () => {
+  //   component.AddUser();
+  //   expect(component).toBeTruthy();
+  // });
+
   afterEach(() => {
     TestBed.resetTestingModule();
   });

@@ -306,8 +306,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="91"
-                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:91</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:89</a></div>
                 </td>
             </tr>
 
@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -583,7 +583,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/adminlogin/adminlogin.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -632,7 +632,7 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
+    text: [&#x27;&#x27;, Validators.required],
   })</code>
                         </td>
                     </tr>
@@ -665,90 +665,87 @@ import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
  */
 @Component({
   selector: &#x27;app-adminlogin&#x27;,
-  templateUrl: &#x27;./adminlogin.component.html&#x27;
+  templateUrl: &#x27;./adminlogin.component.html&#x27;,
 })
 export class AdminloginComponent implements OnInit {
-  user : User;
+  user: User;
   error: string | undefined;
 
   /**
    * error message form for user.
    */
-  errorMessage:string;
+  errorMessage: string;
   UserForm &#x3D; this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
-  })
-  constructor(private formBuilder: FormBuilder,
+    text: [&#x27;&#x27;, Validators.required],
+  });
+  constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private toastr: ToastrService,
-    public LoginService:UserService,
-    private cookieService: CookieService,) { }
-    /**
-     * @ignore
-     */
+    public LoginService: UserService,
+    private cookieService: CookieService
+  ) {}
+  /**
+   * @ignore
+   */
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.resetForm();
   }
   /**
    *
-   * @param form 
+   * @param form
    */
   resetForm(form?: NgForm) {
-    if (form !&#x3D; null)
-      form.reset();
+    if (form !&#x3D; null) form.reset();
     this.LoginService.formData &#x3D; {
-  
       fName: &#x27;&#x27;,
       lName: &#x27;&#x27;,
       username: &#x27;&#x27;,
-      password:&#x27;&#x27;,
-      city:&#x27;&#x27;,
+      password: &#x27;&#x27;,
+      city: &#x27;&#x27;,
       isAdmin: false,
-    }
+    };
   }
   /**
    *
    * @param f
    */
   Login(f: NgForm) {
-    return  this.LoginService.getUsersByName().then(
-         user &#x3D;&gt; {
-           this.toastr.info(&#x27;Get By id successfully&#x27;, &#x27;Get user by id&#x27;);
-           this.user &#x3D; user;
-           console.log(user);
-           this.cookieService.set(&#x27;username&#x27;,&#x60;${this.user.username}&#x60;);
-           this.cookieService.set(&#x27;password&#x27;,&#x60;${this.user.password}&#x60;);
-           this.cookieService.set(&#x27;isAdmin&#x27;, &#x27;true&#x27;)
-           console.log(&#x60;${this.user.password}&#x60;)
-        
-           console.log(&#x60;${this.user.username}&#x60;)
+    return this.LoginService.getUsersByName().then(
+      (user) &#x3D;&gt; {
+        this.toastr.info(&#x27;Get By id successfully&#x27;, &#x27;Get user by id&#x27;);
+        this.user &#x3D; user;
+        console.log(user);
+        this.cookieService.set(&#x27;username&#x27;, &#x60;${this.user.username}&#x60;);
+        this.cookieService.set(&#x27;password&#x27;, &#x60;${this.user.password}&#x60;);
+        this.cookieService.set(&#x27;isAdmin&#x27;, &#x27;true&#x27;);
+        console.log(&#x60;${this.user.password}&#x60;);
 
-          /**
-           * Conditional statement utilized.
-           */
-   
-       this.router.navigate([&#x27;/adminedit&#x27;]);
-           
+        console.log(&#x60;${this.user.username}&#x60;);
 
-         },
-         err &#x3D;&gt; {
-          this.handleError(err) 
-         }
-       )
-     }
-     /**
-      * this is an HTTP error handling method.
-      * @param error
-      */
-     handleError(error: HttpErrorResponse) {
-      if (error.error instanceof ErrorEvent) {
-        this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
-      } else {
-        this.error &#x3D; &#x60;Sorry try again, error ${error.status}, ${error.error.message}&#x60;; //If the response status code was an error then display said error
-        }
+        /**
+         * Conditional statement utilized.
+         */
+
+        this.router.navigate([&#x27;/adminedit&#x27;]);
+      },
+      (err) &#x3D;&gt; {
+        this.handleError(err);
+      }
+    );
+  }
+  /**
+   * this is an HTTP error handling method.
+   * @param error
+   */
+  handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
+    } else {
+      this.error &#x3D; &#x60;Sorry try again, error ${error.status}, ${error.error.message}&#x60;; //If the response status code was an error then display said error
     }
-
+  }
 }
 </code></pre>
     </div>
