@@ -36,4 +36,9 @@ describe('NavbarComponent', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
+  
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

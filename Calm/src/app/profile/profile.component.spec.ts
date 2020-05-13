@@ -47,4 +47,10 @@ beforeEach(() => {
     let password = component.updateUserForm.controls['password'];
     expect(password.valid).toBeFalsy();
   });
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
+
 });

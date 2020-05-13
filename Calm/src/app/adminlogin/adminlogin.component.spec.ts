@@ -46,4 +46,9 @@ beforeEach(async(() => {
   it('form invalid when empty', () => {
     expect(component.UserForm.valid).toBeFalsy();
   });
+  
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

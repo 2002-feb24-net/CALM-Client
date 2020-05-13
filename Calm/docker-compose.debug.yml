@@ -3,7 +3,7 @@ version: '3.4'
 
 services:
   calm:
-    image: calm
+    image: brendanngoran/calm:1.0
     build: .
     environment:
       NODE_ENV: development

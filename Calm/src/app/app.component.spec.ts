@@ -32,5 +32,9 @@
      expect(app.title).toEqual('Calm');
    });
 
+   afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 
 });

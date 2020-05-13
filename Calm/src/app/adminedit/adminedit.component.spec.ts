@@ -58,4 +58,8 @@ describe('AdmineditComponent', () => {
   });
 
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+  
 });

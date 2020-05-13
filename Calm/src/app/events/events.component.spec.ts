@@ -52,4 +52,8 @@ beforeEach(async(() => {
     expect(component.EventTitleForm.valid).toBeFalsy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

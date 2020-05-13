@@ -75,4 +75,8 @@ beforeEach(async(() => {
     expect(password.valid).toBeFalsy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

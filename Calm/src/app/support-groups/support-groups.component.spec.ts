@@ -48,4 +48,9 @@ beforeEach(async(() => {
   //   component.AddUser();
   //   expect(component).toBeTruthy();
   // });
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });
