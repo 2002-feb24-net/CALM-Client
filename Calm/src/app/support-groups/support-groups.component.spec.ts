@@ -44,4 +44,9 @@ beforeEach(async(() => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
+  
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });
