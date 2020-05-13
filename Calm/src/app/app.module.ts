@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 /**
  * imports HTTP clientmodule and reactive form.
  */
-
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 //import { DynamicTestModule} from '@angular/core/testing/testing'
 
