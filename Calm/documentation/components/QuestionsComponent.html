@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -101,10 +98,6 @@
                 <td class="col-md-9"><code>app-questions</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./questions.component.css</code></td>
-            </tr>
 
 
 
@@ -184,8 +177,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/questions/questions.component.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/questions/questions.component.ts:19</a></div>
                 </td>
             </tr>
 
@@ -213,8 +206,7 @@
  */
 @Component({
   selector: &#x27;app-questions&#x27;,
-  templateUrl: &#x27;./questions.component.html&#x27;,
-  styleUrls: [&#x27;./questions.component.css&#x27;]
+  templateUrl: &#x27;./questions.component.html&#x27;
 })
 export class QuestionsComponent implements OnInit {
 /**
@@ -252,7 +244,7 @@ export class QuestionsComponent implements OnInit {
 
         &lt;div class&#x3D;&quot;card-body p-4&quot;&gt;
     &lt;form name&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;Submit()&quot;&gt;
-         &lt;!-- (ngSubmit)&#x3D;&quot;Submit(f)&quot; --&gt;
+      
          &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;col-1&quot;&gt;
         &lt;input type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;1&quot; name&#x3D;&quot;1&quot; value&#x3D;&quot; -Generalized Anxiety Disorder- &quot;&gt;
@@ -323,12 +315,6 @@ export class QuestionsComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./questions.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -355,8 +341,8 @@ export class QuestionsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">        <div class="card-body p-4">    <form name="form" (ngSubmit)="Submit()">         <!-- (ngSubmit)="Submit(f)" -->         <div class="row">            <div class="col-1">        <input type="checkbox" id="1" name="1" value=" -Generalized Anxiety Disorder- ">    </div>  <div class="col-7m">        <label for="1">Do you feel anxious on most days, worrying about            a lot of different things,             for a period of 6 months or more?</label><br>             </div>   </div>             <div class="row">                <div class="col-1">        <input type="checkbox" id="2" name="2" value=" -Social Anxiety- ">    </div>  <div class="col-7m">        <label for="2">Do you have an intense fear of being criticized            or embarrassed/humiliated, even in everyday situations (ie. public <br> speaking, eating in public,             being assertive at work or making small talk)?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">        <input type="checkbox" id="3" name="3" value=" -Specific Phobias- ">    </div> <div class="col-7m">        <label for="3">Do you feel fearful about a particular object or             situation and may go great<br> lengths to avoid it? This may include having an injection,             travelling on a plane, etc?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="4" name="4" value=" -Post-Traumatic Stress Disorder- ">            </div> <div class="col-7m">        <label for="4">Have you experienced a traumatic event (war, assault, accident, disaster, etc) that has resulted <br> in you exhibiting symptoms that can  include difficulty relaxing, upsetting dreams or flashbacks of the event, <br> and avoidance of anything related             to the event for a period of a month or longer?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="5" name="5" value=" -Panic Disorder- ">            </div>  <div class="col-7m">        <label for="5">Do you frequently experience shortness of breath, chest pain, dizziness <br> and excessive perspiration,             otherwise known as panic attacks?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="6" name="6" value=" -Obsessive Compulsive Disorder- ">            </div> <div class="col-7m">        <label for="6">Do you have ongoing unwanted/intrusive thoughts             and fears <br> that you know are silly but try to relieve the anxiety by             carrying out certain behaviors or rituals? <br> For example, fear of germs             can lead to constant washing of hands and clothes.</label><br>            </div>   </div>        <button type="submit" class="btn btn-block btn-primary">Submit</button>      </form>      <br>      <p id="p" style="color: whitesmoke; font-size: large;"></p>    </div></div><div class="push"></div> </div><br /><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">        <div class="card-body p-4">    <form name="form" (ngSubmit)="Submit()">               <div class="row">            <div class="col-1">        <input type="checkbox" id="1" name="1" value=" -Generalized Anxiety Disorder- ">    </div>  <div class="col-7m">        <label for="1">Do you feel anxious on most days, worrying about            a lot of different things,             for a period of 6 months or more?</label><br>             </div>   </div>             <div class="row">                <div class="col-1">        <input type="checkbox" id="2" name="2" value=" -Social Anxiety- ">    </div>  <div class="col-7m">        <label for="2">Do you have an intense fear of being criticized            or embarrassed/humiliated, even in everyday situations (ie. public <br> speaking, eating in public,             being assertive at work or making small talk)?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">        <input type="checkbox" id="3" name="3" value=" -Specific Phobias- ">    </div> <div class="col-7m">        <label for="3">Do you feel fearful about a particular object or             situation and may go great<br> lengths to avoid it? This may include having an injection,             travelling on a plane, etc?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="4" name="4" value=" -Post-Traumatic Stress Disorder- ">            </div> <div class="col-7m">        <label for="4">Have you experienced a traumatic event (war, assault, accident, disaster, etc) that has resulted <br> in you exhibiting symptoms that can  include difficulty relaxing, upsetting dreams or flashbacks of the event, <br> and avoidance of anything related             to the event for a period of a month or longer?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="5" name="5" value=" -Panic Disorder- ">            </div>  <div class="col-7m">        <label for="5">Do you frequently experience shortness of breath, chest pain, dizziness <br> and excessive perspiration,             otherwise known as panic attacks?</label><br>            </div>   </div>            <div class="row">                <div class="col-1">             <input type="checkbox" id="6" name="6" value=" -Obsessive Compulsive Disorder- ">            </div> <div class="col-7m">        <label for="6">Do you have ongoing unwanted/intrusive thoughts             and fears <br> that you know are silly but try to relieve the anxiety by             carrying out certain behaviors or rituals? <br> For example, fear of germs             can lead to constant washing of hands and clothes.</label><br>            </div>   </div>        <button type="submit" class="btn btn-block btn-primary">Submit</button>      </form>      <br>      <p id="p" style="color: whitesmoke; font-size: large;"></p>    </div></div><div class="push"></div> </div><br /><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AddgatheringComponent', 'selector': 'app-addgathering'},{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'},{'name': 'ViewmyselfComponent', 'selector': 'app-viewmyself'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'QuestionsComponent'};
 </script>

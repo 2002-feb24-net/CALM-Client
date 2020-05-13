@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder} from '@angular/forms';
+import { FormBuilder, FormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+//import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'
 
 /**
  * imports event component
@@ -23,7 +24,7 @@ beforeEach(async(() => {
   TestBed.configureTestingModule({
     declarations: [ EventsComponent ],
     providers: [FormBuilder, HttpClient, HttpHandler],
-    imports: [RouterTestingModule, FormsModule, ToastrModule.forRoot()],
+    imports: [RouterTestingModule, ReactiveFormsModule, FormsModule, ToastrModule.forRoot()],
     })
     .compileComponents();
   }));
@@ -46,5 +47,9 @@ beforeEach(async(() => {
     expect(component).toBeTruthy();
   });
 
+
+  it('form invalid when empty', () => {
+    expect(component.EventTitleForm.valid).toBeFalsy();
+  });
 
 });

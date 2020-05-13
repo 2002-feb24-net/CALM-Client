@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -101,10 +98,6 @@
                 <td class="col-md-9"><code>app-login</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./login.component.css</code></td>
-            </tr>
 
 
 
@@ -196,7 +189,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/login/login.component.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/login/login.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -313,8 +306,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="98"
-                            class="link-to-prism">src/app/login/login.component.ts:98</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/login/login.component.ts:103</a></div>
                 </td>
             </tr>
 
@@ -385,8 +378,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="76"
-                            class="link-to-prism">src/app/login/login.component.ts:76</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/login/login.component.ts:75</a></div>
                 </td>
             </tr>
 
@@ -457,8 +450,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/login/login.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/login/login.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -533,7 +526,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/login/login.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/login/login.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -566,7 +559,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/login/login.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/login/login.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -600,7 +593,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/login/login.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/login/login.component.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -627,7 +620,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/login/login.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/login/login.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -655,7 +648,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/login/login.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/login/login.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -687,8 +680,7 @@ import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;; // imports a
 
 @Component({
   selector: &#x27;app-login&#x27;,
-  templateUrl: &#x27;./login.component.html&#x27;,
-  styleUrls: [&#x27;./login.component.css&#x27;]
+  templateUrl: &#x27;./login.component.html&#x27;
 })
 export class LoginComponent implements OnInit {
 
@@ -731,11 +723,11 @@ export class LoginComponent implements OnInit {
     if (form !&#x3D; null)
       form.reset();
     this.LoginService.formData &#x3D; {
-      id: 0,
       fName: &#x27;&#x27;,
       lName: &#x27;&#x27;,
       username: &#x27;&#x27;,
       password:&#x27;&#x27;,
+      city:&#x27;&#x27;,
       isAdmin: false
     }
   }
@@ -744,20 +736,26 @@ export class LoginComponent implements OnInit {
    * @param f
    */
   Login(f: NgForm) {
+   
     return  this.LoginService.getUsersByName().then(
          user &#x3D;&gt; {
+           if(user.username &#x3D;&#x3D; &#x27; &#x27; || user.password &#x3D;&#x3D; &#x27; &#x27;){
+            this.toastr.warning(&#x27;Add details&#x27;, &#x27;No input&#x27;);
+           }
            this.toastr.info(&#x27;Get By Id successfully&#x27;, &#x27;Get user by id&#x27;);
            this.user &#x3D; user;
            console.log(user);
-           this.cookieService.set(&#x27;User&#x27;,&#x60;${this.user.id}&#x60;);
            this.cookieService.set(&#x27;username&#x27;,&#x60;${this.user.username}&#x60;);
-
-       this.router.navigate([&#x27;/support-groups&#x27;]);
+           this.cookieService.set(&#x27;password&#x27;,&#x60;${this.user.password}&#x60;);
+           console.log(&#x60;${this.user.username}&#x60;);
+           console.log(&#x60;${this.user.password}&#x60;);
+           this.router.navigate([&#x27;/support-groups&#x27;]);
 
 
          },
          err &#x3D;&gt; {
           this.handleError(err) 
+          console.log(err)
          }
        )
      }
@@ -769,7 +767,7 @@ export class LoginComponent implements OnInit {
       if (error.error instanceof ErrorEvent) {
         this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
       } else {
-        this.error &#x3D; &#x60;Backend returned code ${error.status}, body was: ${error.error}&#x60;; //If the response status code was an error then display said error
+        this.error &#x3D; &#x60;Sorry try again, error ${error.status}, ${error.error.message}&#x60;; //If the response status code was an error then display said error
       }
     }
 
@@ -801,9 +799,9 @@ export class LoginComponent implements OnInit {
 
                 &lt;br&gt;
 
-                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot; &gt;Login&lt;/button&gt;
+                &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-block btn-success&quot;  &gt;Login&lt;/button&gt;
                 &lt;div&gt;
-                    &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{errorMessage}} &lt;/div&gt;
+                    &lt;div *ngIf&#x3D;&quot;error&quot;&gt;  {{error}} &lt;/div&gt;
 
                 &lt;/div&gt;
                 &lt;br&gt;
@@ -826,12 +824,6 @@ export class LoginComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./login.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -858,8 +850,8 @@ export class LoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">            <div class="card-body p-4">              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <h2 style="text-align:center">username</h2>                <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">password</h2>                <input type="password" name="password"                  class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >                <br>                <button type="submit" class="btn btn-block btn-success" >Login</button>                <div>                    <div *ngIf="error">  {{errorMessage}} </div>                </div>                <br>              </form>            </div>          </div>        <div class="push"></div>    </div>    <br />    <app-footer></app-footer>    ## this form is an html form for user login view page. </div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="container" style="padding-top:60px;">    <div class="row">            <div class="card-body p-4">              <form name="form" #f="ngForm" (ngSubmit)="Login(f)">                <h2 style="text-align:center">username</h2>                <input type="text" name="username"  class="form-control sty1"                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >                  <h2 style="text-align:center">password</h2>                <input type="password" name="password"                  class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >                <br>                <button type="submit" class="btn btn-block btn-success"  >Login</button>                <div>                    <div *ngIf="error">  {{error}} </div>                </div>                <br>              </form>            </div>          </div>        <div class="push"></div>    </div>    <br />    <app-footer></app-footer>    ## this form is an html form for user login view page. </div>'
+    var COMPONENTS = [{'name': 'AddgatheringComponent', 'selector': 'app-addgathering'},{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'},{'name': 'ViewmyselfComponent', 'selector': 'app-viewmyself'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LoginComponent'};
 </script>

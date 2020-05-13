@@ -39,15 +39,17 @@ export class SupportGroupsComponent implements OnInit {
     if(this.data != ""){
  this.show = true;
     }
-    else
+    else{
     this.show = false;
+    }
 
     this.shownotlogged = true;
     if(this.data != ""){
  this.shownotlogged = false;
     }
-    else
+    else{
     this.shownotlogged = true;
+    }
   }
 
   onTitleSelect(event) {
@@ -62,15 +64,15 @@ AddUser(){
   if (confirm('Are you sure to join this group ?')) {
     this.eventApi.EventTitle(this.title)
       .then(res => {
-       
+
       console.log(this.title)
         this.toastr.warning('added successfully', 'Joined Group');
       },
         err => {
-         
+
           console.log(err);
         })
   }}
- 
+
 }
 

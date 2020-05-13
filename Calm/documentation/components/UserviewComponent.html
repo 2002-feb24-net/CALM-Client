@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -94,10 +91,6 @@
                 <td class="col-md-9"><code>app-userview</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./userview.component.css</code></td>
-            </tr>
 
 
 
@@ -147,12 +140,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#onDelete">onDelete</a>
-                            </li>
-                            <li>
-                                <a href="#populateForm">populateForm</a>
                             </li>
                         </ul>
                     </td>
@@ -275,151 +262,6 @@
             </tr>
         </tbody>
     </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="onDelete"></a>
-                    <span class="name">
-                        <b>
-                            onDelete
-                        </b>
-                        <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>onDelete(username, password)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/adminedit/userview/userview.component.ts:23</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>username</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>password</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="populateForm"></a>
-                    <span class="name">
-                        <b>
-                            populateForm
-                        </b>
-                        <a href="#populateForm"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>populateForm(u: <a href="../interfaces/User.html">User</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/adminedit/userview/userview.component.ts:19</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>u</td>
-                                    <td>
-                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </section>
     <section>
     
@@ -467,8 +309,8 @@ import User from &#x27;src/app/models/User&#x27;;
 
 @Component({
   selector: &#x27;app-userview&#x27;,
-  templateUrl: &#x27;./userview.component.html&#x27;,
-  styleUrls: [&#x27;./userview.component.css&#x27;]
+  templateUrl: &#x27;./userview.component.html&#x27;
+
 })
 export class UserviewComponent implements OnInit {
 
@@ -478,24 +320,22 @@ export class UserviewComponent implements OnInit {
     this.userApi.refreshList();
   }
 
-  populateForm(u: User) {
-    this.userApi.formData &#x3D; Object.assign({}, u);
-  }
+ 
 
-  onDelete(username,password) {
-    if (confirm(&#x27;Are you sure to delete this record ?&#x27;)) {
-      this.userApi.deleteUser(username,password)
-        .subscribe(res &#x3D;&gt; {
+  // onDelete(username,password) {
+  //   if (confirm(&#x27;Are you sure to delete this record ?&#x27;)) {
+  //     this.userApi.deleteUser(username,password)
+  //       .subscribe(res &#x3D;&gt; {
   
-          this.userApi.refreshList();
-          this.toastr.warning(&#x27;Deleted successfully&#x27;, &#x27;user deleted&#x27;);
-        },
-          err &#x3D;&gt; {
+  //         this.userApi.refreshList();
+  //         this.toastr.warning(&#x27;Deleted successfully&#x27;, &#x27;user deleted&#x27;);
+  //       },
+  //         err &#x3D;&gt; {
      
-            console.log(err);
-          })
-    }
-    }
+  //           console.log(err);
+  //         })
+  //   }
+  //   }
 
 }
 </code></pre>
@@ -503,27 +343,19 @@ export class UserviewComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;table class&#x3D;&quot;table table-hover table-dark&quot;&gt;&lt;caption&gt;users&lt;/caption&gt;
-    &lt;thead&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;ID&lt;/th&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;name&lt;/th&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;isAdmin&lt;/th&gt;&lt;/thead&gt;
+    &lt;thead&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;City&lt;/th&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;name&lt;/th&gt;&lt;th scope&#x3D;&quot;col&quot;&gt;Admin&lt;/th&gt;&lt;/thead&gt;
       &lt;tr *ngFor&#x3D;&quot;let u of userApi.list&quot;&gt;
-        &lt;td (click)&#x3D;&quot;populateForm(u)&quot;&gt;{{u.id}}&lt;/td&gt;
-        &lt;td (click)&#x3D;&quot;populateForm(u)&quot;&gt;{{u.username}}&lt;/td&gt;  
-        &lt;td (click)&#x3D;&quot;populateForm(u)&quot;&gt;{{u.isAdmin}}&lt;/td&gt;
+        &lt;td&gt;{{u.city}}&lt;/td&gt;  
+        &lt;td&gt;{{u.username}}&lt;/td&gt;  
+        &lt;td&gt;{{u.isAdmin}}&lt;/td&gt;
        
-        &lt;td&gt;
-          &lt;em class&#x3D;&quot;far fa-trash-alt fa-lg text-danger&quot; (click)&#x3D;&quot;onDelete(u.username,u.password)&quot;&gt;&lt;/em&gt;
-        &lt;/td&gt;
+       
       &lt;/tr&gt;
       
   
     &lt;/table&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./userview.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -550,8 +382,8 @@ export class UserviewComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><table class="table table-hover table-dark"><caption>users</caption>    <thead><th scope="col">ID</th><th scope="col">name</th><th scope="col">isAdmin</th></thead>      <tr *ngFor="let u of userApi.list">        <td (click)="populateForm(u)">{{u.id}}</td>        <td (click)="populateForm(u)">{{u.username}}</td>          <td (click)="populateForm(u)">{{u.isAdmin}}</td>               <td>          <em class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(u.username,u.password)"></em>        </td>      </tr>            </table></div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
+        var COMPONENT_TEMPLATE = '<div><table class="table table-hover table-dark"><caption>users</caption>    <thead><th scope="col">City</th><th scope="col">name</th><th scope="col">Admin</th></thead>      <tr *ngFor="let u of userApi.list">        <td>{{u.city}}</td>          <td>{{u.username}}</td>          <td>{{u.isAdmin}}</td>                    </tr>            </table></div>'
+    var COMPONENTS = [{'name': 'AddgatheringComponent', 'selector': 'app-addgathering'},{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'},{'name': 'ViewmyselfComponent', 'selector': 'app-viewmyself'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserviewComponent'};
 </script>
