@@ -15,21 +15,14 @@
 
         </table>
     
-       <p>Event updates:</p> 
-            <div *ngFor="let  e of eventApi.list">
-            
-              <div *ngFor="let ei of e.atendees">
-                <p>{{ei.username}} from, {{ei.city}} is attending {{e.title}} <p>
-                 
-              </div>
-           
-            </div>
+       
   
           
   
 
       
         <div [hidden]="!show">
+          
           <form [formGroup]="EventTitleForm" (ngSubmit)="AddUser()">
             <div class="input-group mb-3">Title:
               <select  style="background-color:blueviolet;" (change)="onTitleSelect($event)">
@@ -43,7 +36,15 @@
           <button type="submit" class="btn btn-block btn-success" >
            Attend</button>
          </form>
-
+         <p>Event updates:</p> 
+         <div *ngFor="let  e of eventApi.list">
+         
+           <div *ngFor="let ei of e.atendees">
+             <p>{{ei.username}} from, {{ei.city}} is attending {{e.title}} <p>
+              
+           </div>
+        
+         </div>
 
         </div>
           <p [hidden]="!shownotlogged" style="color: red;">
