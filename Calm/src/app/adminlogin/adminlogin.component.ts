@@ -90,10 +90,11 @@ export class AdminloginComponent implements OnInit {
       */
      handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
-        this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
-      } else {
-        this.error = `Sorry try again, error ${error.status}, ${error.error.message}`; //If the response status code was an error then display said error
-        }
+        this.error = `An error occurred: ${error.error}, ${error.error.message}`; //in the event of a network error. Add error message.
+      } 
+      else {
+        this.error = `Sorry try again, error ${error.status} `; //If the response status code was an error then display said error
+      }
     }
 
 }
