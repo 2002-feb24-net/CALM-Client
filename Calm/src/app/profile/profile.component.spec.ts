@@ -29,6 +29,9 @@ beforeEach(() => {
     expect(component).toBeTruthy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
 
 
 });

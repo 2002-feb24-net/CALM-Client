@@ -31,6 +31,10 @@ describe('UserService', () => {
       expect(service).toBeTruthy();
     });
    
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 
 
 });

@@ -54,4 +54,8 @@ describe('LoginComponent', () => {
   //   expect(isAdmin.valid).toBeFalse();
   // });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

@@ -46,4 +46,8 @@ describe('AddgatheringComponent', () => {
     expect(component.CreateGatheringForm.valid).toBeFalsy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });
