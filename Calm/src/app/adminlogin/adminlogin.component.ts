@@ -92,8 +92,8 @@ export class AdminloginComponent implements OnInit {
       if (error.error instanceof ErrorEvent) {
         this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
       } else {
-        this.error = `Backend returned code ${error.status}, body was: ${error.error}`; //If the response status code was an error then display said error
-      }
+        this.error = `Sorry try again, error ${error.status}, ${error.error.message}`; //If the response status code was an error then display said error
+        }
     }
 
 }

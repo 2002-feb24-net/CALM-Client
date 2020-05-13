@@ -1,8 +1,9 @@
 <div>
-    FristName: {{user.fName}} LastName: {{user.lName}} City: {{user.city}}
+    <div *ngIf="user">
+ <p>  FristName: {{user.fName}} LastName: {{user.lName}} City: {{user.city}}
     <br>
     Username: {{user.username}} Password: {{user.password}}
-
-
+</p> 
+</div>
     
 </div>
