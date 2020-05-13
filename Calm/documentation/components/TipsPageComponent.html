@@ -49,9 +49,6 @@
             <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -101,10 +98,6 @@
                 <td class="col-md-9"><code>app-tips-page</code></td>
             </tr>
 
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./tips-page.component.css</code></td>
-            </tr>
 
 
 
@@ -128,6 +121,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#userApi">userApi</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -158,7 +166,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(cookieService: CookieService)</code>
+<code>constructor(cookieService: CookieService, userApi: <a href="../injectables/UserService.html">UserService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -187,6 +195,18 @@
                                                   
                                                         <td>
                                                                     <code>CookieService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userApi</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -254,6 +274,40 @@
         </tbody>
     </table>
 </section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userApi"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            userApi</b>
+                            <a href="#userApi"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/tips-page/tips-page.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
 </div>
 
@@ -261,7 +315,8 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;; // imports component, onInit
 
-import { CookieService } from &#x27;ngx-cookie-service&#x27;; // importing cookie service as ngx
+import { CookieService } from &#x27;ngx-cookie-service&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
 
 /**
  * Tips-page Component.
@@ -269,21 +324,22 @@ import { CookieService } from &#x27;ngx-cookie-service&#x27;; // importing cooki
 
 @Component({
   selector: &#x27;app-tips-page&#x27;,
-  templateUrl: &#x27;./tips-page.component.html&#x27;,
-  styleUrls: [&#x27;./tips-page.component.css&#x27;]
+  templateUrl: &#x27;./tips-page.component.html&#x27;
 })
 export class TipsPageComponent implements OnInit {
 
 /**
  * constructor that contains a cookie service
  */
-  constructor( private cookieService: CookieService) { }
+  constructor( private cookieService: CookieService, public userApi: UserService) { }
 
 /**
  * Method that returns Nothiing.
  */
   ngOnInit(): void {
     this.cookieService.deleteAll();
+    this.userApi.refreshList();
+   
   }
 
 }
@@ -298,6 +354,8 @@ export class TipsPageComponent implements OnInit {
   &lt;div class&#x3D;&quot;container&quot;&gt;
     &lt;div class&#x3D;&quot;row&quot;&gt;
       &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;div class&#x3D;&quot;container-fluid myCarousel2&quot;&gt;
+        
         &lt;div id&#x3D;&quot;myCarousel&quot; class&#x3D;&quot;carousel slide&quot; data-ride&#x3D;&quot;carousel&quot; data-interval&#x3D;&quot;3500&quot;&gt;
             &lt;!-- Indicators --&gt;
             &lt;ol class&#x3D;&quot;carousel-indicators&quot;&gt;
@@ -312,7 +370,7 @@ export class TipsPageComponent implements OnInit {
             &lt;div class&#x3D;&quot;carousel-inner&quot;&gt;
         
               &lt;div class&#x3D;&quot;item active&quot; style&#x3D;&quot;align-items: center;&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.verywellmind.com/thmb/t45CRRuibSKE7oZow0JPm9j-yq4&#x3D;/1500x1000/filters:fill(ABEAC3,1)/manage-your-anxiety-2584184-01-07daf91ba6de41d19f827cf65ceef07a.png&quot; alt&#x3D;&quot;Los Angeles&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot; &gt;
+                &lt;img src&#x3D;&quot;../../assets/manage-your-anxiety.png&quot; alt&#x3D;&quot;Los Angeles&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot; &gt;
                 &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
                 
                  
@@ -320,20 +378,20 @@ export class TipsPageComponent implements OnInit {
               &lt;/div&gt;
         
               &lt;div class&#x3D;&quot;item&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.verywellmind.com/thmb/ZBT5pMYX2t1JsG_B7js_tiananA&#x3D;/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/dsm-5-criteria-for-generalized-anxiety-disorder-1393147_v2-902be69757414cc7a517ef3ca9838b59.png&quot;  alt&#x3D;&quot;Chicago&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/dsm-5-criteria-for-generalized-anxiety-disorder.png&quot;  alt&#x3D;&quot;Chicago&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
                 &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
                    
                 &lt;/div&gt;
               &lt;/div&gt;
             
               &lt;div class&#x3D;&quot;item&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.verywellmind.com/thmb/e7E83ISe82_3MM1tKeEmmZUi2EQ&#x3D;/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/social-anxiety-disorder-symptoms-and-diagnosis-4157219-5c5db04146e0fb000127c7e9.png&quot; alt&#x3D;&quot;New York&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/social-anxiety-disorder-symptoms.png&quot; alt&#x3D;&quot;New York&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
                 &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
                     
                 &lt;/div&gt;
               &lt;/div&gt;
               &lt;div class&#x3D;&quot;item active&quot; style&#x3D;&quot;align-items: center;&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.verywellmind.com/thmb/s-BHACV3qi1zF0rXrxhIRLtlo2M&#x3D;/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/top-symptoms-of-panic-attacks-2584270_FINAL-5bcdfd4d46e0fb0051228ee5.png &quot; alt&#x3D;&quot;L&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot; &gt;
+                &lt;img src&#x3D;&quot;../../assets/riskfactor.png&quot; alt&#x3D;&quot;L&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot; &gt;
                 &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
                   
                  
@@ -341,7 +399,7 @@ export class TipsPageComponent implements OnInit {
               &lt;/div&gt;
         
               &lt;div class&#x3D;&quot;item&quot;&gt;
-                &lt;img src&#x3D;&quot;https://www.verywellmind.com/thmb/dtGCloFfZ7ZjOmsHxshEaxVesUo&#x3D;/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/ptsd-causes-and-risk-factors-2797397_FINAL-5c12bdf046e0fb0001e0b53e.png&quot;  alt&#x3D;&quot;Chic&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
+                &lt;img src&#x3D;&quot;../../assets/top-symptoms-of-panic-attacks.png&quot;  alt&#x3D;&quot;Chic&quot; style&#x3D;&quot;padding-left: 18%; width:80%; height: 70%;&quot;&gt;
                 &lt;div class&#x3D;&quot;carousel-caption&quot;&gt;
                    
                 &lt;/div&gt;
@@ -360,6 +418,7 @@ export class TipsPageComponent implements OnInit {
               &lt;span class&#x3D;&quot;glyphicon glyphicon-chevron-right&quot;&gt;&lt;/span&gt;
               &lt;span class&#x3D;&quot;sr-only&quot;&gt;Next&lt;/span&gt;
             &lt;/a&gt;
+       &lt;/div&gt;
           &lt;/div&gt;
 
 
@@ -367,18 +426,16 @@ export class TipsPageComponent implements OnInit {
       
     &lt;/div&gt;
   &lt;/div&gt;
+&lt;br&gt;
+&lt;br&gt;
+ &lt;p style&#x3D;&quot;text-align: center;background-color:rebeccapurple;&quot;&gt; Total number of users: {{ userApi?.list?.length | number }}&lt;/p&gt;
+
   &lt;div class&#x3D;&quot;push&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;br /&gt;
 &lt;app-footer&gt;&lt;/app-footer&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./tips-page.component.css</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -405,8 +462,8 @@ export class TipsPageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="pt-3 px-4" style="min-height:450px;">  <h1>C.A.L.M(Center for Anxiety and Lifestyle Mediation)</h1>  <br />  <div class="container">    <div class="row">      <div class="col">        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">            <!-- Indicators -->            <ol class="carousel-indicators">              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>              <li data-target="#myCarousel" data-slide-to="1"></li>              <li data-target="#myCarousel" data-slide-to="2"></li>              <li data-target="#myCarousel" data-slide-to="3"></li>              <li data-target="#myCarousel" data-slide-to="4"></li>            </ol>                    <!-- Wrapper for slides -->            <div class="carousel-inner">                      <div class="item active" style="align-items: center;">                <img src="https://www.verywellmind.com/thmb/t45CRRuibSKE7oZow0JPm9j-yq4=/1500x1000/filters:fill(ABEAC3,1)/manage-your-anxiety-2584184-01-07daf91ba6de41d19f827cf65ceef07a.png" alt="Los Angeles" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                 </div>              </div>                      <div class="item">                <img src="https://www.verywellmind.com/thmb/ZBT5pMYX2t1JsG_B7js_tiananA=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/dsm-5-criteria-for-generalized-anxiety-disorder-1393147_v2-902be69757414cc7a517ef3ca9838b59.png"  alt="Chicago" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                          <div class="item">                <img src="https://www.verywellmind.com/thmb/e7E83ISe82_3MM1tKeEmmZUi2EQ=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/social-anxiety-disorder-symptoms-and-diagnosis-4157219-5c5db04146e0fb000127c7e9.png" alt="New York" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                    </div>              </div>              <div class="item active" style="align-items: center;">                <img src="https://www.verywellmind.com/thmb/s-BHACV3qi1zF0rXrxhIRLtlo2M=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/top-symptoms-of-panic-attacks-2584270_FINAL-5bcdfd4d46e0fb0051228ee5.png " alt="L" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                   </div>              </div>                      <div class="item">                <img src="https://www.verywellmind.com/thmb/dtGCloFfZ7ZjOmsHxshEaxVesUo=/1500x1000/filters:no_upscale():max_bytes(150000):strip_icc()/ptsd-causes-and-risk-factors-2797397_FINAL-5c12bdf046e0fb0001e0b53e.png"  alt="Chic" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                                            </div>                    <!-- Left and right controls -->            <a class="left carousel-control" href="#myCarousel" data-slide="prev">              <span class="glyphicon glyphicon-chevron-left"></span>              <span class="sr-only">Previous</span>            </a>            <a class="right carousel-control" href="#myCarousel" data-slide="next">              <span class="glyphicon glyphicon-chevron-right"></span>              <span class="sr-only">Next</span>            </a>          </div>      </div>          </div>  </div>  <div class="push"></div></div><br /><app-footer></app-footer></div>'
-    var COMPONENTS = [{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'}];
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div class="pt-3 px-4" style="min-height:450px;">  <h1>C.A.L.M(Center for Anxiety and Lifestyle Mediation)</h1>  <br />  <div class="container">    <div class="row">      <div class="col">        <div class="container-fluid myCarousel2">                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">            <!-- Indicators -->            <ol class="carousel-indicators">              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>              <li data-target="#myCarousel" data-slide-to="1"></li>              <li data-target="#myCarousel" data-slide-to="2"></li>              <li data-target="#myCarousel" data-slide-to="3"></li>              <li data-target="#myCarousel" data-slide-to="4"></li>            </ol>                    <!-- Wrapper for slides -->            <div class="carousel-inner">                      <div class="item active" style="align-items: center;">                <img src="../../assets/manage-your-anxiety.png" alt="Los Angeles" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                 </div>              </div>                      <div class="item">                <img src="../../assets/dsm-5-criteria-for-generalized-anxiety-disorder.png"  alt="Chicago" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                          <div class="item">                <img src="../../assets/social-anxiety-disorder-symptoms.png" alt="New York" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                    </div>              </div>              <div class="item active" style="align-items: center;">                <img src="../../assets/riskfactor.png" alt="L" style="padding-left: 18%; width:80%; height: 70%;" >                <div class="carousel-caption">                                                   </div>              </div>                      <div class="item">                <img src="../../assets/top-symptoms-of-panic-attacks.png"  alt="Chic" style="padding-left: 18%; width:80%; height: 70%;">                <div class="carousel-caption">                                   </div>              </div>                                            </div>                    <!-- Left and right controls -->            <a class="left carousel-control" href="#myCarousel" data-slide="prev">              <span class="glyphicon glyphicon-chevron-left"></span>              <span class="sr-only">Previous</span>            </a>            <a class="right carousel-control" href="#myCarousel" data-slide="next">              <span class="glyphicon glyphicon-chevron-right"></span>              <span class="sr-only">Next</span>            </a>       </div>          </div>      </div>          </div>  </div><br><br> <p style="text-align: center;background-color:rebeccapurple;"> Total number of users: {{ userApi?.list?.length | number }}</p>  <div class="push"></div></div><br /><app-footer></app-footer></div>'
+    var COMPONENTS = [{'name': 'AddgatheringComponent', 'selector': 'app-addgathering'},{'name': 'AdmineditComponent', 'selector': 'app-adminedit'},{'name': 'AdminloginComponent', 'selector': 'app-adminlogin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'EventsComponent', 'selector': 'app-events'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotfoundComponent', 'selector': 'app-notfound'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'QuestionsComponent', 'selector': 'app-questions'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SupportGroupsComponent', 'selector': 'app-support-groups'},{'name': 'TipsPageComponent', 'selector': 'app-tips-page'},{'name': 'UserviewComponent', 'selector': 'app-userview'},{'name': 'ViewmyselfComponent', 'selector': 'app-viewmyself'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TipsPageComponent'};
 </script>

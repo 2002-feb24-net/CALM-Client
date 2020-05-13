@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule} from '@angular/router';
 
 
 /**
@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
 /**
  * imports HTTP clientmodule and reactive form.
  */
-import { HttpClientModule, HttpRequest } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 //import { DynamicTestModule} from '@angular/core/testing/testing'
 
@@ -73,6 +73,7 @@ import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
 
     BrowserModule,
     HttpClientModule,
+    //HttpClientTestingModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
@@ -80,7 +81,7 @@ import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
     ToastrModule.forRoot(),
     RouterModule.forRoot([])
   ],
-  providers: [CookieService, UserService ],
+  providers: [CookieService, UserService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { UserService } from '../services/user.service';
 import User from '../models/User'; // imports from user model
 import { HttpErrorResponse } from '@angular/common/http';
-import { NgForm, FormBuilder, Validators } from '@angular/forms';
+import {  FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this.refresh();
-   
+
     this.updateUserForm = this.formBuilder.group({
       fName: ['', Validators.required],
       lName: ['', Validators.required],
@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
 
   });
-    
+
   }
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
         this.cities= cities;
         console.log(this.cities)
       })
- 
+
   }
   resetError() {
     this.error = undefined; //clears error message
@@ -91,7 +91,7 @@ console.log(newUsers)
 
           } else {
             this.toastr.info('User updated', 'Updated');
-           
+
             this.resetError(); //clears error message
           }
         },
