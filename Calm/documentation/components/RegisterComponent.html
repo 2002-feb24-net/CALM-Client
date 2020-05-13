@@ -337,8 +337,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="112"
-                            class="link-to-prism">src/app/register/register.component.ts:112</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="111"
+                            class="link-to-prism">src/app/register/register.component.ts:111</a></div>
                 </td>
             </tr>
 
@@ -376,8 +376,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/register/register.component.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/register/register.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -448,8 +448,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="45"
-                            class="link-to-prism">src/app/register/register.component.ts:45</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/register/register.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -489,8 +489,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">src/app/register/register.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="107"
+                            class="link-to-prism">src/app/register/register.component.ts:107</a></div>
                 </td>
             </tr>
 
@@ -557,8 +557,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/register/register.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/register/register.component.ts:72</a></div>
                 </td>
             </tr>
 
@@ -596,8 +596,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="80"
-                            class="link-to-prism">src/app/register/register.component.ts:80</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/register/register.component.ts:78</a></div>
                 </td>
             </tr>
 
@@ -661,7 +661,7 @@
                     <tr>
                         <td class="col-md-4">
                             <i>Default value : </i><code>this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
+    text: [&#x27;&#x27;, Validators.required],
   })</code>
                         </td>
                     </tr>
@@ -780,7 +780,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/register/register.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/register/register.component.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -836,7 +836,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/register/register.component.ts:83</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/register/register.component.ts:81</a></div>
                                 </td>
                             </tr>
 
@@ -862,7 +862,7 @@ import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;; // imports H
 
 @Component({
   selector: &#x27;app-register&#x27;,
-  templateUrl: &#x27;./register.component.html&#x27;
+  templateUrl: &#x27;./register.component.html&#x27;,
 })
 /**
  * exports Register component.
@@ -874,7 +874,7 @@ export class RegisterComponent implements OnInit {
   submitted &#x3D; false;
   cities: Array&lt;string&gt;;
   CreateUserForm &#x3D; this.formBuilder.group({
-    text: [&#x27;&#x27;, Validators.required]
+    text: [&#x27;&#x27;, Validators.required],
   });
 
   /**
@@ -885,25 +885,26 @@ export class RegisterComponent implements OnInit {
    * @param CookieService
    * @param userApi
    */
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
-     private router: Router,  private CookieService: CookieService,
-      public userApi:UserService) { }
-/**
- * create user form that validates user properties
- */
+  constructor(
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService,
+    private router: Router,
+    private CookieService: CookieService,
+    public userApi: UserService
+  ) {}
+  /**
+   * create user form that validates user properties
+   */
   ngOnInit() {
-    this.refresh()
-   
- 
-    this.CookieService.deleteAll();  // cookie service injected.
+    this.refresh();
+
+    this.CookieService.deleteAll(); // cookie service injected.
     this.CreateUserForm &#x3D; this.formBuilder.group({
       fName: [&#x27;&#x27;, Validators.required],
       lName: [&#x27;&#x27;, Validators.required],
       username: [&#x27;&#x27;, Validators.required],
       password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6)]],
-
-  });
-  
+    });
   }
   /**
    * Asserts errorr handling in the register form.
@@ -913,33 +914,31 @@ export class RegisterComponent implements OnInit {
     if (error.error instanceof ErrorEvent) {
       this.error &#x3D; &#x60;An error occurred: ${error.error.message}&#x60;; //in the event of a network error. Add error message.
     } else {
-      this.error &#x3D; &#x60;Sorry try again, error ${error.status}, ${error.error.message}&#x60;;  //If the response status code was an error then display said error
+      this.error &#x3D; &#x60;Sorry try again, error ${error.status}, ${error.error.message}&#x60;; //If the response status code was an error then display said error
     }
   }
 
-  refresh(){
-    return this.userApi.refreshMap()
-    .then(
-      cities &#x3D;&gt; {
-        this.cities&#x3D; cities;
-        console.log(this.cities)
-      })
- 
+  refresh() {
+    return this.userApi.refreshMap().then((cities) &#x3D;&gt; {
+      this.cities &#x3D; cities;
+      console.log(this.cities);
+    });
   }
   resetError() {
     this.error &#x3D; undefined; //clears error message
   }
-  get f() { return this.CreateUserForm.controls; }
+  get f() {
+    return this.CreateUserForm.controls;
+  }
 
-//  const pass&#x3D; this.CreateUserForm.get(&#x27;Password&#x27;)?.value;
-//  const salt &#x3D;  bcrypt.genSaltSync(10);
-//  console.log(salt)
-// const  passhash &#x3D; bcrypt.hashSync(pass, salt);
+  //  const pass&#x3D; this.CreateUserForm.get(&#x27;Password&#x27;)?.value;
+  //  const salt &#x3D;  bcrypt.genSaltSync(10);
+  //  console.log(salt)
+  // const  passhash &#x3D; bcrypt.hashSync(pass, salt);
 
-
-/**
- * method that gets users through the use of promises to accept response from api
- */
+  /**
+   * method that gets users through the use of promises to accept response from api
+   */
 
   // getUsers() {
   //   return this.userApi.getUsers()
@@ -955,34 +954,32 @@ export class RegisterComponent implements OnInit {
   // }
 
   onCitySelect(event) {
-    this.value&#x3D; event.target.value;
-    console.log(this.value)
-}
+    this.value &#x3D; event.target.value;
+    console.log(this.value);
+  }
   CreateUser() {
     this.submitted &#x3D; true;
     /**
      * User form containing property values from API
      */
     const newUsers: User &#x3D; {
-
       fName: this.CreateUserForm.get(&#x27;fName&#x27;)?.value,
       lName: this.CreateUserForm.get(&#x27;lName&#x27;)?.value,
       username: this.CreateUserForm.get(&#x27;username&#x27;)?.value,
       city: this.value,
       password: this.CreateUserForm.get(&#x27;password&#x27;)?.value,
-      isAdmin: false
-
+      isAdmin: false,
     };
-console.log(newUsers)
+    console.log(newUsers);
 
-    this.userApi.CreateUser(newUsers) // creates new user
+    this.userApi
+      .CreateUser(newUsers) // creates new user
       .then(
-        User &#x3D;&gt; {
-          if (this.error) { //conditinal statement that checks for errors in register component.
+        (User) &#x3D;&gt; {
+          if (this.error) {
+            //conditinal statement that checks for errors in register component.
 
-           this.toastr.error(&#x27;User Register&#x27;, &#x27;Error&#x27;);
-
-
+            this.toastr.error(&#x27;User Register&#x27;, &#x27;Error&#x27;);
           } else {
             this.toastr.info(&#x27;User Created&#x27;, &#x27;registered&#x27;);
             this.router.navigate([&#x27;/login&#x27;]);
@@ -990,11 +987,9 @@ console.log(newUsers)
             this.resetError(); //clears error message
           }
         },
-        error &#x3D;&gt; this.handleError(error) //handles error message
+        (error) &#x3D;&gt; this.handleError(error) //handles error message
       );
-
-
-}
+  }
 }
 </code></pre>
     </div>

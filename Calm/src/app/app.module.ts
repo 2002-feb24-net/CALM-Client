@@ -26,7 +26,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 import {CookieService} from 'ngx-cookie-service';
-import { NotfoundComponent } from './notfound.component';
 import { EventsComponent } from './events/events.component';
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -58,7 +57,6 @@ import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
     TipsPageComponent,
     LoginComponent,
     RegisterComponent,
-    NotfoundComponent,
     EventsComponent,
     SupportGroupsComponent,
     QuestionsComponent,

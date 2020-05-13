@@ -37,9 +37,15 @@ beforeEach(async(() => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
+/**
+ * test method for OnInit method
+ */
   it('should do on initialize', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
+  // it('should add user', () => {
+  //   component.AddUser();
+  //   expect(component).toBeTruthy();
+  // });
 });

@@ -28,7 +28,23 @@ beforeEach(() => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-
-
+  it('form invalid when empty', () => {
+    expect(component.updateUserForm.valid).toBeFalsy();
+  });
+  it('username field validity', () => {
+    let username = component.updateUserForm.controls['username'];
+    expect(username.valid).toBeFalsy();
+  });
+  it('fName field validity', () => {
+    let fName = component.updateUserForm.controls['fName'];
+    expect(fName.valid).toBeFalsy();
+  });
+  it('lName field validity', () => {
+    let lName = component.updateUserForm.controls['lName'];
+    expect(lName.valid).toBeFalsy();
+  });
+  it('password field validity', () => {
+    let password = component.updateUserForm.controls['password'];
+    expect(password.valid).toBeFalsy();
+  });
 });
