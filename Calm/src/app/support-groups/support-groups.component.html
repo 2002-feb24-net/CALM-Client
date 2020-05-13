@@ -14,17 +14,9 @@
         </tr>
       </table>
 
-      <p>Group members:</p> 
-      <div *ngFor="let  e of eventApi.list">
-      
-        <div *ngFor="let ei of e.atendees">
-          <p>{{ei.username}} from, {{ei.city}} is a member of {{e.title}} <p>
-           
-        </div>
-     
-      </div>
 
     <div [hidden]="!show">
+      
       <form [formGroup]="EventTitleForm" (ngSubmit)="AddUser()">
         <div class="input-group mb-3">Title:
           <select  style="background-color:blueviolet;" (change)="onTitleSelect($event)">
@@ -38,11 +30,19 @@
       <button type="submit" class="btn btn-block btn-success" >
        Attend</button>
      </form>
-
+     <p>Group members:</p> 
+     <div *ngFor="let  e of eventApi.list">
+     
+       <div *ngFor="let ei of e.atendees">
+         <p>{{ei.username}} from, {{ei.city}} is a member of {{e.title}} <p>
+          
+       </div>
+    
+     </div>
 
     </div>
-      <p [hidden]="!shownotlogged">
-       Please login to Join a group
+      <p [hidden]="!shownotlogged" style="color: red;">
+       Please login to join a group
       </p>
     </div>
 <div class="push"></div>
