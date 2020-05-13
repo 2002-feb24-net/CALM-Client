@@ -26,8 +26,8 @@ export class ProfileComponent implements OnInit {
     });
   data=this.cookieService.get('username');
   ngOnInit() {
-    
-    this.refresh()
+
+    this.refresh();
    
     this.updateUserForm = this.formBuilder.group({
       fName: ['', Validators.required],
@@ -71,11 +71,11 @@ export class ProfileComponent implements OnInit {
      */
     const newUsers: User = {
 
-      fName: this.updateUserForm.get('fName')?.value,
-      lName: this.updateUserForm.get('lName')?.value,
-      username: this.updateUserForm.get('username')?.value,
+      fName: this.updateUserForm.get('fName').value,
+      lName: this.updateUserForm.get('lName').value,
+      username: this.updateUserForm.get('username').value,
       city: this.value,
-      password: this.updateUserForm.get('password')?.value,
+      password: this.updateUserForm.get('password').value,
       isAdmin: false
 
     };
