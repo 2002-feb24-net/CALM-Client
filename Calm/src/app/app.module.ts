@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 /**
  * imports HTTP clientmodule and reactive form.
  */
+// import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HttpRequest } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 //import { DynamicTestModule} from '@angular/core/testing/testing'
@@ -73,6 +74,7 @@ import { ViewmyselfComponent } from './profile/viewmyself/viewmyself.component';
 
     BrowserModule,
     HttpClientModule,
+    HttpClientTestingModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
