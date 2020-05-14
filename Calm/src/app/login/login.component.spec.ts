@@ -42,7 +42,7 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should do on initialize', () => {
+  it('should on initialize', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });

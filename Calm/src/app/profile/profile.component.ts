@@ -32,19 +32,12 @@ export class ProfileComponent implements OnInit {
     this.updateUserForm = this.formBuilder.group({
       fName: ['', Validators.required],
       lName: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(4)]],
       username: ['', Validators.required],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-
   });
 
   }
-  handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      this.error = `An error occurred: ${error.error.message}`; //in the event of a network error. Add error message.
-    } else {
-      this.error = `Backend returned code ${error.status}, body was: ${error.error}`; //If the response status code was an error then display said error
-    }
-  }
+
 
   refresh(){
     return this.userApi.refreshMap()
@@ -99,5 +92,12 @@ console.log(newUsers)
       );
 
 
+}
+handleError(error: HttpErrorResponse) {
+  if (error.error instanceof ErrorEvent) {
+    this.error = `Error: ${error.error.message}`; //in the event of a network error. Add error message.
+  } else {
+    this.error = `Backend error. Code ${error.status}, body was: ${error.error}`; //If the response status code was an error then display said error
+  }
 }
 }
