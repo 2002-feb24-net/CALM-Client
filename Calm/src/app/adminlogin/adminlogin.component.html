@@ -13,7 +13,7 @@
   
                 <input type="text" name="username"  class="form-control sty1"
                   placeholder="Admin name" required ngModel [(ngModel)]="LoginService.formData.username" >
-                  <h2 style="text-align:center">password</h2>
+                  <h2 style="text-align:center">Password</h2>
                 <input type="password" name="password" 
                   class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.password" >
   
@@ -22,7 +22,7 @@
   
                 <button type="submit" class="btn btn-block btn-danger" >AdminLogin</button>
                 <div>
-                    <div *ngIf="error">  {{error}} </div> 
+                    <div *ngIf="error"> {{error}} </div> 
                   
                 </div>
                 <br>
