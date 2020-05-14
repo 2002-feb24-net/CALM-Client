@@ -37,7 +37,8 @@
         <button type="submit" class="btn btn-block btn-success">
           Attend</button>
       </form>
-      <p>Event updates:</p>
+      <div class="gfg" >
+      <p >Event updates:</p>
       <div *ngFor="let  e of eventApi.list">
 
         <div *ngFor="let ei of e.atendees">
@@ -47,6 +48,7 @@
         </div>
 
       </div>
+    </div >
 
     </div>
     <p [hidden]="!shownotlogged" style="color: red;">
