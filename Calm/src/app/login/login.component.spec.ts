@@ -42,7 +42,7 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should do on initialize', () => {
+  it('should on initialize', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
@@ -53,5 +53,9 @@ describe('LoginComponent', () => {
   //   let isAdmin = component.UserForm.controls['isAdmin'];
   //   expect(isAdmin.valid).toBeFalse();
   // });
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
 
 });

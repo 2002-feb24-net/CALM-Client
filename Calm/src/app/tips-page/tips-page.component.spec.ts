@@ -40,4 +40,9 @@ describe('TipsPageComponent', () => {
     component.ngOnInit();
     expect(component).toBeTruthy();
   });
+  
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

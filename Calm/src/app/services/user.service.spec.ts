@@ -30,7 +30,12 @@ describe('UserService', () => {
       service.refreshList();
       expect(service).toBeTruthy();
     });
+
    
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 
 
 });

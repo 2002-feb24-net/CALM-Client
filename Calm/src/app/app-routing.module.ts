@@ -3,7 +3,6 @@ import { Routes, RouterModule} from '@angular/router'; // imports angular routin
 import { TipsPageComponent } from './tips-page/tips-page.component'; // imports from tipspage component
 import { LoginComponent } from './login/login.component'; // imports from login component
 import { RegisterComponent } from './register/register.component'; // imports from register component
-import { NotfoundComponent } from './notfound.component'; // imports from the Notfound component.
 import { EventsComponent } from './events/events.component'; // imports event component
 import { SupportGroupsComponent } from './support-groups/support-groups.component';
 import { QuestionsComponent } from './questions/questions.component'; // imports questions component
@@ -28,7 +27,6 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'questions', component: QuestionsComponent },
   { path: 'support-groups', component: SupportGroupsComponent },
-  { path: 'notfound', component: NotfoundComponent },
   { path: 'profile', component: ProfileComponent }
 ]
 /**

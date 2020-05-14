@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'; // imports component, onInit
 
-import { CookieService } from 'ngx-cookie-service';
-import { UserService } from '../services/user.service';
+import { CookieService } from 'ngx-cookie-service'; // imports cookieservice
+import { UserService } from '../services/user.service';  // imports userservice
 
 /**
  * Tips-page Component.
@@ -24,7 +24,7 @@ export class TipsPageComponent implements OnInit {
   ngOnInit(): void {
     this.cookieService.deleteAll();
     this.userApi.refreshList();
-   
+
   }
 
 }

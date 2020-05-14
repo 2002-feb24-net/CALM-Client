@@ -1,61 +1,62 @@
 <app-navbar></app-navbar>
-  <div class="container" style="padding-top:40px;">
-    <div class="card-body p-4">
-    <table class="table table-hover table-dark"><caption>events</caption>
-        <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Details</th><th scope="col">Organizer</th></thead>
-          <tr *ngFor="let e of eventApi.list" >
-            
-            <td >{{e.title}}</td>
-            <td >{{e.occurrenceData}}</td> 
-            <td >{{e.city}}</td> 
-            <td >{{e.details}}</td>
-            <td >{{e.organizer.username}}</td>
+<div class="container" style="padding-top:40px;">
+  <div class="card-body p-4">
+    <table class="table table-hover table-dark">
+      <caption>events</caption>
+      <thead>
+        <th scope="col">Title</th>
+        <th scope="col">Dates</th>
+        <th scope="col">Location</th>
+        <th scope="col">Details</th>
+        <th scope="col">Organizer</th>
+      </thead>
+      <tr *ngFor="let e of eventApi.list">
 
-          </tr>
+        <td>{{e.title}}</td>
+        <td>{{e.occurrenceData}}</td>
+        <td>{{e.city}}</td>
+        <td>{{e.details}}</td>
+        <td>{{e.organizer.username}}</td>
 
-        </table>
-    
-       
-  
-          
-  
+      </tr>
 
-      
-        <div [hidden]="!show">
-          
-          <form [formGroup]="EventTitleForm" (ngSubmit)="AddUser()">
-            <div class="input-group mb-3">Title:
-              <select  style="background-color:blueviolet;" (change)="onTitleSelect($event)">
-              <option *ngFor="let e of eventApi.list" 
-              [value]="e.title" >
-            {{e.title}}</option>
-              </select>
-          
-          </div> 
-          
-          <button type="submit" class="btn btn-block btn-success" >
-           Attend</button>
-         </form>
-         <p>Event updates:</p> 
-         <div *ngFor="let  e of eventApi.list">
-         
-           <div *ngFor="let ei of e.atendees">
-             <p>{{ei.username}} from, {{ei.city}} is attending {{e.title}} <p>
-              
-           </div>
-        
-         </div>
+    </table>
+
+
+    <div [hidden]="!show">
+
+      <form [formGroup]="EventTitleForm" (ngSubmit)="AddUser()">
+        <div class="input-group mb-3">Title:
+          <select style="background-color:blueviolet;" (change)="onTitleSelect($event)">
+            <option *ngFor="let e of eventApi.list" [value]="e.title">
+              {{e.title}}</option>
+          </select>
 
         </div>
-          <p [hidden]="!shownotlogged" style="color: red;">
-           Please login to attend an event
-          </p>
+
+        <button type="submit" class="btn btn-block btn-success">
+          Attend</button>
+      </form>
+      <p>Event updates:</p>
+      <div *ngFor="let  e of eventApi.list">
+
+        <div *ngFor="let ei of e.atendees">
+          <p>{{ei.username}} from, {{ei.city}} is attending {{e.title}}
+          <p>
+
         </div>
-     
-    <div class="push"></div>
-    
+
+      </div>
+
+    </div>
+    <p [hidden]="!shownotlogged" style="color: red;">
+      Please login to attend an event
+    </p>
+  </div>
+
+  <div class="push"></div>
+
 
 </div>
 <br />
 <app-footer></app-footer>
-

@@ -879,7 +879,7 @@ import { CookieService } from &#x27;ngx-cookie-service&#x27;;
 import { UserService } from &#x27;../services/user.service&#x27;;
 import User from &#x27;../models/User&#x27;; // imports from user model
 import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
-import { NgForm, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import {  FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
 import { ToastrService } from &#x27;ngx-toastr&#x27;;
 
 @Component({
@@ -904,7 +904,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     this.refresh();
-   
+
     this.updateUserForm &#x3D; this.formBuilder.group({
       fName: [&#x27;&#x27;, Validators.required],
       lName: [&#x27;&#x27;, Validators.required],
@@ -912,7 +912,7 @@ export class ProfileComponent implements OnInit {
       password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6)]],
 
   });
-    
+
   }
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -929,7 +929,7 @@ export class ProfileComponent implements OnInit {
         this.cities&#x3D; cities;
         console.log(this.cities)
       })
- 
+
   }
   resetError() {
     this.error &#x3D; undefined; //clears error message
@@ -967,7 +967,7 @@ console.log(newUsers)
 
           } else {
             this.toastr.info(&#x27;User updated&#x27;, &#x27;Updated&#x27;);
-           
+
             this.resetError(); //clears error message
           }
         },

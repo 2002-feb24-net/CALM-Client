@@ -177,8 +177,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/questions/questions.component.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/questions/questions.component.ts:18</a></div>
                 </td>
             </tr>
 
@@ -206,33 +206,31 @@
  */
 @Component({
   selector: &#x27;app-questions&#x27;,
-  templateUrl: &#x27;./questions.component.html&#x27;
+  templateUrl: &#x27;./questions.component.html&#x27;,
 })
 export class QuestionsComponent implements OnInit {
-/**
- * @ignore
- */
-  constructor() { }
-/**
- * @ignore
- */
-  ngOnInit(): void {
-  }
+  /**
+   * @ignore
+   */
+  constructor() {}
+  /**
+   * @ignore
+   */
+  ngOnInit(): void {}
   Submit() {
-/**
- * for loop that gets the user input element by id which outputs a value.
- */
-      document.getElementById(&#x27;p&#x27;).innerText&#x3D; (&quot;Recommended groups: &quot;)
+    /**
+     * for loop that gets the user input element by id which outputs a value.
+     */
+    document.getElementById(&#x27;p&#x27;).innerText &#x3D; &#x27;Recommended groups: &#x27;;
     // for loop statement that iterates through questions presented to the client based on choices.
-     for(let i&#x3D;1; i&lt;&#x3D;6; i++ )
-     {
-    var element&#x3D; &lt;HTMLInputElement&gt; document.getElementById(&#x60;${i}&#x60;);
-     if (element.checked) {  // conditional statement
-      document.getElementById(&#x27;p&#x27;).innerText +&#x3D; element.value;
+    for (let i &#x3D; 1; i &lt;&#x3D; 6; i++) {
+      var element &#x3D; &lt;HTMLInputElement&gt;document.getElementById(&#x60;${i}&#x60;);
+      if (element.checked) {
+        // conditional statement
+        document.getElementById(&#x27;p&#x27;).innerText +&#x3D; element.value;
       }
-     }
+    }
   }
-
 }
 </code></pre>
     </div>

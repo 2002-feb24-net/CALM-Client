@@ -33,5 +33,9 @@ describe('QuestionsComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 
 });

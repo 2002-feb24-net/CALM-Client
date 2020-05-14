@@ -60,22 +60,12 @@ beforeEach(async(() => {
     errors = lName.errors || {};
     expect(errors['required']).toBeTruthy();
 
-    // lName.setValue("test");
-    // errors = lName.errors || {};
-    // expect(errors['pattern']).toBeTruthy();
   });
   it('fName field validity', () => {
     let fName = component.CreateUserForm.controls['fName'];
     expect(fName.valid).toBeFalsy();
   });
-  // it('city field validity', () => {
-  //   let city = component.CreateUserForm.controls['city'];
-  //   expect(city.valid).toBeFalsy();
 
-  //   let errors = {};
-  //   errors = city.errors || {};
-  //   expect(errors['required']).toBeTruthy();
-  // });
   it('username fied validity', () => {
     let username = component.CreateUserForm.controls['username'];
     expect(username.valid).toBeFalsy();
@@ -83,6 +73,10 @@ beforeEach(async(() => {
   it('password fied validity', () => {
     let password = component.CreateUserForm.controls['password'];
     expect(password.valid).toBeFalsy();
+  });
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
   });
 
 });

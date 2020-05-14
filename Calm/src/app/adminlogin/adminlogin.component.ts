@@ -39,13 +39,13 @@ export class AdminloginComponent implements OnInit {
   }
   /**
    *
-   * @param form 
+   * @param form
    */
   resetForm(form?: NgForm) {
     if (form != null)
       form.reset();
     this.LoginService.formData = {
-  
+
       fName: '',
       lName: '',
       username: '',
@@ -68,19 +68,19 @@ export class AdminloginComponent implements OnInit {
            this.cookieService.set('password',`${this.user.password}`);
            this.cookieService.set('isAdmin', 'true')
            console.log(`${this.user.password}`)
-        
+
            console.log(`${this.user.username}`)
 
           /**
            * Conditional statement utilized.
            */
-   
+
        this.router.navigate(['/adminedit']);
-           
+
 
          },
          err => {
-          this.handleError(err) 
+          this.handleError(err)
          }
        )
      }
@@ -91,7 +91,7 @@ export class AdminloginComponent implements OnInit {
      handleError(error: HttpErrorResponse) {
       if (error.error instanceof ErrorEvent) {
         this.error = `An error occurred: ${error.error}, ${error.error.message}`; //in the event of a network error. Add error message.
-      } 
+      }
       else {
         this.error = `Sorry try again, error ${error.status} `; //If the response status code was an error then display said error
       }

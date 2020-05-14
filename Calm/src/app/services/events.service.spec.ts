@@ -38,4 +38,8 @@ describe('EventsService', () => {
       expect(service).toBeTruthy();
     });
 
+    afterEach(() => {
+      TestBed.resetTestingModule();
+    });
+  
 });

@@ -34,4 +34,8 @@ describe('UserviewComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
 });

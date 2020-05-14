@@ -1,40 +1,39 @@
 <app-navbar></app-navbar>
 <div class="container" style="padding-top:60px;">
     <div class="row">
-     
-            <div class="card-body p-4">
-  
 
-  
+            <div class="card-body p-4">
+
+
+
               <form name="form" #f="ngForm" (ngSubmit)="Login(f)">
                 <!--  -->
-                 
+
                 <h2 style="text-align:center">Admin name</h2>
-  
+
                 <input type="text" name="username"  class="form-control sty1"
-                  placeholder="Admin name" required ngModel [(ngModel)]="LoginService.formData.username" >
+                  placeholder="username" required ngModel [(ngModel)]="LoginService.formData.username" >
                   <h2 style="text-align:center">Password</h2>
-                <input type="password" name="password" 
-                  class="form-control sty1" placeholder="Password" required ngModel [(ngModel)]="LoginService.formData.password" >
-  
-  
+                <input type="password" name="password"
+                  class="form-control sty1" placeholder="password" required ngModel [(ngModel)]="LoginService.formData.password" >
+
+
                 <br>
-  
+
                 <button type="submit" class="btn btn-block btn-danger" >AdminLogin</button>
                 <div>
-                    <div *ngIf="error"> {{error}} </div> 
-                  
+                    <div *ngIf="error">  {{error}} </div>
+
                 </div>
                 <br>
 
-  
-  
+
+
               </form>
             </div>
           </div>
-        
+
         <div class="push"></div>
     </div>
     <br />
     <app-footer></app-footer>
-  
