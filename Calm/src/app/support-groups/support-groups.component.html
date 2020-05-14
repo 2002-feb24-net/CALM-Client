@@ -1,52 +1,57 @@
 <app-navbar></app-navbar>
 
-  <div class="container" style="padding-top:40px;">
-    <div class="card-body p-4">
-  <table class="table table-hover table-dark"><caption>Support groups</caption>
-      <thead><th scope="col">Title</th><th scope="col">Dates</th><th scope="col">Location</th><th scope="col">Organizer</th></thead>
-        <tr *ngFor="let e of eventApi.list" >
-          
-          <td >{{e.title}}</td>
-          <td >{{e.occurrenceData}}</td> 
-          <td >{{e.city}}</td> 
-          <td >{{e.organizer.username}}</td>
-        </tr>
-      </table>
+<div class="container" style="padding-top:40px;">
+  <div class="card-body p-4">
+    <table class="table table-hover table-dark">
+      <caption>Support groups</caption>
+      <thead>
+        <th scope="col">Title</th>
+        <th scope="col">Dates</th>
+        <th scope="col">Location</th>
+        <th scope="col">Organizer</th>
+      </thead>
+      <tr *ngFor="let e of eventApi.list">
+
+        <td>{{e.title}}</td>
+        <td>{{e.occurrenceData}}</td>
+        <td>{{e.city}}</td>
+        <td>{{e.organizer.username}}</td>
+      </tr>
+    </table>
 
 
     <div [hidden]="!show">
-      
+
       <form [formGroup]="EventTitleForm" (ngSubmit)="AddUser()">
         <div class="input-group mb-3">Title:
-          <select  style="background-color:blueviolet;" (change)="onTitleSelect($event)">
-          <option *ngFor="let e of eventApi.list" 
-          [value]="e.title" >
-        {{e.title}}</option>
+          <select style="background-color:blueviolet;" (change)="onTitleSelect($event)">
+            <option *ngFor="let e of eventApi.list" [value]="e.title">
+              {{e.title}}</option>
           </select>
-      
-      </div> 
-      
-      <button type="submit" class="btn btn-block btn-success" >
-       Attend</button>
-     </form>
-     <p>Group members:</p> 
-     <div *ngFor="let  e of eventApi.list">
-     
-       <div *ngFor="let ei of e.atendees">
-         <p>{{ei.username}} from, {{ei.city}} is a member of {{e.title}} <p>
-          
-       </div>
-    
-     </div>
 
+        </div>
+
+        <button type="submit" class="btn btn-block btn-success">
+          Attend</button>
+      </form>
+   <div class="gfg" > <p>Group members:</p>
+      <div *ngFor="let  e of eventApi.list">
+
+        <div  *ngFor="let ei of e.atendees">
+          <p>{{ei.username}} from {{ei.city}} is a member of {{e.title}}
+          <p>
+
+        </div>
+
+      </div>
+    </div>  
     </div>
-      <p [hidden]="!shownotlogged" style="color: red;">
-       Please login to join a group
-      </p>
-    </div>
-<div class="push"></div>
-  
+    <p [hidden]="!shownotlogged" style="color: red;">
+      Please login to join a group
+    </p>
+  </div>
+  <div class="push"></div>
+
 </div>
 <br />
-<app-footer></app-footer> 
-
+<app-footer></app-footer>
